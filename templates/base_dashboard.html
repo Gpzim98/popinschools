@@ -1,0 +1,332 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+{% load check_interested %}
+{% load rating_schools %}
+{% load check_student_school %}
+
+{% block body %}
+  <div id="shop"></div>
+  <div class="container">
+    <div class="row">
+      <div id="form" class="modal  modal-fixed-footer">
+        <div class="modal-content">
+          <div id="form_content"><h3>Wait ...loading...</div>
+        </div>
+        <div class="modal-footer right">
+          <a href="#" id="submit" class="modal-action modal-close waves-effect waves-green btn-flat ">Enviar</a>
+          <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close">Fechar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+
+
+
+  (function() {
+
+    'use strict';
+
+  
+
+    // SHOP ELEMENT
+    var shop = document.querySelector('#shop');
+
+    // DUMMY DATA
+    var data = [
+      /*
+      RATINGS_CATEGORIES = (
+          ("quality", "Quality"),
+          ("price", "price"),
+          ("staff", "staff"),
+          ("organization", "organization")
+      )
+      */
+      {% for dt in schools %}
+      {% is_interested dt.id request.user.pk as r %}
+      {% is_stuend_in_the_school request.user.pk dt.id  as f %}
+      {% recomends_percentages dt.id as recomends %}
+      {
+        school: "{{ dt.school }}",
+        id: {{ dt.id }},
+        image: "{{ dt.image }}",
+        is_interested: "{{ r }}",
+        school_of_student: "{{ f }}",
+        enable: "{{ f }}",
+        title: "Ratings",
+        perc_recomend: "{{ recomends.perc_recomendations }}",
+        perc_may_recomend: "{{ recomends.perc_may_recomend }}",
+        perc_not_recomend: "{{ recomends.perc_not_recomend }}",
+        total_recomend: "{{ recomends.total_recomend }}",
+        total_may_recomend: "{{ recomends.total_may_recomend  }}",
+        total_not_recomend: "{{ recomends.total_not_recomend }}",
+        data: [
+        {% for rt in ratings %}
+        {% for k, v in rt.items %}
+        {% rating_school dt.id k as rating %}
+        {
+          description: "{{ v }}",
+          id_description: "{{ k }}",
+          rating: {{ rating }}
+        },
+        {% endfor %}
+        {% endfor %}
+        ]
+      },
+      {% endfor %}
+    ];
+
+    // INITIALIZE
+    (function init() {
+      for (var i = 0; i < data.length; i++) {
+        if (data[i].enable == data[i].id){
+          var enable = true;
+        } else {
+          var enable = false;
+        }
+        addRatingWidget(buildShopItem(data[i]), data[i], enable);
+      }
+    })();
+
+    $(document).ready(function(){
+        $('.modal').modal({
+            opacity: 0.0,
+            dismissible: false
+          }
+        );
+      });
+
+    function NewRating(value, school, type){
+      $.ajax({
+        type: "GET",
+        url: "{% url 'schools:new_rainting' %}",
+        success: function(data){
+          $("#form").modal('open');
+          $("#form_content").html(data);
+          $("#id_school").val(school);
+          $("#id_stars").val(value);
+
+
+          $("#id_type_of_rating").val(type);
+          
+        },
+        error: function(data){
+          console.log(data)
+        }
+      });
+    };
+
+    $("#submit").click(function(){
+        //$("#new_rating_form").submit();
+        $.ajax({
+        type: "POST",
+        url: "{% url 'schools:new_rainting' %}",
+        data: $("#new_rating_form").serialize(),
+        success: function(data){
+          Materialize.toast(data.msg, 4000)
+          
+        },
+        error: function(data){
+          console.log(data)
+        }
+      });
+
+      })
+
+    // BUILD SHOP ITEM
+    function buildShopItem(data) {
+      var shopItem = document.createElement('div');
+
+
+
+
+      //var html = '<div class="c-shop-item__img">' +
+      //    '<h3 class="c-shop-item__title">' + title + '</h3>';
+
+
+      var html = '<div class="c-shop-item__img"><a href="#"><img alt="" height="100%" width="100%" class="responsive-img" src="' + data.image + '"></img></a>';
+
+
+      {% if request.user.is_interested %}
+
+      if (data.is_interested == "True"){
+        html += '<input class="interested" type="checkbox" id="interested_' + data.id + '" data-id="' + data.id + '" checked /><label for="interested_' + data.id + '">Interessante</label>'
+      } else {
+        html += '<input class="interested" type="checkbox" id="interested_' + data.id + '" data-id="' + data.id + '" /><label for="interested_' + data.id +'">Interessante</label>'
+      }
+      {% endif %}
+      {% if request.user.is_student %}
+        if (data.school_of_student == "False") {
+          html += '<input class="my_school" type="checkbox" id="my_school_' + data.id + '" data-school="' + data.school + '"  data-id="' + data.id + '"/><label for="my_school_' + data.id + '">Estudo Aqui</label>';
+        } else {
+          if ( data.id == data.school_of_student ){
+            html += '<input disabled="disabled" class="my_school" type="checkbox" id="my_school" data-school="' + data.school + '"  data-id="' + data.id + '"/><label for="my_school">Estudo Aqui</label>';
+          }
+        }
+
+      {% endif %}
+
+
+      html += '</div><div class="c-shop-item__details">';
+
+      for (var x=0; x <= data.data.length -1; x++) {
+
+        html += '<b>' + data.data[x].description + '</b><ul class="c-rating" data-item="' + data.data[x].id_description + '" id="rating_' + x + '"></ul><p></p>';
+      }
+
+      html += '</div><div class="c-shop-item__details"></div><div class="c-shop-item__details"><p class="c-shop-item__description"><b>' + data.perc_recomend + '% recomendariam essa escola</b></p><div class="chart" id="chart_ok_' + String(data.id) +'" data-percent="' + data. perc_recomend + '" data-scale-color="#0B6121"><i class="material-icons">message</i>' + data.total_recomend + '</div></div><div class="c-shop-item__details"><p class="c-shop-item__description"><b>' + data.perc_may_recomend + '% nao sabem se recomendariam essa escola</b></p><div class="chart" id="chart_ok_nok_' + String(data.id) +'" data-percent="' + data.perc_may_recomend + '" data-scale-color="#ffb400"><i class="material-icons">message</i>' + data.total_may_recomend + '</div></div><div class="c-shop-item__details"><p class="c-shop-item__description"><b>'+ data.perc_not_recomend + '% nao recomendariam essa escola</b></p><div class="chart"  id="chart_nok_' + String(data.id) +'" data-percent="'+ data.perc_not_recomend + '" data-scale-color="#ffb400"><i class="material-icons">message</i>'+ data.total_not_recomend +'</div></div></div>';
+
+      
+      shopItem.classList.add('c-shop-item');
+      shopItem.innerHTML = html;
+      shop.appendChild(shopItem);
+      runPieChart(data.id);
+
+      return shopItem;
+    }
+
+    // ADD RATING WIDGET
+    function addRatingWidget(shopItem, data, enableMouseOver) {
+      for (var x=0; x <= data.data.length -1; x++){
+        var ratingElement = shopItem.querySelector('#rating_' + x);
+        var currentRating = data.data[x].rating;
+        var maxRating = 5;
+        var t = data.data[x].description;
+        var callback = function(rating, item) { 
+          NewRating(rating, data.id, $("#" + item.id).data("item"));
+        };
+        var r = rating(ratingElement, currentRating, maxRating, callback, enableMouseOver);
+      }
+    }
+
+  })();
+  function runPieChart(id) {
+    $('#chart_ok_' + id).easyPieChart({
+        barColor:'#0B6121',
+    });
+    $('#chart_ok_nok_' + id).easyPieChart({
+        barColor:'#DF7401',
+    });
+    $('#chart_nok_' + id).easyPieChart({
+        barColor:'#FF0040',
+    });
+};
+
+  {% if request.user.is_authenticated %}
+  {% if request.user.is_student %}
+
+  $(".my_school").click(function(){
+    if ($(this).is(":checked")){
+      if (confirm("Caso selecionada sua escola, nao sera possivel altera-la, somente contactando um de nossos administradores! Deseja confirmar a " + $(this).data("school") + " como sua escola?")){
+        var url = "{% url 'clients:create_school_student' %}";
+        $.ajax({
+          type: "POST",
+          url: url,
+          data: {'csrfmiddlewaretoken': '{{ csrf_token }}', 'school': $(this).data("id")},
+          success: function(data){
+            if (data.status == "error"){
+              Materialize.toast(data.msg, 4000);
+            }
+          },
+          error: function(data){
+            console.log(data)
+          }
+        })
+        location.reload();
+
+      } else {
+        $('.my_school').attr('checked', false); 
+      }
+    }
+  })
+  {% endif %}
+  {% if request.user.is_interested %}
+
+
+  $(".interested").click(function (){
+
+    if ($(this).is(':checked')) {
+      var url = "/users/interests/create/";
+    } else {
+      var url = "/users/interests/delete/" + $(this).data("id") + "/";
+    }
+    $.ajax({
+      type: "POST",
+      url: url,
+      data: {'csrfmiddlewaretoken': '{{ csrf_token }}', 'school_pk': $(this).data("id")},
+      success: function(data){
+        console.log(data)
+      },
+      error: function(data){
+        console.log(data)
+      }
+    })
+  });
+  {% endif %}
+  {% endif %}
+  {% if request.user.is_authenticated and request.user.is_student and f %}
+
+  $(document).ready(function (){
+
+    var boxes = ["#chart_ok_{{ f }}", "#chart_ok_nok_{{ f }}", "#chart_nok_{{ f }}"]
+    var sentences = [
+      "Recomendaria esta escola?",
+      "Nao sabe se recomendaria esta escola?",
+      "Nao recomendaria esta escola"
+    ]
+
+    var raitings = [
+      "i_recomend",
+      "i_do_not_know_if_i_recomend",
+      "i_do_not_recomend"
+    ]
+
+    {% exists_recomendation f request.user.pk as type_of_rating %}
+
+    var t = "{{ type_of_rating.0.type_of_rating }}";
+    console.log(t);
+
+    for (var x=0; x <= boxes.length -1; x++){
+      var box = document.querySelector(boxes[x]);
+      var chart_checkbox = document.createElement('div');
+      chart_checkbox.innerHTML = "<input data-raiting=\"" + raitings[x] + "\" data-id=\"{{ f }}\" name=\"group1\" type=\"radio\" class=\"filled-in\" id=\"recomend_" + x + "\"/><label for=\"recomend_" + x + "\">"+ sentences[x] + "</label>";
+      box.appendChild(chart_checkbox);
+  
+
+    $("#recomend_" + x ).click(function(){
+      if ($(this).is(':checked')) {
+        $.ajax({
+          type: "POST",
+          url: "{% url 'schools:new_rating'%}",
+          data: {
+            'csrfmiddlewaretoken': '{{ csrf_token }}',
+            'school': $(this).data("id"),
+            "type_of_rating": $(this).data("raiting")
+          },
+          success: function(data){
+            if (data.status == "error"){
+              Materialize.toast(data.msg, 4000);
+            }
+            location.reload();
+
+          },
+          error: function(data){
+            console.log(data)
+          }
+        })
+      }
+    });
+  }
+  var el = $("input[data-raiting='" + t + "']");
+  el.attr("checked", "checked");
+  console.log(el);
+})
+
+  {% endif %}
+
+  </script>
+
+  {% endblock %}
+

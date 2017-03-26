@@ -1,0 +1,1572 @@
+
+/* Global CSS */
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: museo;
+    src: url(../fonts/museo.woff);
+}
+
+body {
+    background: #f0f0f0;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-family: "museo", sans-serif;
+    color: rgb(137, 25, 32);
+    line-height: 1.158;
+    color: #fff;
+}
+
+h2 {
+    font-size: 2em;
+    font-family: "museo", sans-serif;
+    color: rgb(137, 25, 32);
+    line-height: 1.05;
+    text-align: center;
+}
+
+h3 {
+    font-size: 16px;
+    font-family: "museo", sans-serif;
+    color: #312e2e;
+    text-align: center;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 14px;
+    font-family: "roboto", sans-serif;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+p, label, a {
+    color: #fff;
+    font-family: "roboto", arial;
+}
+
+input {
+    padding: 2%;
+    width: 90%;
+    margin: 2% 0;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    font-family: "roboto", arial;
+}
+
+textarea {
+    border: 1px solid #ccc;
+    width: 95%;
+    border-radius: 7px;
+}
+
+select {
+    padding: 1%;
+    width: 90%;
+    background-color: white;
+    border: 1px solid #ccc;
+    font-family: "roboto", arial;
+}
+
+.link-active {
+    color: #bf1522 !important;
+    font-weight: bold;
+}
+
+.background-white {
+    background: white;
+}
+/* End global stuffs */
+
+/* Reusable things */
+
+.content {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.btn {
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 15px;
+    padding-left: 40px;
+}
+
+/* End reusable things */
+/* Button login */
+.btn-login {
+    background: url("../img/login-over.png") no-repeat 5px 5px;
+    background-size: 25px 25px;
+    color: white;
+}
+
+.btn-login:hover {
+    background: #bf1522 url("../img/login.png") no-repeat 5px 5px;
+    background-size: 25px 25px;
+    color: #fff;
+}
+
+/* Button create profile*/
+.btn-create-profile {
+    background: url("../img/create-perfil-over.png") no-repeat 5px 5px;
+    background-size: 25px 25px;
+    color: white;
+}
+
+.btn-create-profile:hover {
+    background: #bf1522 url("../img/create-perfil.png") no-repeat 5px 5px;
+    background-size: 25px 25px;
+    color: #fff;
+}
+
+.btn-color-home {
+    background-color: #fff;
+    color: #8d8d8d;
+}
+
+.col {
+    width: 30%;
+    float: left;
+}
+
+.create-profile-icon-white {
+    background: url("../img/create-profile-white.png") no-repeat 5px 5px;
+    background-size: 25px 25px;    
+}
+
+
+.login-icon-white {
+    background: url("../img/login-white.png") no-repeat 5px 5px;
+    background-size: 25px 25px;    
+}
+
+.btn-login-hover:hover {
+    background: #5e0303 url("../img/login-white.png") no-repeat 5px 5px;
+    background-size: 25px 25px;
+}
+
+.btn-profile-hover:hover{
+    background: #5e0303 url("../img/create-profile-white.png") no-repeat 5px 5px;
+    background-size: 25px 25px;
+}
+
+/* Header */
+
+header {
+    background-color: #bf1522;
+    width: 100%;
+    height: 130px;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 100;
+    clear: both
+}
+
+.red-header {
+    background: white;
+}
+
+/* Heaader social-top */
+header #social-top {
+    background-color: #bf1522;
+    width: 100%;
+    height: 35px;
+}
+
+header #social-top ul li {
+    display: inline;
+    float: right;
+    text-align: center;
+}
+
+header #social-top ul li a img {
+    width: 50%;
+    margin-top: 3px;
+}
+
+/* End header social-top*/
+
+/* Header login */
+
+#auth {
+    margin-top: 1%; 
+}
+
+/* Responsive logo */
+#logo, #logo-home {
+    float: left;
+    width: 100%;
+    height: 60px;
+    max-width: 300px;
+    background: url(../img/logo.png) center center no-repeat;
+    background-size: 100% auto;
+}
+
+#logo {
+    background: url(../img/white-logo.png) center center no-repeat;
+}
+
+#login {
+    float: right;
+    width: 45%;
+}
+
+#login button {
+    float: right;
+}
+
+.search-box button {
+    float: left;
+    margin-top: 3%;
+}
+
+main {
+    width: 100%;
+    margin-top: 130px;
+    min-height: 100px;
+    overflow: hidden;
+}
+
+/* Section serach ( Main section )*/
+/* Holds the main image thats why should keep the 100%*/
+#search {
+    height: 700px;
+    background-image: url(../img/front.jpg);
+    text-align: center;
+    background-size: 100% 100%;
+}
+
+.search-content {
+    height: 100%;
+    padding-top: 10%;
+    align-items: center;
+}
+
+#search .search-box{
+    text-align: center;
+    border-radius: 4px;
+    background-color: rgba(31, 28, 28, 0.63);
+    width: 90%;
+    height: 100px;
+    margin: 0 auto;
+}
+
+section#search .search-box form {
+    width: 100%;
+    height: 100%;
+}
+
+section#search .search-box input[type='text'] {
+    padding: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    height: 40%;
+    width: 65%;
+    float: left;
+    border-radius: 5px;
+    margin: 3% 1% 2% 2%;
+    background: #fff url('../img/find.png') no-repeat right;
+    background-size: 30px 30px;
+    background-position: 98%;
+}
+
+.btn-danger {
+    background-color: #bf1522;
+    color: white;
+    font-size: 85%;
+    padding: 15px 30px;
+    width: 28%;
+    height: 52%;
+}
+
+/* Section schools */
+
+section {
+    width: 100%;
+}
+
+section #container {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.school {
+    position: relative;
+    float: left;
+    width: 20%;
+    height: 500px;
+    margin: 20px 10px;
+}
+
+#schools {
+    margin-top: 70px;
+}
+
+#schools p {
+    width: 60%;
+    margin: 40px auto;
+    line-height: 20px;
+    color: #464040;
+    text-align: center;
+}
+.school img {
+      position: absolute;
+      top: 7%;
+      left: 0%; 
+}
+
+/* Footer */
+#footer-home {
+    clear: both;
+    height: 411px;
+    background: url('../img/footer.jpg') no-repeat center;
+    padding-top: 0;
+}
+
+#footer-home #container-footer{
+    background-color: rgba(190, 21, 34, 0.75);
+    width: 100%;
+    height: 100%;
+}
+
+#footer-home #container-footer .content {
+    width: 50%;
+    margin: 0 auto;
+}
+
+#footer-home #container-footer .content h2 {
+    color: #fff;
+    font-size: 38px;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 10px;
+    padding-top: 40px;
+    width: 300px;
+    margin-left: 30%;
+}
+
+#footer-home #container-footer p {
+    margin-top: 50px;
+}
+
+.rights {
+    border-top: 1px solid #4D5E50;
+    background-color: #333333;
+    min-height: 5px;
+    text-align: center;
+    opacity: 0.95;
+    overflow: hidden;
+}
+
+#social-footer {
+    margin-top: 5px;
+}
+
+.rights #social-footer ul {
+    float: right;
+}
+
+.rights #social-footer ul li{   
+    display: inline;
+    padding-bottom: 10px;
+}
+
+.rights #social-footer ul li a img {
+    width: 30px;
+    height: 30px;
+}
+
+
+.rights .content #social-footer p {
+    display: inline;
+    margin-top: 20px;
+}
+
+
+/* Pages */
+#navigation {
+    background: #8c8c8c;
+    height: 40px;
+    margin-top: 95px;
+    padding: 1% 0 0 1%;
+}
+
+#navigation a {
+    text-decoration: none;
+    color: white;
+    font-family: "roboto";
+    margin-right: 15px; 
+}
+
+#profile {
+    margin-top: 50px;
+    background: white;
+    padding-top: 3%;
+    height: 140px;
+    position: relative;
+}
+
+.prof-info p {
+   color: #222;
+   font-family: "roboto"; 
+}
+
+#profile img {
+    display: inline;
+    float: left;
+    margin-right: 5%;
+}
+
+.prof-info h2 {
+    text-align: left;
+}
+
+#profile-form {
+    padding: 2%;
+}
+
+#profile-form form input[type='date'] {
+    color: #a6a4a6;
+    padding: 1%;
+}
+
+#profile-form form label {
+    color: #a6a4a6;    
+}
+
+#profile-form button {
+    float: right;
+    margin-bottom: 20px;
+    margin-right: 3%;
+}
+
+#profile ul {
+    float: left;
+    clear: both;
+    position: absolute;
+    bottom: 0;
+}
+
+#profile ul li {
+    display: inline;
+    text-decoration: none;
+}
+
+#profile ul li a {
+    text-decoration: none;
+    border-right: 1px solid;
+    padding-right: 4px;
+    color: #37383b;
+    font-family: 'roboto';
+}
+
+#profile ul li a:active{
+    color: #bf1522;
+    font-weight: bold; 
+}
+
+/* Footer stuffs */
+
+footer {
+    width: auto;
+    height: 300px;
+    background: #37383b;
+    padding-top: 3%;
+}
+
+#twitter, #social, #quicklinks {
+    float: left;
+    width: 17%;
+}
+
+/* End footer stuffs*/
+
+
+/* Footer Store stuffs*/
+
+#stores {
+    width: 35%;
+    float: left;
+    margin-right: 2%;
+}
+
+#stores #logo-footer {
+    width: 80%;
+}
+
+#stores img {
+    width: 40%;
+}
+
+#stores p {
+    margin-top: 10px;
+}
+
+/* End footer store stuffs */
+
+
+/* Quick links stuffs*/
+
+#quicklinks {
+    margin-right: 5%;
+}
+
+#quicklinks ul li {
+    text-decoration: none;
+    color: white;
+    border-bottom: 1px inset #8d8d8d;
+    padding-bottom: 8px;
+    margin-top: 3px;
+    list-style-type: none;
+}
+
+#quicklinks ul li a{
+    text-decoration: none;
+    color: #b7b5b7;
+    font-family: 'roboto';
+    text-shadow: 2px 2px #222;
+}
+
+#quicklinks h4 {
+    color: #bab9bb;
+    text-align: left;
+    margin-bottom: 15%;
+}
+
+/* End Quick links stuffs*/
+
+/* Footer Twitter stuffs  */
+#twitter {
+    margin-right: 5%;
+}
+
+#twitter h4 {
+    color: #bab9bb;
+    text-align: left;
+    margin-bottom: 15%;
+}
+
+#twitter ul li {
+    list-style-type: none;
+}
+
+#twitter ul li p {
+    color: #b7b5b7;
+    text-shadow: 2px 2px #222;
+}
+
+/* End Footer Twitter stuffs  */
+#social {
+
+}
+
+#social h4 {
+    color: #bab9bb;
+    text-align: left;
+    margin-bottom: 15%;
+}
+
+#social ul li {
+    list-style-type: none;    
+}
+
+#social ul li a {
+    text-decoration: none;
+    color: #b7b5b7;
+    text-shadow: 2px 2px #222;
+}
+
+#social ul li a img {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+    margin: 2px 10px 0 0;
+}
+
+
+/* Avalição Page stuffs */
+#table {
+    margin-top: 5%;
+}
+
+#table table {
+    font-family: "roboto";
+    border-collapse:collapse;
+    width:100%;
+}
+
+#table table td:nth-child(1){
+    padding-right: 10%;
+    width: 20%;
+}
+
+#table table tr {
+    border-bottom:1px groove;
+}
+
+#table table tr td {
+    padding-top: 2%;
+    float: left;
+}
+/* End Avaliação page stuffs */
+
+
+/* Page Pesquisa stuffs */
+#aside-search {
+    margin: 5% 0 1% 1%;
+    float: left;
+    width: 30%;
+    border: 1px solid #c0c0c0;
+    padding-left: 1%;
+    position: relative;
+    background: white;
+}
+
+#aside-search form {
+    margin-top: 10%;
+}
+
+#aside-search form label {
+    color: #312e2e;
+    font-family: "roboto";
+}
+
+#aside-search form input[type='radio']{
+    width: 7%;
+}
+
+#aside-search form input[type='checkbox']{
+    width: 7%;
+}
+
+
+#aside-search form p {
+    display: inline;
+    color: #2b2b2b;
+}
+
+#aside-search form input[type='radio']:checked {
+    background: red;
+}
+
+#aside-search #classification, #aside-search #price {
+    width: 95%;
+}
+
+#aside-title{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #bd1521;
+    width: 100%;
+    height: auto;
+}
+
+#aside-title h2 {
+    color: white;
+}
+
+/* End page pesquisa */
+
+/* Range slider style */
+.ui-widget-content {
+    background-color: white;
+    background: -webkit-linear-gradient(#c7c2c2, white); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#c7c2c2, white); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#c7c2c2, white); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#c7c2c2, white); /* Standard syntax (must be last) */
+}
+
+.ui-slider-horizontal .ui-slider-handle {
+    top:-0.05em;
+}
+
+.ui-slider .ui-slider-handle {
+    width: 0.8em;
+    height:0.8em;
+}
+
+.ui-corner-all {
+    border-radius: 7px;
+}
+
+.ui-widget.ui-widget-content {
+    border: 2px double #e6e3e3;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default {
+    box-shadow: 1px 1px #736e6e;
+    border: none;
+    background-color: white;
+    background: -webkit-linear-gradient(#4c4b4b, #cec8c8); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#4c4b4b, #cec8c8); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#4c4b4b, #cec8c8); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#4c4b4b, #cec8c8); /* Standard syntax (must be last) */
+}
+
+#classification-amount, #price-amount {
+    border: none;
+    background: transparent;
+}
+/* End range slider style*/
+
+/* Section search-result */
+#search-result {
+    margin: 5% 0 1% 1%;
+    padding-left: 0%;
+    float: left;
+    width: 65%;
+    background-color: white;
+}
+
+.result {
+    padding: 3%;
+    border-bottom: 1px solid #cccccc;
+    border-size: 90% 90%;
+}
+
+.result>img {
+    float: left;
+    width: 20%;
+    height: auto;
+    margin-right: 3%;
+}
+
+.result h2 {
+    text-align: left;
+    color: black;
+    font-family: "roboto";
+    font-size: 1.5em;
+}
+
+.school-rating {
+    background-color: #bf1522;
+    display: inline-block;
+    padding: 0.5% 1% 0.5% 1%;
+    border-radius: 7px;
+    color: white;
+    font-weight: bold;
+    font-family: "roboto";
+    margin: 1% 0 1% 0;
+}
+
+.result ul {
+    margin-top: 1%;
+}
+
+.result ul li{
+    display: inline;
+    font-family: "roboto"
+}
+
+.result p {
+    font-family: "roboto";
+    color: #37383b;
+    margin-top: 1%;
+}
+/* end search-result*/
+
+/* Page Cadastro Escola stuffs */
+.capa {
+    width: 100%;
+    height: 350px;
+    background-color: #e9e9e9;
+    position: relative;
+}
+
+.capa .content img {
+    position: absolute;
+    top: 65%;
+    width: 200px;
+    height: 200px;
+}
+
+#profile-basics {
+    position: absolute;
+    top: 105%;
+    width: 30%;
+    height: 20%;
+    left: 37%;
+}
+
+#profile-basics p {
+    color: #37383b;
+    font-family: "roboto";
+}
+#profile-basics h2 {
+    text-align: left;
+    color: #37383b;
+    font-family: "roboto";
+    font-size: 1.5em;
+    display: inline;
+}
+
+#profile-basics label {
+    display: inline;
+    color: #bd1521;
+}
+
+#school-form {
+    background: white;
+    padding-top: 10%;
+    min-height: 100px;
+    overflow: hidden;
+}
+
+#school-form h2 {
+    text-align: left;
+    color: #ab1a27;
+    margin-bottom: 2%;
+}
+
+#school-form h3 {
+    text-align: left;
+    margin-bottom: 2%;
+    font-size: 1.2em;
+}
+
+#school-form p {
+    color: #37383b;
+}
+
+#school-form form {
+    min-height: 100px;
+    overflow: hidden;
+    margin-bottom: 3%;
+}
+
+.school-form textarea {
+    width: 92%;
+}
+#school-form form p {
+    color: black;
+}
+
+#school-form form textarea {
+    margin-top: 2%;
+}
+
+#school-form label {
+    color: #37383b;
+}
+
+#school-form input, #school-form .col input {
+    margin: 1% 0;
+    padding: 1%;
+}
+
+.info-grid {
+    margin-top: 2%;
+}
+.info-grid img {
+    display: inline;
+}
+
+.info-grid p {
+    display: inline-block;
+    width: 65%;
+}
+
+.info-grid img+p{
+    width: 30%;
+}
+
+.info-grid-3 {
+    margin-top: 3%;
+}
+.info-grid-3 p {
+    display: inline-block;
+    width: 20%;
+}
+#course-type, #class-type {
+    width: 30%;
+    float: left;
+    margin-top: 3%;
+}
+
+#course-type label, #class-type label {
+    margin-top: 15%;
+}
+
+#course-type p, #class-type p {
+    display: inline;
+    margin-right: 5%;
+}
+
+#course-type input[type='checkbox'],
+#class-type input[type='checkbox'] {
+    width: auto;
+    margin: 5% 5% 5% 0;
+}
+
+#course {
+    width: 20%;
+    float: left;
+}
+
+#course p {
+    display: inline;
+    color: #2b2b2b;
+}
+
+#course input[type='checkbox'] {
+    width: 7%;
+}
+
+#visa {
+    clear: left;
+    width: 50%;
+    float: left;
+    margin-top: 3%;
+}
+
+#visa select {
+    margin-top: 3%;
+}
+
+#social-media {
+    width: 100%;
+    clear: both;
+    margin: 45% 0 1% 0;
+}
+
+#social-media input {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    width: 15%;
+}
+
+#course-fees {
+    margin-top: 3%;
+}
+#course-fees input[type='radio'],
+    #course-fees input[type='text']{
+    width: auto;
+}
+
+#course-fees label, #course-fees p {
+    margin-right: 5%;
+    display: inline;
+}
+
+#course-fees label {
+    width: 50%;
+}
+
+#course-fees label {
+    display: inline-block;
+    width: 25%;
+}
+
+#price {
+    width: 70%;
+}
+
+#price .season {
+    width: 20%;
+    float: left;
+    margin: 3% 0 3% 0;
+}
+
+#price #high-season, #price #low-season {
+    width: 100%;
+    float: left;
+}
+
+#price #high-season input, #price #low-season input {
+    padding: 4%;
+    width: 70%;
+}
+
+#accomodation {
+    width: 70%;
+}
+
+#accomodation p, #facilities p,
+#facilities-options p, #events p{
+    display: inline;
+}
+
+#accomodation input, #facilities input,
+#facilities-options input, #events input{
+    width: auto;
+    margin-top: 5%;
+}
+
+#accomodation label, #facilities label,
+    #facilities-options label {
+    margin-right: 5%;
+}
+
+.half-input {
+    width: 10% !important;
+}
+
+#accomodation p {
+    margin-right: 5%;
+    margin-left: 1%;
+}
+
+#facilities {
+    width: 100%;
+    float: left;
+    margin: 3% 0;
+}
+
+#facilities p {
+    margin: 0 5% 5% 0;
+}
+
+#events {
+    width: 95%;
+}
+
+#events p {
+    display: inline-block;
+    width: 20%;
+}
+
+#events input {
+    margin: 1% 0;
+}
+
+#events input[type='text'] {
+    width: 60%;
+}
+
+#media {
+    width: 95%;
+    float: left;
+    margin-top: 3%;
+}
+
+#media img {
+    margin-right: 1%;
+    width: 23%;
+}
+
+#school-videos {
+    width: 100%;
+    float: left;
+    clear: both;
+}
+
+#school-videos input {
+    width: 50%;
+}
+/* End page cadastro escola stuffs */
+
+
+/* School profile stuffs */
+#image-slider {
+    margin-top: 3%;
+}
+
+.video-galery {
+    margin-top: 3%;
+}
+
+.video-galery iframe{
+    width: 200px;
+    height: 120px;
+}
+
+.map iframe {
+    width: 100%;
+    height: 400px;
+}
+
+.comment {
+    position: relative;
+    margin-top: 3%;
+}
+
+.comment h3 {
+    margin-top: 5%;
+}
+
+.comment .img-comment {
+    width: auto;
+    height: 100%;
+    margin-right: 2%;
+}
+
+.comment-content {
+    margin-left: 11%;
+}
+
+.comment-content a {
+    color: #37383b;
+}
+
+.comment-content label+a{
+    float: right;
+}
+
+.comment-content h3, .comment-content h3+p, .comment-content label {
+    display: inline;
+}
+
+.comment .img-comment img {
+    float: left;
+    width: 10%;
+    height: 10%;
+}
+
+.replay {
+    margin: 1% 0 0 5%;
+    border-top: 1px solid #d4d4d6;
+    padding-top: 1%;
+}
+
+.load-comments {
+    width: 100% !important;
+    height: 40px;
+    color: #2b2b2b;
+    font-family: "roboto";
+}
+
+.load-comments:active {
+    background-color: #8c8c8c;
+    color: white;
+}
+/* End school profile stuffs */
+
+@media screen and (max-width: 621px){
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    h3 {
+        font-size: 1.1em;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    header {
+        height: 135px;
+        position: relative;
+    }
+
+    main {
+        margin-top: 0;
+    }
+
+    .col {
+        width: 95%;
+        margin: auto;
+    }
+
+    #login {
+        width: 75%;
+        float: right;
+    }
+
+    #aside-search {
+        margin-top: 12%;
+        width: 95%
+    }
+
+    .result ul {
+        clear: both;
+    }
+    #search-result {
+        margin-top: 10%;
+        width: 95%;
+    }
+
+    #logo, #logo-home {
+        width: 25%;
+        height: 95px;
+        float: left;
+        background: url(../img/logo-mini.png) center center no-repeat;
+    }
+
+    #login button {
+        width: 55%;
+        float: right;
+        margin-top: 5px;
+    }
+
+    #search {
+        height: 250px;
+    }
+
+    #schools {
+        margin-top: 5%;
+    }
+
+    #schools p {
+        width: 95%;
+    }
+
+    .school {
+        width: 100%;
+        margin: 0px;
+        height: 250px;
+        text-align: center;
+    }
+
+    .school img {
+        position: relative;
+        margin-top: 5px;
+    }
+
+    #search .search-box {
+        width: 90%;
+        height: auto;
+        padding-bottom: 2%;
+    }
+
+    .btn {
+        margin-top: 0px;
+    }
+
+    .btn-danger {
+        width: 95%;
+        float: none;
+        height: auto;
+        margin: 0% 1% 2% 2%;
+    }
+
+    section#search .search-box input[type='text'] {
+        width: 90%;
+        font-size: 0.8em;
+        background-size: 20px;
+        float: none;
+        padding: 10px;
+    }
+
+    #profile-form form input[type='date'] {
+        padding: 2%;
+    }
+
+    #footer-home {
+        overflow: hidden;
+        padding: 0;
+    }
+
+    #footer-home #container-footer .content h2 {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    #footer-home #container-footer .content {
+        width: 95%;
+        text-align: center;
+    }
+
+
+    /* School profile stuffs */
+    .info-grid {
+        margin-top: 5%;
+    }
+
+    .price p {
+        width: 90%;
+    }
+
+    .btn-danger {
+        margin: 0;
+    }
+    /* End School profile stuffs */
+
+    /* Footer stufs */
+    footer {
+        padding: 5%;
+        height: auto;
+        overflow: hidden;
+    }
+
+    #twitter h4, #quicklinks h4, #social h4, #stores h4 {
+        margin-bottom: 5%;
+    }
+
+    #quicklinks, #twitter, #social, #stores {
+        width: 90%;
+        margin-top: 5%;
+    }
+
+    #profile {
+        margin-top: 45px;
+    }
+
+    #profile-form form {
+        width: 95%;
+    }
+
+    #profile-form form button {
+        float: left;
+        width: 95%;
+    }
+
+    .capa .content img {
+        top:85%;
+        left: 5%;
+        width: 100px;
+        height: 100px;
+    }
+
+    #profile-basics {
+        left: 35%;
+        width: 60%;
+        top:100%;
+    }
+
+    #school-form {
+        padding-top: 35%;
+    }
+
+    .info-grid p {
+        width: 60%;
+    }
+
+    .price img+p{
+        width: 90%;
+        margin: 3% 0;
+    }
+
+    .info-grid-3 p {
+        width: 25%;
+    }
+
+    .video-galery iframe {
+        margin-left: 15%;
+    }
+    #school-form label {
+        display: block;
+    }
+
+    #school-form form {
+        margin-left: 2%;
+    }
+
+    #course-type, #class-type {
+        width: 100%;
+    }
+
+    #visa {
+        margin-bottom: 5%;
+        width: 100%;
+    }
+
+    #visa select {
+        margin: 0;
+    }
+
+    #social-media input {
+        width: 95%;
+    }
+
+    #course-fees label {
+        width: 95%;
+    }
+
+    #price, #accomodation {
+        width: 100%;
+    }
+
+    #price .season {
+        width: 25%;
+    }
+
+    #low-season, #high-season {
+        margin-top: 5%;
+    }
+
+    #events p {
+        width: 35%;
+    }
+
+    #events input[type='text'] {
+        width: 40%;
+    }
+    .col {
+        width: 100%;
+    }
+    /*End footer stufs*/
+
+}
+
+@media screen and (max-width: 1000px) and (min-width: 622px) {
+
+    h1 {font-size: 2em;}
+    h2 {font-size: 1.7em;}
+    h3 {font-size: 1em;}
+
+    .content {
+        width: 90%;
+    }
+
+    .col {
+        width: 100%;
+        margin: 0;
+    }
+
+    input {
+        width: 95%;
+    }
+
+    #search {
+        height: 300px;
+    }
+
+    #search .search-box {
+        width: 90%;
+        height: 30%;
+
+    }
+
+    .btn-danger {
+        height: 50%;
+        width: 25%;
+    }
+
+    #schools p {
+        width: 100%;
+    }
+
+    .school {
+        margin: 10px auto;
+        width: 50%;
+        text-align: center;
+        height: auto;
+
+    }
+
+    .btn {
+        margin-top: 3%;   
+    }
+
+    .school img {
+        position: relative;
+    }
+
+    #footer-home #container-footer .content {
+        width: 70%;
+    }
+
+    /* Testar no tamanho grande */
+    #footer-home #container-footer .content h2 {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    section#search .search-box input[type='text'] {
+        padding: 0 0 0 3%;
+        height: 50%;
+        font-size: 1em;
+    }
+
+    /* Footer stuffs */
+
+    /* Footer stufs */
+    footer {
+        height: auto;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    #twitter h4, #quicklinks h4, #social h4, #stores h4 {
+        margin-bottom: 5%;
+    }
+
+    #stores {
+        width: 100%;
+        margin-top: 5%;
+    }
+
+    #quicklinks, #social {
+        width: 45%;
+        margin-top: 5%;
+        float: left;
+    }
+
+    #twitter {
+        float: right;
+        width: 45%;
+        margin-top: 5%;
+    }
+
+    #profile-form button {
+        width: 50%;
+    }
+
+    #profile-form form {
+        width: 100%;
+    }
+
+    #profile-form form input[type='date'] {
+        padding: 2%;
+    }
+
+    #social {
+        clear: both;
+    }
+
+    /* End Footer stuffs */
+
+    #aside-search {
+        margin-top: 10%;
+        width: 95%
+    }
+
+    #search-result {
+        margin-top: 10%;
+        width: 95%;
+    }
+
+    .capa .content img {
+        top: 75%;
+        width: 150px;
+        height: 150px;
+    }
+
+    #profile-basics {
+        left: 35%;
+        width: 70%;
+    }
+
+    #profile-basics label {
+        color: #bd1521;
+    }
+
+    #school-form {
+        padding-top: 15%;
+    }
+
+    #course-type, #class-type {
+        width: 50%;
+    }
+
+    #social-media input {
+        width: 95%;
+    }
+
+    #visa {
+        margin-bottom: 5%;
+    }
+
+    #price, #accomodation {
+        width: 100%;
+    }
+
+    #school-form button {
+        width: 55%;
+    }
+}

@@ -1,0 +1,264 @@
+{% extends 'base_site.html' %}
+
+{% load static from staticfiles %}
+
+{% block main %}
+
+    <section class="capa">
+        <div id="profile-photo" class="content">
+            <img src="{% static 'assets/img/profile-photo.png' %}" alt="Image profile">
+            <div id="profile-basics">
+                <h2>Name</h2>
+                <p>Phone: +353 89 98951-565615 | +353 87 54515-98985</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="school-form">
+        <div class="content">
+            <h2>Dados da escola</h2>
+            <form action="">
+                <label for="school-name">Name of school</label>
+                <input type="text" id="school-name">
+                <div class="col">
+                    <label for="country">Country</label>
+                    <input type="text" id="country">
+                    <label for="address">Address</label>
+                    <input type="text" id="address">
+                </div>
+                <div class="col">
+                    <label for="city">City</label>
+                    <input type="text" id="city"><br>
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email">
+                </div>
+                <div class="col">
+                    <label for="course-offered">Course offered</label>
+                    <input type="text" id="course-offered">
+                    <label for="phone">Phone</label><br>
+                    <input type="text" id="phone">
+                </div>
+                <div id="course-type">
+                    <label><b>Tipo do curso</b></label><br>
+                    <input type="checkbox" name="part-time"><p>Part time</p>
+                    <input type="checkbox" name="anual"><p>Anual</p><br>
+                    <input type="checkbox" name="full-time"><p>Full time</p>
+                    <input type="checkbox" name="semestral"><p>Semestral</p><br>
+                    <input type="checkbox" name="intensive"><p>Intensive</p>
+                    <input type="checkbox" name="trimestral"><p>Trimesrtal</p><br>
+                    <input type="checkbox" name="business"><p>Business</p>
+                    <input type="checkbox" name="mensal"><p>Mensal</p>
+                </div>
+                <div id="class-type">
+                    <label><b>Class</b></label><br>
+                    <input type="checkbox" name="morning"><p>Morning</p><br>
+                    <input type="checkbox" name="afternoon"><p>Afternoon</p><br>
+                    <input type="checkbox" name="night"><p>Night</p><br>
+                </div>
+
+                <div id="visa">
+                    <label for="visa-type"><b>Visa</b></label><br>
+                    <select id="visa-type">
+                      <option value="student" selected>Student</option>
+                      <option value="work">Work Perit</option>
+                      <option value="live">Live</option>
+                      <option value="others">Others</option>
+                    </select>
+                </div>
+
+                <div id="social-media">
+                    <label for="website"><b>Social</b></label><br>
+                    <i class="fa fa-globe" aria-hidden="true"></i>
+                    <input type="text" name="website" id="website">
+                    <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                    <input type="text" name="facebook">
+                    <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                    <input type="text" name="twitter">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                    <input type="text" name="instagram">
+                    <i class="fa fa-youtube-square" aria-hidden="true"></i>
+                    <input type="text" name="youtube">
+                </div>
+
+                <label for="school-description">Short school description</label><br>
+                <textarea name="school-description" cols="30" rows="10" id="school-description"></textarea>
+
+                <div id="course-fees">
+                    <h2>Course and Fees</h2>
+                    <label>Accreditaion or enrolment fee</label>
+                    <input type="radio" name="accreditation"> <p>Yes</p>
+                    <input type="radio" name="accreditation"> <p>No</p>
+                    <input type="text" name="accreditation-value" placeholder="€"><br>
+                    <label>Work book</label>
+                    <input type="radio" name="work-book"> <p>Yes</p>
+                    <input type="radio" name="work-book"> <p>No</p>
+                    <input type="text" name="work-book-value" placeholder="€"><br>
+                    <label>Refounds</label>
+                    <input type="radio" name="refounds"> <p>Yes</p>
+                    <input type="radio" name="refounds"> <p>No</p>
+                    <input type="text" name="refounds-value" placeholder="€">
+                </div>
+
+                <div id="price">
+                    <h2>Price</h2>
+                    <div id="low-season">
+                        <label><b>Low season</b></label><br>
+                        <div class="season">
+                            <label>For 4 weeks</label><br>
+                            <input type="text" placeholder="€">
+                        </div>
+                        <div class="season">
+                            <label>For 4 weeks</label><br>
+                            <input type="text" placeholder="€">
+                        </div>
+                        <div class="season">
+                            <label>For 4 weeks</label><br>
+                            <input type="text" placeholder="€">
+                        </div>
+                        <div class="season">
+                            <label>For 4 weeks</label><br>
+                            <input type="text" placeholder="€">
+                        </div>
+                    </div>
+
+                    <div id="high-season">
+                        <label><b>High season</b></label><br>
+                        <div class="season">
+                            <label>For 4 weeks</label><br>
+                            <input type="text" placeholder="€">
+                        </div>
+                        <div class="season">
+                            <label>For 4 weeks</label><br>
+                            <input type="text" placeholder="€">
+                        </div>
+                        <div class="season">
+                            <label>For 4 weeks</label><br>
+                            <input type="text" placeholder="€">
+                        </div>
+                        <div class="season">
+                            <label>For 4 weeks</label><br>
+                            <input type="text" placeholder="€">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="accomodation">
+                    <label><b>Registration free</b></label>
+                    <input type="radio" name="accomodation" value="yes"><p>Yes</p>
+                    <input type="radio" name="accomodation" value="no"><p>No</p>
+                    <input type="text" placeholder="€"><br>
+                    <label><b>Free wifi</b></label><br>
+                    <input type="radio" name="freewifi" value="yes"><p>Yes</p>
+                    <input type="radio" name="freewifi" value="no"><p>No</p>
+                    <br>
+                    <br>
+                    <label for="accomodation-facilities"><b>What are the accomodation's facilities</b></label><br>
+                    <textarea name="school-description" cols="30" rows="10" id="accomodation-facilities"></textarea>
+
+                    <label><b>Meals offered</b></label><br>
+                    <input type="checkbox" value="breackfast"><p>Breakfast</p><br>
+                    <input type="checkbox" value="lunch"><p>Lunch</p><br>
+                    <input type="checkbox" value="dinner"><p>Dinner</p><br>
+                    <input type="checkbox" value="Others"><p>Others</p><br>
+                    <textarea name="meals-others" cols="30" rows="10" id="meals-others"></textarea>
+                </div>
+
+                <div id="facilities">
+                    <p>Do you have a tv in the bedroom?</p><br>
+                    <input type="radio" name="tv" value="yes"><p>Yes</p>
+                    <input type="radio" name="tv" value="no"><p>No</p><br><br>
+
+                    <p>Do you have a wardrobe in the bedroom?</p><br>
+                    <input type="radio" name="bedroom" value="yes"><p>Yes</p>
+                    <input type="radio" name="bedroom" value="no"><p>No</p><br><br>
+
+                    <p>Do you have a air conditioning in the bedroom?</p><br>
+                    <input type="radio" name="air" value="yes"><p>Yes</p>
+                    <input type="radio" name="air" value="no"><p>No</p><br><br>
+
+                    <p>Room condition and cleanliness?</p><br>
+                    <input type="radio" name="room-condition" value="everyday"><p>Everyday</p>
+                    <input type="radio" name="room-condition" value="2days"><p>2 days/week</p>
+                    <input type="radio" name="room-condition" value="3days"><p>3 days/week</p>
+                    <input type="radio" name="room-condition" value="4days"><p>4 days/week</p>
+                    <input type="radio" name="room-condition" value="5days"><p>5 days/week</p><br><br>
+
+                    <p>Rooms per week? (Low season)</p><br>
+                    <input type="radio" name="room-low-season" value="single"><p>Single</p>
+                    <input type="radio" name="room-low-season" value="twin"><p>Twin</p>
+                    <input type="radio" name="room-low-season" value="triple"><p>Triple</p>
+                    <input type="radio" name="room-low-season" value="quad"><p>Quad</p>
+                    <input type="radio" name="room-low-season" value="more"><p>More</p><br><br>
+
+                    <p>Rooms per week? (High season)</p><br>
+                    <input type="radio" name="room-high-season" value="single"><p>Single</p>
+                    <input type="radio" name="room-high-season" value="twin"><p>Twin</p>
+                    <input type="radio" name="room-high-season" value="triple"><p>Triple</p>
+                    <input type="radio" name="room-high-season" value="quad"><p>Quad</p>
+                    <input type="radio" name="room-high-season" value="more"><p>More</p>
+
+                </div>
+
+                <label for="other-offers">What else do you offer for the students</label><br>
+                <textarea name="other-offers" cols="30" rows="10" id="other-offers"></textarea>
+
+                <div id="events">
+                    <input type="checkbox" name="monday"><p>On Monday</p>
+                    <input type="text" name="monday-value" class="half-input">
+                    <input type="text" name="monday-description"><br>
+
+                    <input type="checkbox" name="tuesday"><p>On Tuesday</p>
+                    <input type="text" name="tuesday-value" class="half-input">
+                    <input type="text" name="tuesday-description"><br>
+
+                    <input type="checkbox" name="wednesday"><p>On Wednesday</p>
+                    <input type="text" name="wednesday-value" class="half-input">
+                    <input type="text" name="wednesday-description"><br>
+
+                    <input type="checkbox" name="thursday"><p>On Thursday</p>
+                    <input type="text" name="thursday-value" class="half-input">
+                    <input type="text" name="thursday-description"><br>
+
+                    <input type="checkbox" name="friday"><p>On Friday</p>
+                    <input type="text" name="friday-value" class="half-input">
+                    <input type="text" name="friday-description"><br>
+
+                    <input type="checkbox" name="saturday"><p>On saturday</p>
+                    <input type="text" name="saturday-value" class="half-input">
+                    <input type="text" name="saturday-description"><br>
+
+                    <input type="checkbox" name="sunday"><p>On Sunday</p>
+                    <input type="text" name="sunday-value" class="half-input">
+                    <input type="text" name="sunday-description"><br>
+
+                    <input type="checkbox" name="monday"><p>On Monday</p>
+                    <input type="text" name="monday-value" class="half-input">
+                    <input type="text" name="monday-description"><br>
+                </div>
+                <br>
+                <label for="others-events"><b>Other events do you offer</b></label><br>
+                <textarea name="others-events" cols="30" rows="10" id="others-events"></textarea>
+
+                <div id="media">
+                    <h2>Media</h2>
+                    <img src="{% static 'assets/img/square.png' %}" alt="media">
+                    <img src="{% static 'assets/img/square.png' %}" alt="media">
+                    <img src="{% static 'assets/img/square.png' %}" alt="media">
+                    <img src="{% static 'assets/img/square.png' %}" alt="media">
+                </div>
+
+                <div id="school-videos">
+                    <i class="fa fa-youtube-square" aria-hidden="true"></i>
+                    <input type="text" name="youtube" placeholder="Vídeo URL"><br>
+
+                    <i class="fa fa-youtube-square" aria-hidden="true"></i>
+                    <input type="text" name="youtube" placeholder="Vídeo URL">
+                </div>
+
+                <button type="submit" class="btn btn-danger">Publicar perfil</button>
+
+            </form>
+        </div>
+    </section>
+
+{% endblock main %}

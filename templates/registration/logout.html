@@ -1,0 +1,12 @@
+{% extends "registration/base_login.html" %}
+{% block body %}
+<script type="text/javascript">
+window.onload = function click_button(){
+document.getElementById("bt_continue").click();
+}
+</script>
+<form method="get" action="{% url 'login' %}" id="mainForm" >
+
+<button class="btn btn-large btn-primary" type="submit" value="Indo para página de login......" id="bt_continue"/>
+</form>
+{% endblock %}

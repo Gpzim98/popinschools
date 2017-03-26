@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+{% block header_title %}
+<span class="mdl-layout-title">{{ page }}</span>
+{% endblock %}
+{% block body %}
+
+<div class="container">
+ 	<div class="row">
+	    <form id="new_school_form" class="col s12" id="chart_type_form_first_step" method="post" enctype="multipart/form-data" action="{% url 'schools:edit_school' object.pk %}">
+	      <div class="row">
+	        {% csrf_token %}
+	        <div class="input-field col s12" class="validate">
+	          {{ form.name }}
+	          <label for="id_chart_type">Nome da Escola</label>
+	        </div>
+	        <div class="input-field col s12">
+	          {{ form.logo_image }}
+	          <label class="active" for="id_text_subtitle">{{ form.logo_image.help_text }}</label>
+	        </div>
+	        <div class="input-field col s12">
+	          {{ form.address }}
+	          <label class="active" for="id_datasource">{{ form.address.help_text }}</label>
+	        </div>
+	        <div class="input-field col s12">
+	          {{ form.admin_email }}
+	          <label class="active" for="id_datasource">{{ form.admin_email.help_text }}</label>
+	        </div>
+	        <div class="input-field col s12">
+	          {{ form.phone }}
+	          <label class="active" for="id_datasource">{{ form.phone.help_text }}</label>
+	        </div>
+	    </form>
+	    <a id="submit" name="send" class="waves-effect waves-light btn right">Salvar</a>
+	  </div>
+  </div>
+</div>
+<script type="text/javascript">
+	$("#submit").click(function(){
+		$("#new_school_form").submit();
+	})
+
+</script>
+{% endblock %}

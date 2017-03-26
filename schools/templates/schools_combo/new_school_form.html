@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+{% block header_title %}
+<span class="mdl-layout-title">{{ page }}</span>
+{% endblock %}
+{% block body %}
+
+<div class="container">
+    <ul class="collapsible" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header active"><i class="material-icons">library_books</i>About the Course</div>
+      <div class="collapsible-body">
+          <div class="container">
+            <form id="course_content" class="col s12" method="post" enctype="multipart/form-data" action="{% url 'schools:new_combo' %}">
+              <div class="row">
+              {% csrf_token %}
+              <div class="input-field col s12">
+                {{ form.type_of_combo }}
+                <label for="id_type_of_combo" class="active">{{ form.type_of_combo.help_text }}</label>
+              </div>
+              <div class="input-field col s12">
+                {{ form.type_of_course }}
+                <label for="id_type_of_source" class="active">{{ form.type_of_course.help_text }}</label>
+              </div>
+              <div class="input-field col s12">
+                {{ form.course_offered }}
+                <label for="id_course_offered" class="active">{{ form.course_offered.help_text }}</label>
+              </div>
+              <div class="input-field col s12">
+                {{ form.short_name }}
+                <label class="active" for="id_short_name">{{ form.short_name.help_text }}</label>
+              </div>
+             
+              <div class="input-field col s12">
+                {{ form.plus }}
+                <label class="active" for="id_plus">{{ form.plus.help_text }}</label>
+              </div>
+            </form>
+         </div>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">place</i>About Acommodation</div>
+      <div class="collapsible-body">
+        <div class="container">
+          <form id="acommodation_content" class="col s12" method="post">
+            <div class="col s12">
+              <div class="row">
+                <div class="col s4">
+                  {{ form.is_beakfest_included }}
+                  <label class="active" for="id_is_beakfest_included">{{ form.is_beakfest_included.help_text }}</label>
+                </div>
+                <div class="col s4">
+                  {{ form.is_lunch_included }}
+                  <label class="active" for="id_is_lunch_included">{{ form.is_lunch_included.help_text }}</label>
+                </div>
+                <div class="col s4">  
+                  {{ form.is_dinner_included }}
+                  <label class="active" for="id_is_dinner_included">{{ form.is_dinner_included.help_text }}</label>
+                </div>
+              </div>
+            </div>
+             <div class="col s12">
+              <div class="row">
+                <div class="col s4">
+                  {{ form.wifi_free }}
+                  <label class="active" for="id_wifi_free">{{ form.wifi_free.help_text }}</label>
+                </div>
+                <div class="col s4">
+                  {{ form.is_tv_in_the_bedroom }}
+                  <label class="active" for="id_is_tv_in_the_bedroom">{{ form.is_tv_in_the_bedroom.help_text }}</label>
+                </div>
+                <div class="col s4">
+                  {{ form.is_wardrobe_in_the_bedroom }}
+                  <label class="active" for="id_is_wardrobe_in_the_bedroom">{{ form.is_wardrobe_in_the_bedroom.help_text }}</label>
+                </div>
+              </div>
+            </div>
+            <div class="col s12">
+              <div class="row">
+                <div class="col s4">
+                  {{ form.is_air_in_the_badroom }}
+                  <label class="active" for="id_is_air_in_the_badroom">{{ form.is_air_in_the_badroom.help_text }}</label>
+                </div>
+              </div>
+            </div>
+            <div class="col s12">
+              <div class="row">
+                <div class="input-field col s12">
+                  {{ form.interval_clean_up_the_beadroom }}
+                  <label class="active" for="id_interval_clean_up_the_beadroom">{{ form.interval_clean_up_the_beadroom.help_text }}</label>
+                </div>
+                <div class="input-field col s12">
+                  {{ form.duration }}
+                  <label class="active" for="id_duration">{{ form.duration.help_text }}</label>
+                </div>
+                <div class="input-field col s12">
+                  {{ form.to_school }}
+                  <label class="active" for="id_to_school">{{ form.to_school.help_text }}</label>
+                </div>
+                <div class="input-field col s12">
+                  {{ form.differentials }}
+                  <label class="active" for="id_differentials">{{ form.differentials.help_text }}</label>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">today</i>Events</div>
+      <div class="collapsible-body">
+        <div class="container">
+          <form id="price_content" class="col s12">
+            <div class="input-field col s6">
+              {{ form.events_period }}
+              <label class="active" for="id_currency">{{ form.events_period.help_text }}</label>
+            </div>
+          </form>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">$</i>Price</div>
+      <div class="collapsible-body">
+        <div class="container">
+          <form id="price_content" class="col s12">
+            <div class="input-field col s6">
+              {{ form.currency }}
+              <label class="active" for="id_currency">{{ form.currency.help_text }}</label>
+            </div>
+            <div class="input-field col s6">
+              {{ form.registration_fee }}
+              <label class="active" for="id_registration_fee">{{ form.registration_fee.help_text }}</label>
+            </div>
+            <div class="input-field col s6">
+              {{ form.workbook }}
+              <label class="active" for="id_workbook">{{ form.workbook.help_text }}</label>
+            </div>
+            <div class="input-field col s6">
+              {{ form.insurance }}
+              <label class="active" for="id_insurance">{{ form.insurance.help_text }}</label>
+            </div>
+            <div class="input-field col s6">
+              {{ form.course_change_fee }}
+              <label class="active" for="id_course_change_fee">{{ form.course_change_fee.help_text }}</label>
+            </div>
+            <div class="input-field col s6">
+              {{ form.high_season_suplement }}
+              <label class="active" for="id_high_season_suplement">{{ form.high_season_suplement.help_text }}</label>
+            </div>
+          </form>
+        </div>
+      </div>
+    </li>
+  </ul>
+ 	<div class="row">
+	    
+	    <a id="submit" name="send" class="waves-effect waves-light btn right">Salvar</a>
+	  </div>
+    
+  </div>
+</div>
+<script type="text/javascript">
+	$("#submit").click(function(){
+		$("#new_school_form").submit();
+	})
+    $(document).ready(function() {
+    $('select').material_select();
+  });
+
+</script>
+{% endblock %}

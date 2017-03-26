@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+{% block header_title %}
+<span class="mdl-layout-title">{{ page }}</span>
+{% endblock %}
+{% block body %}
+
+<div class="container">
+  <div class="row">
+  <table class="highlight">
+    <thead>
+      <tr>
+          <th data-field="id">Country Id</th>
+          <th data-field="id">Country Name</th>
+          <th data-field="name">Country Shrot Name</th>
+          <th data-field="price">Currency</th>
+      </tr>
+    </thead>
+
+    <tbody>
+        <tr >
+          <td>{{ object.pk }}</td>
+          <td>{{ object.country_name }}</td>
+          <td>{{ object.short_name }}</td>
+          <td>{{ object.currency }}</td>
+        </tr>
+    </tbody>
+    </table>
+   </div>
+ </div>
+
+
+{% endblock %}

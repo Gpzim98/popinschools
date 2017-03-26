@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+{% block header_title %}
+<span class="mdl-layout-title">{{ page }}</span>
+{% endblock %}
+{% block body %}
+
+<div class="container">
+ 	<div class="row">
+	    <form id="new_school_form" class="col s12" id="chart_type_form_first_step" method="post" enctype="multipart/form-data" action="{% url 'schools:edit_schools_country' object.pk %}">
+	      <div class="row">
+	        {% csrf_token %}
+	        <div class="input-field col s12">
+	          {{ form.country_name }}
+	          <label class="active" for="id_text_subtitle">{{ form.country_name.help_text }}</label>
+	        </div>
+	        <div class="input-field col s12">
+	          {{ form.short_name }}
+	          <label class="active" for="id_datasource">{{ form.short_name.help_text }}</label>
+	        </div>
+	        <div class="input-field col s12">
+	          {{ form.currency }}
+	          <label class="active" for="id_datasource">{{ form.currency.help_text }}</label>
+	        </div>
+	    </form>
+	    <a id="submit" name="send" class="waves-effect waves-light btn right">Salvar</a>
+	  </div>
+  </div>
+</div>
+<script type="text/javascript">
+	$("#submit").click(function(){
+		$("#new_school_form").submit();
+	})
+
+</script>
+{% endblock %}

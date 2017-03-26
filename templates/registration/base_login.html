@@ -1,0 +1,35 @@
+  {% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <!-- CSS Class -->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="{% static 'materialize/css/materialize.css' %}">
+    {% block customizing_css %}{% endblock %}
+      <link rel="stylesheet" href="{% static 'materialize/css/style.css' %}">
+      <link rel="stylesheet" href="{% static 'materialize/css/page-center.css' %}">
+      <link rel="stylesheet" href="{% static 'materialize/css/prism.css' %}">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.2/css/materialize.min.css">
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.2/js/materialize.min.js"></script>
+
+
+
+    {% block extra_js %}{% endblock %}
+    {% block cabecalho %}
+    <title>Bem vindo</title>
+    {% endblock %}
+  </head>
+  <body data-twttr-rendered="true" class="grey lighten-1 loaded">
+    {% block body %}{% endblock %}
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="{% static 'materialize/js/materialize.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'materialize/js/prism.js' %}"></script>
+    <script type="text/javascript" src="{% static 'materialize/js/perfect-scrollbar.min.js' %}"></script>
+    
+    <script type="text/javascript" src="{% static 'materialize/js/plugins.js' %}"></script>
+  </body>
+</html>

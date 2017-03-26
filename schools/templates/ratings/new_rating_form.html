@@ -1,0 +1,19 @@
+{{ form.errors }}
+<div class="container">
+ 	<div class="row">
+	    <form id="new_rating_form" class="col s12" id="chart_type_form_first_step" method="post" action="{% url 'schools:new_rainting' %}">
+	      <div class="row">
+	        {% csrf_token %}
+	        <div class="input-field col s12" class="validate">
+	          <input type="hidden" name="school" id="id_school" value="">
+	          <input type="hidden" name="stars" id="id_stars" value="">
+	          <input type="hidden" name="type_of_rating" id="id_type_of_rating" value="">
+	        </div>
+	        <div class="input-field col s12">
+	          {{ form.comment }}
+	          <label class="active" for="id_text_subtitle">{{ form.comment.help_text }}</label>
+	        </div>
+	    </form>
+	  </div>
+  </div>
+</div>

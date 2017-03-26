@@ -1,0 +1,14 @@
+{% extends 'base_site.html' %}
+
+{% load static from staticfiles %}
+
+{% block main %}
+    <section id="profile-form" class="content">
+        <form method="POST">
+            <h1>Login</h1>
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit" class="btn btn-danger">LOGIN</button>
+        </form>
+    </section>
+{% endblock main %}

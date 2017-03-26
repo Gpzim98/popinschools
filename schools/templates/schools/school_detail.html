@@ -1,0 +1,262 @@
+{% extends 'base_site.html' %}
+
+{% load static from staticfiles %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'assets/css/tinycarousel.css' %}">
+{% endblock css %}
+
+{% block scripts %}
+    <script src="{% static 'assets/js/jquery.tinycarousel.js' %}"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#image-slider').tinycarousel();
+        });
+    </script>
+
+{% endblock scripts %}
+
+{% block main %}
+
+        <section class="capa">
+        <div id="profile-photo" class="content">
+            <img src="{{ object.get_image }}" alt="Image profile">
+            <div id="profile-basics">
+                <h2>{{ object.name }}</h2>
+                <div class="school-rating">{{ object.ratings }}</div>
+                <label>Ótima</label>
+                <p>{{ object.address }}</p>
+                <p>{{ object.phone }}</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="school-form">
+        <div class="content">
+            <h3>Descrição da escola</h3>
+            <p>{{ object.short_phrase }}</p>
+
+            <div class="info-grid">
+                <h3>Course and Fees</h3>
+                <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
+                <p>Acreditation or Enrolmente fee</p>
+                <p>€ 800,00</p>
+                <br>
+                <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
+                <p>Workbook</p>
+                <p>€ 300,00</p>
+                <br>
+                <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
+                <p>Refounds</p>
+                <p>€ 22,00</p>
+            </div>
+
+            <div class="info-grid price">
+                <h3>Price</h3>
+                <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
+                <p>Low season</p>
+                <p>For 4 weeks € 300,00 | For 8 weeks € 900,00 | For 12 weeks € 1100,00 | For 24 weeks € 1500,00</p>
+                <br>
+                <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
+                <p>High season</p>
+                <p>For 4 weeks € 300,00 | For 8 weeks € 900,00 | For 12 weeks € 1100,00 | For 24 weeks € 1500,00</p>
+            </div>
+
+            <div class="info-grid">
+                <h3>Student accomodation</h3>
+                <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
+                <p>Registration free</p><br>
+                <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
+                <p>Free Wifi</p><br><br>
+
+                <p>Loren ipsum Loren ipsum Loren ipsum Loren ipsum Loren ipsum
+                Loren ipsum Loren ipsum Loren ipsum Loren ipsum Loren ipsum </p>
+
+                <br>
+                <br>
+
+                <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
+                <p>Lunch</p>
+
+                <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
+                <p>Breackfast</p>
+
+                <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
+                <p>Dinner</p>
+
+                <br>
+
+                <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
+                <p>TV</p>
+
+                <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
+                <p>Wardrobe</p>
+
+                <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
+                <p>Air conditioning</p>
+
+                <br>
+                <br>
+                <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
+                <p>Rooms per week Low season | Twin room</p>
+
+                <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
+                <p>Rooms per week High season | Doubleroom</p>
+
+                <br>
+                <br>
+                <p>Loren ipsum Loren ipsum Loren ipsum Loren ipsum
+                Loren ipsum Loren ipsum Loren ipsum Loren ipsum
+                </p>
+            </div>
+
+             <div class="info-grid-3">
+                 <h3>List of events and prices</h3>
+                 <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
+                 <p>Wednesday</p>
+                 <p>€ 10,00</p>
+                 <p>Visit of Museum</p>
+
+                 <br>
+
+                 <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
+                 <p>Saturday</p>
+                 <p>€ 30,00</p>
+                 <p>Visit of Park</p>
+
+                 <br>
+
+                 <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
+                 <p>Sunday</p>
+                 <p>€ 22,00</p>
+                 <p>Visit of School</p>
+            </div>
+        </div>
+       	<div id="image-slider">
+            <a class="buttons prev" href="#">&#60;</a>
+            <div class="viewport">
+                <ul class="overview">
+                    <li><img src="{% static 'assets/img/square.png' %}" /></li>
+                    <li><img src="{% static 'assets/img/square.png' %}" /></li>
+                    <li><img src="{% static 'assets/img/square.png' %}" /></li>
+                    <li><img src="{% static 'assets/img/square.png' %}" /></li>
+                </ul>
+            </div>
+            <a class="buttons next" href="#">&#62;</a>
+        </div>
+
+        <div class="video-galery content">
+            <iframe src="{% static 'https://www.youtube.com/embed/Dr022TbxPKI' %}" frameborder="0" allowfullscreen></iframe>
+            <iframe src="{% static 'https://www.youtube.com/embed/Dr022TbxPKI' %}" frameborder="0" allowfullscreen></iframe>
+            <iframe src="{% static 'https://www.youtube.com/embed/Dr022TbxPKI' %}" frameborder="0" allowfullscreen></iframe>
+            <iframe src="{% static 'https://www.youtube.com/embed/Dr022TbxPKI' %}" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <div class="map">
+            <h3>Localização</h3>
+            <iframe src="{% static 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d76215.11989082559!2d-6.322273214668956!3d53.348223568502206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670e80ea27ac2f%3A0xa00c7a9973171a0!2sDublin!5e0!3m2!1spt-BR!2sie!4v1488721566202' %}"
+                    frameborder="0" style="border:0" allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="content">
+            <div class="comment">
+                <h3>Comentários</h3>
+                <div class="img-comment">
+                    <img src="{% static 'assets/img/square.png' %}" alt="">
+                </div>
+                <div class="comment-content">
+                    <h3>Márcio Gabriel</h3>
+                    <p>18 de setembro 2016</p>
+                    <a href="#">Responder</a><br>
+                    <div class="school-rating">7.5</div>
+                    <label>Muito boa</label>
+                    <a href="#">Denunciar comentário</a>
+                    <p>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+                    Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+                    Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+                    Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+                    Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum </p>
+                </div>
+
+            </div>
+
+            <!--Comment reply -->
+            <div class="comment replay">
+                <div class="img-comment">
+                    <img src="{% static 'assets/img/square.png' %}" alt="">
+                </div>
+                <div class="comment-content">
+                    <h3>Márcio Gabriel</h3>
+                    <p>18 de setembro 2016</p>
+                    <a href="#">Responder</a><br>
+                    <div class="school-rating">7.5</div>
+                    <label>Muito boa</label>
+                    <a href="#">Denunciar comentário</a>
+                    <p>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+                    Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+                    Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+                    Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+                    Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum </p>
+                </div>
+            </div>
+            <!--End comment reply -->
+
+            <div class="comment">
+                <div class="img-comment">
+                    <img src="{% static 'assets/img/square.png' %}" alt="">
+                </div>
+                <div class="comment-content">
+                    <h3>Márcio Gabriel</h3>
+                    <p>18 de setembro 2016</p>
+                    <a href="#">Responder</a><br>
+                    <div class="school-rating">7.5</div>
+                    <label>Muito boa</label>
+                    <a href="#">Denunciar comentário</a>
+                    <p>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+                    Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+                    Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+                    Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+                    Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum </p>
+                </div>
+
+            </div>
+
+            <!--Comment reply -->
+            <div class="comment replay">
+                <div class="img-comment">
+                    <img src="{% static 'assets/img/square.png' %}" alt="">
+                </div>
+                <div class="comment-content">
+                    <h3>Márcio Gabriel</h3>
+                    <p>18 de setembro 2016</p>
+                    <a href="#">Responder</a><br>
+                    <div class="school-rating">7.5</div>
+                    <label>Muito boa</label>
+                    <a href="#">Denunciar comentário</a>
+                    <p>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+                    Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+                    Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+                    Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+                    Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum </p>
+                </div>
+            </div>
+            <!--End comment reply -->
+            <button class="load-comments"><i class="fa fa-refresh fa-large" aria-hidden="true"></i>
+                Carregar mais comentários
+            </button>
+
+            <form action="">
+                <input type="text" id="name" placeholder="Nome">
+                <input type="email" name="email" placeholder="E-mail">
+                <textarea name="comment" id="comment-message" cols="30" rows="10" placeholder="Comentário"></textarea>
+                <button class="btn btn-danger">Post comment</button>
+            </form>
+        </div>
+
+
+    </section>
+
+
+{% endblock main %}

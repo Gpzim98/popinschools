@@ -1,0 +1,111 @@
+{% load static from staticfiles %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'assets/css/roboto.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/css/jquery-ui.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/font-awesome.min.css' %}">
+
+    {% block css %}
+    {% endblock css %}
+
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery-ui.min.js' %}"></script>
+    <title>Popinschool - Home </title>
+
+    {% block scripts %}
+    {% endblock scripts %}
+</head>
+<body>
+<header>
+    <div id="social-top">
+        <div id="logo"></div>
+
+        <div id="login">
+            {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}"
+                   class="btn btn-login login-icon-white btn-login-hover btn-header">
+                    FAZER LOGOUT
+                </a>
+            {% else %}
+                <a href="{% url 'login' %}"
+                   class="btn btn-login login-icon-white btn-login-hover btn-header">
+                    FAZER LOGIN
+                </a>
+            {% endif %}
+            <!--Verificar por que o URL dispatch não esta funcionando e tiar URL hard coded-->
+            <a href="/users/register"
+               class="btn btn-create-profile create-profile-icon-white btn-profile-hover btn-header">
+                CRIE SEU PERFIL
+            </a>
+        </div>
+    </div>
+    <div id="navigation">
+        <a href="#">Home ></a><a href="/">Resultado da busca</a>
+    </div>
+</header>
+
+<main class="background-color">
+    {% block main %}
+    {% endblock %}
+</main>
+
+<footer>
+    <div class="content">
+        <div id="stores">
+            <img src="{% static 'assets/img/white-logo.png' %}" alt="Popinschool" id="logo-footer">
+            <p>Loren Loren Loren Loren Loren Loren Loren Loren Loren Loren </p>
+            <img src="{% static 'assets/img/play-store.png' %}" alt="">
+            <img src="{% static 'assets/img/ios-store.png' %}" alt="">
+        </div>
+
+        <div id="quicklinks">
+            <h4>QUICK LINKS</h4>
+            <ul>
+                <li><a href="">Blog</a></li>
+                <li><a href="">About Popinschool</a></li>
+                <li><a href="">School sigin up</a></li>
+            </ul>
+        </div>
+
+        <div id="twitter">
+            <h4>TWITTER</h4>
+            <ul>
+                <li>
+                    <p>@someone Loren ipsun Loren ipsun Loren ipsun Loren ipsun</p>
+                </li>
+
+                <li>
+                    <p>@someone_else Loren ipsun Loren ipsun Loren ipsun Loren ipsun</p>
+                </li>
+            </ul>
+        </div>
+
+        <div id="social">
+            <h4>FIND US ON</h4>
+            <ul>
+                <li><a href=""><img src="{% static 'assets/img/facebook.png' %}" alt="Facebbok">Facebook</a></li>
+                <li><a href=""><img src="{% static 'assets/img/instagram.png' %}" alt="Instagram">Instagram</a></li>
+                <li><a href=""><img src="{% static 'assets/img/twitter.png' %}" alt="Twitter">Twitter</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<div class="rights">
+    <div class="content">
+        <div id="social-footer">
+            <p>Todos os direitos reservados</p>
+            <ul>
+                <li><a href=""><img src="{% static 'assets/img/facebook.png' %}" alt="Facebook"></a></li>
+                <li><a href=""><img src="{% static 'assets/img/instagram.png' %}" alt="Instagram"></a></li>
+                <li><a href=""><img src="{% static 'assets/img/twitter.png' %}" alt="Twitter"></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>

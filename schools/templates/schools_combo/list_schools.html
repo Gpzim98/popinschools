@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+{% block header_title %}
+<span class="mdl-layout-title">{{ page }}</span>
+{% endblock %}
+{% block body %}
+
+<div class="container">
+  <div class="row">
+  <table class="highlight">
+    <thead>
+      <tr>
+          <th data-field="id">Country Id</th>
+          <th data-field="id">Country Name</th>
+          <th data-field="name">Short Name</th>
+          <th data-field="price">Currency</th>
+          <th data-field="price">Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for obj in object_list %}
+        <tr class='clickable-row' data-href="{% url 'schools:details_schools_country' obj.pk %}">
+          <td>{{ obj.pk }}</td>
+          <td>{{ obj.country_name }}</td>
+          <td>{{ obj.short_name }}</td>
+          <td>{{ obj.currency }}</td>
+          <td>
+            <a href="{% url 'schools:edit_schools_country' obj.pk %}"><i class="large material-icons">mode_edit</i></a>
+            <a onClick="DoubleCheckRemove(this);" data-t="{{ obj.pk }}"><i class="large material-icons">delete</i></a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+    </table>
+   </div>
+ </div>
+ <div id="modalRemove" class="modal">
+  <div class="modal-content">
+    Tem certeza que deseja remover o item selecionado?
+    <form id="remove_form" action="" method="post">
+      {% csrf_token %}
+    </form>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Nao</a>
+    <a id="ConfirmDelete" class="modal-action modal-close waves-effect waves-green btn-flat ">Sim</a>
+  </div>
+</div>
+
+</div>
+ <script type="text/javascript">
+ jQuery(document).ready(function($) {
+    $(".clickable-row").click(function() {
+        window.document.location = $(this).data("href");
+    });
+});
+ function DoubleCheckRemove(value){
+  $("#remove_form.").attr("action", "schools/country/delete/" + $(this).data("t"));
+  $("#modalRemove").openModal();
+ }
+ $("#ConfirmDelete").click(function(){
+    $("#remove_form").submit();
+  });
+</script>
+
+{% endblock %}
