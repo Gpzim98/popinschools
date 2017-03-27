@@ -18,7 +18,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'schools'
+    'apps.core',
+    'apps.schools',
 ]
 
 MIDDLEWARE = [
@@ -54,8 +55,8 @@ WSGI_APPLICATION = 'school_stalker.wsgi.application'
 
 default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
 
-DATABASES = { 
-    'default': config('DATABASE_URL', default=default_dburl, cast=dburl), 
+DATABASES = {
+    'default': config('DATABASE_URL', default=default_dburl, cast=dburl),
 }
 
 
@@ -96,3 +97,7 @@ STATICFILES_DIRS = (
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = 'media'
+
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_URL = '/logout/'
