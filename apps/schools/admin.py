@@ -4,6 +4,7 @@ from .models import (
     ImageGalery,
     Videos,
     EventsOffered,
+    Accommodation
 )
 
 
@@ -30,3 +31,4 @@ admin.site.register(School, SchoolAdmin)
 admin.site.register(ImageGalery)
 admin.site.register(EventsOffered)
 admin.site.register(Videos)
+admin.site.register(Accommodation)

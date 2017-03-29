@@ -97,14 +97,13 @@
     </aside>
 
     <section id="search-result">
-<<<<<<< HEAD
     {% if object_list %}
     {% for school in object_list %}
     <div class="result">
         <a href="schools/profile/{{ school.id }}">
             <img src="{{ school.get_image}}" alt="{{ school.name }}">
         </a>
-        <h2>{{ school }}</h2>
+        <h2><a href="schools/profile/{{ school.id }}">{{ school }}</a></h2>
         <div class="school-rating">7.5</div>
         <ul>
             {% for id, categorie in categories %}

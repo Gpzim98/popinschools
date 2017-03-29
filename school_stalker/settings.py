@@ -101,3 +101,10 @@ MEDIA_ROOT = 'media'
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_URL = '/logout/'
+
+RATINGS_CATEGORIES = (
+    ("methodology", "Metodologia"),
+    ("staff", "Atendimento"),
+    ("structure", "Estrutura"),
+    ("coats", "Custos")
+)

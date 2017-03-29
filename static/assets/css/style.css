@@ -140,13 +140,13 @@ select {
 
 .create-profile-icon-white {
     background: url("../img/create-profile-white.png") no-repeat 5px 5px;
-    background-size: 25px 25px;    
+    background-size: 25px 25px;
 }
 
 
 .login-icon-white {
     background: url("../img/login-white.png") no-repeat 5px 5px;
-    background-size: 25px 25px;    
+    background-size: 25px 25px;
 }
 
 .btn-login-hover:hover {
@@ -199,7 +199,7 @@ header #social-top ul li a img {
 /* Header login */
 
 #auth {
-    margin-top: 1%; 
+    margin-top: 1%;
 }
 
 /* Responsive logo */
@@ -323,7 +323,7 @@ section #container {
 .school img {
       position: absolute;
       top: 7%;
-      left: 0%; 
+      left: 0%;
 }
 
 /* Footer */
@@ -376,7 +376,7 @@ section #container {
     float: right;
 }
 
-.rights #social-footer ul li{   
+.rights #social-footer ul li{
     display: inline;
     padding-bottom: 10px;
 }
@@ -405,7 +405,7 @@ section #container {
     text-decoration: none;
     color: white;
     font-family: "roboto";
-    margin-right: 15px; 
+    margin-right: 15px;
 }
 
 #profile {
@@ -418,7 +418,7 @@ section #container {
 
 .prof-info p {
    color: #222;
-   font-family: "roboto"; 
+   font-family: "roboto";
 }
 
 #profile img {
@@ -441,7 +441,7 @@ section #container {
 }
 
 #profile-form form label {
-    color: #a6a4a6;    
+    color: #a6a4a6;
 }
 
 #profile-form button {
@@ -472,7 +472,7 @@ section #container {
 
 #profile ul li a:active{
     color: #bf1522;
-    font-weight: bold; 
+    font-weight: bold;
 }
 
 /* Footer stuffs */
@@ -577,7 +577,7 @@ footer {
 }
 
 #social ul li {
-    list-style-type: none;    
+    list-style-type: none;
 }
 
 #social ul li a {
@@ -747,6 +747,11 @@ footer {
     color: black;
     font-family: "roboto";
     font-size: 1.5em;
+}
+
+.result h2 a {
+    color: black;
+    text-decoration: none;
 }
 
 .result li a {
@@ -1456,7 +1461,7 @@ footer {
     }
 
     .btn {
-        margin-top: 3%;   
+        margin-top: 3%;
     }
 
     .school img {

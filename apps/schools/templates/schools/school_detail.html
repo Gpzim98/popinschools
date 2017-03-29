@@ -19,17 +19,17 @@
 
 {% block main %}
 
-        <section class="capa">
-        <div id="profile-photo" class="content">
-            <img src="{{ object.get_image }}" alt="Image profile">
-            <div id="profile-basics">
-                <h2>{{ object.name }}</h2>
-                <div class="school-rating">{{ object.ratings }}</div>
-                <label>Ótima</label>
-                <p>{{ object.address }}</p>
-                <p>{{ object.phone }}</p>
-            </div>
+    <section class="capa">
+    <div id="profile-photo" class="content">
+        <img src="{{ object.get_image }}" alt="Image profile">
+        <div id="profile-basics">
+            <h2>{{ object.name }}</h2>
+            <div class="school-rating">{{ object.ratings }}</div>
+            <label>Ótima</label>
+            <p>{{ object.address }}</p>
+            <p>{{ object.phone }}</p>
         </div>
+    </div>
     </section>
 
     <section id="school-form">
@@ -41,123 +41,132 @@
                 <h3>Course and Fees</h3>
                 <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
                 <p>Acreditation or Enrolmente fee</p>
-                <p>€ 800,00</p>
+                <p>€ {{ object.registration_fee }}</p>
                 <br>
                 <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
                 <p>Workbook</p>
-                <p>€ 300,00</p>
+                <p>€ {{ object.workbook}}</p>
                 <br>
                 <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
                 <p>Refounds</p>
-                <p>€ 22,00</p>
+                <p>€ {{ object.refounds }}</p>
             </div>
 
             <div class="info-grid price">
                 <h3>Price</h3>
                 <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
                 <p>Low season</p>
-                <p>For 4 weeks € 300,00 | For 8 weeks € 900,00 | For 12 weeks € 1100,00 | For 24 weeks € 1500,00</p>
+                <p>{{ object.low_season }}</p>
                 <br>
                 <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
                 <p>High season</p>
-                <p>For 4 weeks € 300,00 | For 8 weeks € 900,00 | For 12 weeks € 1100,00 | For 24 weeks € 1500,00</p>
+                <p> {{ object.high_season }} </p>
             </div>
 
             <div class="info-grid">
                 <h3>Student accomodation</h3>
+
+                {% if object.accomodation.wifi_free %}
                 <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
+                {% else %}
+                <img src="{% static 'assets/img/right-arrow-disable.png' %}" alt="">
+                {% endif %}
                 <p>Registration free</p><br>
-                <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
-                <p>Free Wifi</p><br><br>
 
-                <p>Loren ipsum Loren ipsum Loren ipsum Loren ipsum Loren ipsum
-                Loren ipsum Loren ipsum Loren ipsum Loren ipsum Loren ipsum </p>
+
+                {% if object.accomodation.wifi_free %}
+                <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
+                {% else %}
+                <img src="{% static 'assets/img/right-arrow-disable.png' %}" alt="">
+                {% endif %}
+                <p>Wifi free</p><br>
 
                 <br>
                 <br>
 
+                {% if object.accomodation.is_lunch_included %}
                 <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
-                <p>Lunch</p>
+                {% else %}
+                <img src="{% static 'assets/img/right-arrow-disable.png' %}" alt="">
+                {% endif %}
+                <p>Lunch included</p><br>
 
+                {% if object.accomodation.is_beakfest_included %}
                 <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
+                {% else %}
+                <img src="{% static 'assets/img/right-arrow-disable.png' %}" alt="">
+                {% endif %}
                 <p>Breackfast</p>
 
+                {% if object.accomodation.is_dinner_included %}
                 <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
+                {% else %}
+                <img src="{% static 'assets/img/right-arrow-disable.png' %}" alt="">
+                {% endif %}
                 <p>Dinner</p>
 
                 <br>
 
+                {% if object.accomodation.is_tv_in_the_bedroom %}
                 <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
-                <p>TV</p>
+                {% else %}
+                <img src="{% static 'assets/img/right-arrow-disable.png' %}" alt="">
+                {% endif %}
+                <p>TV in the Bedroom</p>
 
+                {% if object.accomodation.is_wardrobe_in_the_bedroom %}
                 <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
+                {% else %}
+                <img src="{% static 'assets/img/right-arrow-disable.png' %}" alt="">
+                {% endif %}
                 <p>Wardrobe</p>
 
+                {% if object.accomodation.is_air_in_the_badroom %}
                 <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
+                {% else %}
+                <img src="{% static 'assets/img/right-arrow-disable.png' %}" alt="">
+                {% endif %}
                 <p>Air conditioning</p>
 
                 <br>
                 <br>
-                <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
-                <p>Rooms per week Low season | Twin room</p>
-
-                <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
-                <p>Rooms per week High season | Doubleroom</p>
-
-                <br>
-                <br>
-                <p>Loren ipsum Loren ipsum Loren ipsum Loren ipsum
-                Loren ipsum Loren ipsum Loren ipsum Loren ipsum
+                <h3>Diferencials</h3>
+                <p>{{ object.accomodation.differentials }}
                 </p>
             </div>
 
              <div class="info-grid-3">
                  <h3>List of events and prices</h3>
-                 <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
-                 <p>Wednesday</p>
-                 <p>€ 10,00</p>
-                 <p>Visit of Museum</p>
-
-                 <br>
-
-                 <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
-                 <p>Saturday</p>
-                 <p>€ 30,00</p>
-                 <p>Visit of Park</p>
-
-                 <br>
-
-                 <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
-                 <p>Sunday</p>
-                 <p>€ 22,00</p>
-                 <p>Visit of School</p>
+                 {% for event in object.events %}
+                     <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
+                     <p>{{ event.week_day }}</p>
+                     <p>€ {{ event.price }}</p>
+                     <p>{{ event.description }}</p><br>
+                 {% endfor %}
             </div>
         </div>
        	<div id="image-slider">
             <a class="buttons prev" href="#">&#60;</a>
             <div class="viewport">
                 <ul class="overview">
-                    <li><img src="{% static 'assets/img/square.png' %}" /></li>
-                    <li><img src="{% static 'assets/img/square.png' %}" /></li>
-                    <li><img src="{% static 'assets/img/square.png' %}" /></li>
-                    <li><img src="{% static 'assets/img/square.png' %}" /></li>
+                    {% for file in object.galery %}
+                        <li><img src="{{ file.image.url }}" /></li>
+                    {% endfor %}
                 </ul>
             </div>
             <a class="buttons next" href="#">&#62;</a>
         </div>
 
         <div class="video-galery content">
-            <iframe src="{% static 'https://www.youtube.com/embed/Dr022TbxPKI' %}" frameborder="0" allowfullscreen></iframe>
-            <iframe src="{% static 'https://www.youtube.com/embed/Dr022TbxPKI' %}" frameborder="0" allowfullscreen></iframe>
-            <iframe src="{% static 'https://www.youtube.com/embed/Dr022TbxPKI' %}" frameborder="0" allowfullscreen></iframe>
-            <iframe src="{% static 'https://www.youtube.com/embed/Dr022TbxPKI' %}" frameborder="0" allowfullscreen></iframe>
+            <h3>Galeria de vídeos</h3>
+            {% for video in object.videos %}
+                {{ video.embeded_code|safe }}
+            {% endfor %}
         </div>
 
         <div class="map">
             <h3>Localização</h3>
-            <iframe src="{% static 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d76215.11989082559!2d-6.322273214668956!3d53.348223568502206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670e80ea27ac2f%3A0xa00c7a9973171a0!2sDublin!5e0!3m2!1spt-BR!2sie!4v1488721566202' %}"
-                    frameborder="0" style="border:0" allowfullscreen>
-            </iframe>
+            {{ object.embeded_map|safe }}
         </div>
 
         <div class="content">

@@ -3,6 +3,78 @@ from django.utils.translation import ugettext_lazy as _
 from django.db.models import Avg
 
 
+class Accommodation(models.Model):
+
+    TYPE_OF_ACOMMODATIONS = (
+        ("school_house", "Student Acommodation"),
+        ("home_stay", "Home Stay"),
+        ("hostel", "Hostel")
+    )
+
+    is_beakfest_included = models.BooleanField(
+        _(u"Is BreakFeast included?"),
+        help_text=_(u"Is BreakFest Included?"),
+        default=False
+    )
+
+    is_lunch_included = models.BooleanField(
+        _(u"Is Lunch included?"),
+        help_text=_(u"Is lunch Included?"),
+        default=False
+    )
+
+    is_dinner_included = models.BooleanField(
+        _(u"Is Dinner Included?"),
+        help_text=_(u"Is dinner Included?"),
+        default=False
+    )
+
+    is_tv_in_the_bedroom = models.BooleanField(
+        _(u"Do you have a tv in the bedroom?"),
+        help_text=_(u"Do you have a tv in the bedroom?"),
+        default=False
+    )
+
+    is_wardrobe_in_the_bedroom = models.BooleanField(
+        _("Do you have a wardrobe in the bedroom?"),
+        help_text=_(u"Do you have a wardrobe in the bedroom?"),
+        default=False
+    )
+
+    is_air_in_the_badroom = models.BooleanField(
+        _("Do you have a air conditioning in the bedroom?"),
+        help_text=_(u"Do you have a air conditioning in the bedroom?"),
+        default=False
+    )
+
+    duration = models.CharField(
+        _(u"Period of stay in"),
+        help_text=_(u"Time of acomodation"),
+        max_length=255
+    )
+
+    wifi_free = models.BooleanField(
+        _(u"Do you have free wifi?"),
+        help_text=_(u"Do you have free wifi?"),
+        default=False
+    )
+
+    time_to_school = models.CharField(
+        _(u"How much time it take from the school?"),
+        max_length=255,
+        help_text=_(u"How much time it take from the school?")
+    )
+
+    differentials = models.CharField(
+        _(u"Tell Me about your differentials"),
+        help_text=_(u"What is your accomodation's differential"),
+        max_length=255
+    )
+
+    def __str__(self):
+        return str(self.id)
+
+
 class School(models.Model):
     """
         School model class.
@@ -73,7 +145,8 @@ class School(models.Model):
         help_text=_(u"Registration Fee Price"),
         decimal_places=2,
         null=True,
-        blank=True
+        blank=True,
+        default=0
     )
 
     workbook = models.DecimalField(
@@ -82,7 +155,8 @@ class School(models.Model):
         help_text=_(u"HWorkbook Price"),
         decimal_places=2,
         null=True,
-        blank=True
+        blank=True,
+        default=0
     )
 
     refounds = models.DecimalField(
@@ -91,7 +165,8 @@ class School(models.Model):
         help_text=_(u"Refounds"),
         decimal_places=2,
         null=True,
-        blank=True
+        blank=True,
+        default=0
     )
 
     low_season = models.CharField(
@@ -112,6 +187,21 @@ class School(models.Model):
 
     embeded_map = models.TextField()
 
+    accomodation = models.ForeignKey(
+        Accommodation, null=True, blank=True)
+
+    @property
+    def events(self):
+        return self.eventsoffered_set.get_queryset()
+
+    @property
+    def galery(self):
+        return self.imagegalery_set.get_queryset()
+
+    @property
+    def videos(self):
+        return self.videos_set.get_queryset()
+
     def __str__(self):
         return self.name
 
@@ -120,10 +210,10 @@ class School(models.Model):
 
     @property
     def ratings(self):
-        rating_total = self.ratings_set.get_queryset().aggregate(
-            Avg('stars')).get('stars__avg')
-        rating_total = round(rating_total, 2) if rating_total else 0
-        return rating_total
+        # rating_total = self.ratings_set.get_queryset().aggregate(
+        #     Avg('stars')).get('stars__avg')
+        # rating_total = round(rating_total, 2) if rating_total else 0
+        return 5
 
 
 class ImageGalery(models.Model):
@@ -140,7 +230,7 @@ class Videos(models.Model):
     description = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)
     school = models.ForeignKey(School)
-    url = models.URLField()
+    embeded_code = models.TextField(default='')
 
 
 class EventsOffered(models.Model):
@@ -162,7 +252,20 @@ class EventsOffered(models.Model):
 
     price = models.DecimalField(
         max_digits=5, decimal_places=2)
+
     school = models.ForeignKey(School)
+
+    @property
+    def week_day(self):
+        a = {'1': _('Domingo'),
+             '2': _('Segunda-feira'),
+             '3': _('Terça-feira'),
+             '4': _('Quarta-feira'),
+             '5': _('Quinta-feira'),
+             '6': _('Sexta-feira'),
+             '7': _('Sábado')
+             }
+        return a.get(str(self.day))
 
     def __str__(self):
         return self.description
