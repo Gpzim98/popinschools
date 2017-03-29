@@ -95,9 +95,6 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = 'media'
-
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_URL = '/logout/'
@@ -116,3 +113,18 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
+
+# KEEP THIS FOR TRAVIS
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db2.sqlite3',
+    }
+}
+try:
+    from local_settings import *
+except ImportError:
+    try:
+        from .local_settings import *
+    except ImportError:
+        print('local_settings.py not found')
