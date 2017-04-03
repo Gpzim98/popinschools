@@ -1,5 +1,3 @@
 -r requirements-dev.txt
 gunicorn
 psycopg2
-django-storages
-boto
