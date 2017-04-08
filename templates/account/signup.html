@@ -1,0 +1,114 @@
+{% extends 'base_site.html' %}
+
+{% load i18n %}
+
+{% load static from staticfiles %}
+
+{% block navigation %}
+    <div id="navigation">
+        <a href="{% url 'core:homepage' %}">Home ></a><a>Signup</a>
+    </div>
+{% endblock %}
+
+{% block main %}
+    <section id="profile-form" class="content">
+        <h1>{% trans "Sign Up" %}</h1>
+
+        <p>{% blocktrans %}
+                Already have an account? Then please
+                <a href="{{ login_url }}">sign in</a>.
+            {% endblocktrans %}
+        </p>
+
+        {% if form.errors %}
+            {% for field in form %}
+                {% for error in field.errors %}
+                    <div class="alert alert-danger">
+                        <strong>{{ field.label }}</strong>
+                        <strong>{{ error }}</strong>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+            {% for error in form.non_field_errors %}
+                <div class="alert alert-danger">
+                    <strong>{{ error }}</strong>
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+            {% csrf_token %}
+            {% load widget_tweaks %}
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="id_username">Username</label>
+                            {% render_field form.username class+="form-control" %}
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="id_first_name">First name</label>
+                            {% render_field form.first_name class+="form-control" %}
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="id_last_name">Last name</label>
+                            {% render_field form.last_name class+="form-control" %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="id_gender">Gender</label>
+                            {% render_field form.gender class+="form-control" %}
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="id_nationality">Nationality</label>
+                            {% render_field form.nationality class+="form-control" %}
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="id_birth_day">Birth day</label>
+                            {% render_field form.birth_day class+="form-control" %}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="id_email">Email</label>
+                            {% render_field form.email class+="form-control" %}
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="id_password1">Password</label>
+                            {% render_field form.password1 class+="form-control" %}
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="id_password2">Confirm password</label>
+                            {% render_field form.password2 class+="form-control" %}
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-danger">REGISTER</button>
+            </form>
+    </section>
+{% endblock main %}
+

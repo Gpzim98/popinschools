@@ -3,4 +3,5 @@ MEDIA_ROOT = 'media'
 
 DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
 
-print(DEFAULT_FILE_STORAGE)
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = 1025

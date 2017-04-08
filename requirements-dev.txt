@@ -10,3 +10,5 @@ djangorestframework
 Pillow
 django-storages
 boto3
+django-allauth
+django-widget-tweaks

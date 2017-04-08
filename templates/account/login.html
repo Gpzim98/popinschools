@@ -1,0 +1,69 @@
+{% extends "base_site.html" %}
+
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block navigation %}
+    <div id="navigation">
+        <a href="{% url 'core:homepage' %}">Home ></a><a>Login</a>
+    </div>
+{% endblock %}
+
+{% block main %}
+<div class="row">
+    <div class="content custom-login">
+        <h1>{% trans "Sign In" %}</h1>
+        <h2 hidden>Login Popinschools</h2>
+
+        {% get_providers as socialaccount_providers %}
+
+        {% if socialaccount_providers %}
+        <p>{% blocktrans with site.name as site_name %}Please sign in with one
+        of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
+        for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
+
+        <div class="socialaccount_ballot">
+
+          <ul class="socialaccount_providers">
+            {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+          </ul>
+
+          <div class="login-or">{% trans 'or' %}</div>
+
+        </div>
+
+        {% include "socialaccount/snippets/login_extra.html" %}
+
+        {% else %}
+        <p>{% blocktrans %}If you have not created an account yet, then please
+        <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+        {% endif %}
+
+        <form class="login" method="POST" action="{% url 'account_login' %}">
+          {% csrf_token %}
+          {% load widget_tweaks %}
+
+              <div class="form-group">
+                  <label for="id_login">Username</label>
+                  {% render_field form.login class+="form-control" %}
+              </div>
+
+              <div class="form-group">
+                  <label for="id_password">Password</label>
+                  {% render_field form.password class+="form-control" %}
+              </div>
+
+          {% if redirect_field_value %}
+          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+          {% endif %}
+
+          <a class="btn btn-link" href="{% url 'account_reset_password' %}">
+              {% trans "Forgot Password?" %}
+          </a>
+          <button class="btn btn-danger pull-right">Login</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
+

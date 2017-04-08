@@ -35,6 +35,12 @@
 
 {% endblock scripts %}
 
+{% block navigation %}
+    <div id="navigation">
+        <a href="{% url 'core:homepage' %}">Home ></a><a>School search</a>
+    </div>
+{% endblock %}
+
 {% block main %}
     <aside id="aside-search">
     <div id="aside-title">

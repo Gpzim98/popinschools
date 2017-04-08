@@ -1,6 +1,5 @@
-from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from django.db.models import Avg
+from django.db import models
 
 
 class Accommodation(models.Model):

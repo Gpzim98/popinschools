@@ -221,6 +221,12 @@ header #social-top ul li a img {
     width: 45%;
 }
 
+.custom-login h1, .custom-login p,
+    .custom-login a, .custom-login label {
+    color: #37383b;
+    margin-top: 40px;
+}
+
 #login .btn-header {
     float: right;
     text-decoration: none;

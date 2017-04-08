@@ -9,8 +9,10 @@ urlpatterns = [
     url(r'^', include('apps.core.urls', namespace=u"core")),
     url(r'^schools/', include('apps.schools.urls', namespace=u"schools")),
 
-    url(r'^login/$', auth_views.login, name='login'),
-    url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
+    # url(r'^login/$', auth_views.login, name='login'),
+    # url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
+
+    url(r'^accounts/', include('allauth.urls')),
 
     url(r'^admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
