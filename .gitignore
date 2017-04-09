@@ -4,3 +4,4 @@
 *pyc
 .env
 media
+school_stalker/local_settings.py
