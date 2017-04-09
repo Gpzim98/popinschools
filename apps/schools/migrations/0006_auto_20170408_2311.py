@@ -16,6 +16,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='school',
             name='address',
-            field=models.ForeignKey(help_text='Informe o endereço da escola', on_delete=django.db.models.deletion.CASCADE, to='adresses.Address'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='adresses.Address'),
         ),
     ]
