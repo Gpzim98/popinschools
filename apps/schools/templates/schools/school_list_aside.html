@@ -1,0 +1,66 @@
+<aside id="aside-search">
+    <div id="aside-title">
+        <h2>Filtro de Busca</h2>
+    </div>
+    <form onchange="searchSchool()" id="formSearch">
+        {% csrf_token %}
+        <label for="country"><b>País</b></label><br>
+        <input type="text" id="country" value="{{ country }}">
+        <label for="city"><b>Cidade</b></label>
+        <input type="text" id="city">
+        <label for="idiom"><b>Idioma</b></label>
+        <input type="text" id="idiom">
+
+        <p>
+          <label for="classification-amount"><b>Classificação</b></label>
+          <input type="text" id="classification-amount" readonly>
+        </p>
+        <div id="classification"></div>
+        <br>
+        <p>
+          <label for="price-amount"><b>Preço</b></label>
+          <input type="text" id="price-amount" readonly>
+        </p>
+        <div id="price"></div>
+        <br>
+        <label for="visa"><b>Visto</b></label><br>
+        <input type="radio" name="visa" id="visto" value="sim"><p>Sim</p><br>
+        <input type="radio" name="visa" value="nao"><p>Não</p>
+
+        <br>
+        <br>
+        <label for="classes"><b>Aulas</b></label><br>
+        <input type="radio" name="classes" id="classes" value="individual"><p>Individual</p><br>
+        <input type="radio" name="classes" value="group"><p>Grupo</p>
+
+        <br>
+        <br>
+        <label for="shift"><b>Turno</b></label><br>
+        <input type="radio" name="shift" id="shift" value="morning"><p>Manhã</p><br>
+        <input type="radio" name="shift" value="afternoon"><p>Tarde</p><br>
+        <input type="radio" name="shift" value="night"><p>Noite</p>
+
+        <br>
+        <br>
+        <label><b>Duração</b></label><br>
+        <input type="checkbox" name="part-time" id="part-time"
+               value="part-time"><p>Part time</p>
+        <input type="checkbox" name="anual" id="anual"
+               value="anual"><p>Anual</p><br>
+
+        <input type="checkbox" name="full-time" id="full-time"
+               value="full-time"><p>Full time</p>
+        <input type="checkbox" name="semester" id="semester"
+               value="semester"><p>Semestral</p><br>
+
+        <input type="checkbox" name="intensive" id="intensive"
+               value="intensive"><p>Intensivo</p>
+        <input type="checkbox" name="trimestral" id="trimestral"
+               value="trimestral"><p>Trimestral</p><br>
+
+        <input type="checkbox" name="business" id="business"
+               value="business"><p>Business</p>
+        <input type="checkbox" name="mensal" id="mensal"
+               value="mensal"><p>Mensal</p><br>
+    </form>
+</aside>

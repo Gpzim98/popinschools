@@ -1,6 +1,7 @@
 from django.utils.translation import ugettext_lazy as _
 from django.db import models
 
+from apps.adresses.models import Address
 
 class Accommodation(models.Model):
 
@@ -93,11 +94,8 @@ class School(models.Model):
         upload_to='schools',
         blank=True
     )
-    address = models.CharField(
-        _(u"School Address"),
-        help_text=_(u"Note que vc precisa colocar o endereco completo da escola"),
-        max_length=255,
-        db_index=True
+    address = models.ForeignKey(
+        Address, help_text=_(u"Informe o endereço da escola"),
     )
 
     youtube_channel_link = models.CharField(

@@ -3,6 +3,8 @@
 {% load static from staticfiles %}
 
 {% block scripts %}
+<script src="{% static 'search.js'%}"></script>
+
 <script>
     $( function() {
         $( "#price" ).slider({
@@ -12,10 +14,13 @@
             values: [ 9000, 20000 ],
             slide: function( event, ui ) {
                 $( "#price-amount" ).val( "Valores entre R$" + ui.values[ 0 ] + " e R$" + ui.values[ 1 ] );
+            },
+            change: function( event, ui ) {
+                searchSchool();
             }
         });
-            $( "#price-amount" ).val( "Valores entre R$" + $( "#price" ).slider( "values", 0 ) +
-              " e R$" + $( "#price" ).slider( "values", 1 ) );
+        $( "#price-amount" ).val( "Valores entre R$" + $( "#price" ).slider( "values", 0 ) +
+          " e R$" + $( "#price" ).slider( "values", 1 ) );
     } );
 
     $( function() {
@@ -26,10 +31,13 @@
             values: [ 4, 7],
             slide: function( event, ui ) {
                 $( "#classification-amount" ).val( 'Avaliações entre ' + ui.values[ 0 ] + " e " + ui.values[ 1 ] );
-            }
+            },
+            change: function( event, ui ) {
+                searchSchool();
+              }
         });
-            $( "#classification-amount" ).val( 'Avaliações entre ' + $( "#classification" ).slider( "values", 0 ) +
-              " e " + $( "#classification" ).slider( "values", 1 ) );
+        $( "#classification-amount" ).val( 'Avaliações entre ' + $( "#classification" ).slider( "values", 0 ) +
+          " e " + $( "#classification" ).slider( "values", 1 ) );
     } );
     </script>
 
@@ -42,65 +50,7 @@
 {% endblock %}
 
 {% block main %}
-    <aside id="aside-search">
-    <div id="aside-title">
-        <h2>Filtro de Busca</h2>
-    </div>
-    <form action="">
-        <label for="country"><b>País</b></label>
-        <input type="text" id="country">
-        <label for="city"><b>Cidade</b></label>
-        <input type="text" id="city">
-        <label for="idiom"><b>Idioma</b></label>
-        <input type="text" id="idiom">
-
-        <p>
-          <label for="classification-amount"><b>Classificação</b></label>
-          <input type="text" id="classification-amount" readonly>
-        </p>
-        <div id="classification"></div>
-        <br>
-        <p>
-          <label for="price-amount"><b>Preço</b></label>
-          <input type="text" id="price-amount" readonly>
-        </p>
-        <div id="price"></div>
-        <br>
-        <label for="vistos"><b>Visto</b></label><br>
-        <input type="radio" name="vistos" id="vistos" value="sim"><p>Sim</p><br>
-        <input type="radio" name="vistos" value="nao"><p>Não</p>
-
-        <br>
-        <br>
-        <label for="classes"><b>Aulas</b></label><br>
-        <input type="radio" name="classes" id="classes" value="individual"><p>Individual</p><br>
-        <input type="radio" name="classes" value="group"><p>Grupo</p>
-
-        <br>
-        <br>
-        <label for="shift"><b>Turno</b></label><br>
-        <input type="radio" name="shift" id="shift" value="morning"><p>Manhã</p><br>
-        <input type="radio" name="shift" value="afternoon"><p>Tarde</p><br>
-        <input type="radio" name="shift" value="night"><p>Noite</p>
-
-        <br>
-        <br>
-        <label><b>Duração</b></label><br>
-        <input type="checkbox" name="part-time" value="part-time"><p>Part time</p>
-        <input type="checkbox" name="anual" value="anual"><p>Anual</p><br>
-
-        <input type="checkbox" name="full-time" value="full-time"><p>Full time</p>
-        <input type="checkbox" name="semester" value="semester"><p>Semestral</p><br>
-
-        <input type="checkbox" name="intensive" value="intensive"><p>Intensivo</p>
-        <input type="checkbox" name="trimestral" value="trimestral"><p>Trimestral</p><br>
-
-        <input type="checkbox" name="business" value="business"><p>Business</p>
-        <input type="checkbox" name="mensal" value="mensal"><p>Mensal</p><br>
-
-
-    </form>
-    </aside>
+    {% include 'schools/school_list_aside.html' %}
 
     <section id="search-result">
     {% if object_list %}

@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'apps.core',
     'apps.schools',
     'apps.profile',
+    'apps.adresses',
 ]
 
 SITE_ID = 1
