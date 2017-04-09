@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AlterField(
+        migrations.AddField(
             model_name='school',
             name='address',
             field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='adresses.Address'),
