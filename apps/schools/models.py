@@ -1,7 +1,12 @@
 from django.utils.translation import ugettext_lazy as _
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator
+from ..utils.rating_categories import RATINGS_CATEGORIES
+from ..profile.models import Profile
+from django.db.models import Avg
 
 from apps.adresses.models import Address
+
 
 class Accommodation(models.Model):
 
@@ -73,6 +78,14 @@ class Accommodation(models.Model):
 
     def __str__(self):
         return str(self.id)
+
+
+class Languages(models.Model):
+    description = models.CharField(max_length=20)
+    initials = models.CharField(max_length=5)
+
+    def __str__(self):
+        return self.description + ' - ' + self.initials
 
 
 class School(models.Model):
@@ -187,9 +200,19 @@ class School(models.Model):
     accomodation = models.ForeignKey(
         Accommodation, null=True, blank=True)
 
+    language = models.ForeignKey(
+        Languages, null=True, blank=True)
+
     @property
     def events(self):
         return self.eventsoffered_set.get_queryset()
+
+    @property
+    def ratings(self):
+        rating_total = self.ratings_set.get_queryset().aggregate(
+            Avg('stars')).get('stars__avg')
+        # rating_total = round(rating_total, 2) if rating_total else 0
+        return rating_total
 
     @property
     def galery(self):
@@ -203,14 +226,11 @@ class School(models.Model):
         return self.name
 
     def get_image(self):
-        return self.logo_image.url if self.logo_image else 'assets/img/circle2.png'
+        return self.logo_image.url if self.logo_image else '/static/assets/img/circle2.png'
 
-    @property
-    def ratings(self):
-        # rating_total = self.ratings_set.get_queryset().aggregate(
-        #     Avg('stars')).get('stars__avg')
-        # rating_total = round(rating_total, 2) if rating_total else 0
-        return 5
+    def get_absolute_url(self):
+        from django.urls import reverse
+        return reverse('school-profile', kwargs={'pk': str(self.id)})
 
 
 class ImageGalery(models.Model):
@@ -266,3 +286,66 @@ class EventsOffered(models.Model):
 
     def __str__(self):
         return self.description
+
+
+class Ratings(models.Model):
+    def __str__(self):
+        return str(self.stars)
+
+    school = models.ForeignKey(
+        School,
+    )
+    user = models.ForeignKey(
+        Profile,
+    )
+    type_of_rating = models.CharField(
+        _(u"Ratings"),
+        choices=RATINGS_CATEGORIES,
+        max_length=15
+    )
+    stars = models.IntegerField(
+        _(u"How many Stars Do you think this school diserve?"),
+        validators=[MinValueValidator(0), MaxValueValidator(5)]
+    )
+    comment = models.CharField(
+        _(u"Why this note?"),
+        max_length=255,
+        help_text=_(u"Why Would you like to do this rating?")
+    )
+    class Meta:
+        unique_together = ("school", "user", "type_of_rating")
+
+
+class Course(models.Model):
+    CLASS_TYPE = (
+        ('individual', 'Individual'),
+        ('group', 'Group'),
+    )
+
+    SHIFTS = (
+        ('morning', 'Morning'),
+        ('afternoon', 'Afternoon'),
+        ('night', 'Night'),
+    )
+
+    school = models.ForeignKey(
+        School
+    )
+    description = models.CharField(
+        max_length=150, help_text='Course description'
+    )
+    price = models.DecimalField(
+        max_digits=6, decimal_places=2, help_text='Price'
+    )
+    visa_needed = models.BooleanField(
+        help_text='Visa is needed?'
+    )
+    classes_type = models.CharField(
+        max_length=20, choices=CLASS_TYPE
+    )
+    shift = models.CharField(
+        max_length=20, choices=SHIFTS
+    )
+
+    def __str__(self):
+        return self.description + ' - ' + str(self.price)

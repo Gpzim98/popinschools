@@ -10,7 +10,8 @@
         $( "#price" ).slider({
             range: true,
             min: 5500,
-            max: 35000,
+            max: 20000,
+            step: 500,
             values: [ 9000, 20000 ],
             slide: function( event, ui ) {
                 $( "#price-amount" ).val( "Valores entre R$" + ui.values[ 0 ] + " e R$" + ui.values[ 1 ] );
@@ -27,8 +28,8 @@
         $( "#classification" ).slider({
             range: true,
             min: 1,
-            max: 10,
-            values: [ 4, 7],
+            max: 5,
+            values: [1, 5],
             slide: function( event, ui ) {
                 $( "#classification-amount" ).val( 'Avaliações entre ' + ui.values[ 0 ] + " e " + ui.values[ 1 ] );
             },
@@ -56,11 +57,11 @@
     {% if object_list %}
     {% for school in object_list %}
     <div class="result">
-        <a href="schools/profile/{{ school.id }}">
+        <a href="profile/{{ school.id }}">
             <img src="{{ school.get_image}}" alt="{{ school.name }}">
         </a>
-        <h2><a href="schools/profile/{{ school.id }}">{{ school }}</a></h2>
-        <div class="school-rating">7.5</div>
+        <h2><a href="profile/{{ school.id }}">{{ school }}</a></h2>
+        <div class="school-rating">{{ school.ratings }}</div>
         <ul>
             {% for id, categorie in categories %}
             <li>
@@ -74,7 +75,8 @@
     </div>
     {% endfor %}
     {% else %}
-        Results not found :(
+        None schools matched with your search
     {% endif %}
     </section>
+
 {% endblock %}

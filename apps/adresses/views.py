@@ -1,6 +1,6 @@
 from rest_framework import viewsets
 from .models import Address
-from .serializers import AddressSerializer
+from .api.serializers import AddressSerializer
 
 
 class AddressViewSet(viewsets.ModelViewSet):

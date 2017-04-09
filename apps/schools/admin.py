@@ -4,7 +4,10 @@ from .models import (
     ImageGalery,
     Videos,
     EventsOffered,
-    Accommodation
+    Accommodation,
+    Languages,
+    Ratings,
+    Course
 )
 
 
@@ -20,7 +23,7 @@ class VideoInline(admin.TabularInline):
 
 class SchoolAdmin(admin.ModelAdmin):
     inlines = (ImageInline, VideoInline)
-    list_display = ('id', 'name')
+    list_display = ('id', 'name', 'ratings')
     list_filter = ('id', 'name')
     ordering = ('id', 'name')
     search_fields = ('id', 'name')
@@ -32,3 +35,6 @@ admin.site.register(ImageGalery)
 admin.site.register(EventsOffered)
 admin.site.register(Videos)
 admin.site.register(Accommodation)
+admin.site.register(Languages)
+admin.site.register(Ratings)
+admin.site.register(Course)

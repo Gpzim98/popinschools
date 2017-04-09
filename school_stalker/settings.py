@@ -137,9 +137,6 @@ AUTHENTICATION_BACKENDS = (
 
 ACCOUNT_SIGNUP_FORM_CLASS = 'apps.profile.forms.SignupForm'
 
-
-# Settings for Allauth
-
 try:
     from local_settings import *
 except ImportError:

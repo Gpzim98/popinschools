@@ -10,8 +10,7 @@ class SchoolList(ListView):
 
     def get_queryset(self):
         queryset = School.objects.all()
-        #
-        # import pdb;pdb.set_trace()
+
         if self.request.GET.get('country'):
             country = self.request.GET.get('country')
             queryset = School.objects.filter(
@@ -21,7 +20,7 @@ class SchoolList(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(SchoolList, self).get_context_data(**kwargs)
-        context['country'] = self.request.GET.get('country')
+        context['country'] = self.request.GET.get('country', '')
         return context
 
 
