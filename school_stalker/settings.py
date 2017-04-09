@@ -137,6 +137,15 @@ AUTHENTICATION_BACKENDS = (
 
 ACCOUNT_SIGNUP_FORM_CLASS = 'apps.profile.forms.SignupForm'
 
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'webmail.programefacil.com.br'
+EMAIL_HOST_PASSWORD = config('EMAIL_PASSWORD')
+EMAIL_HOST_USER = config('EMAIL_USER')
+EMAIL_PORT = config('EMAIL_PORT')
+EMAIL_USE_SSL = True
+
+
 try:
     from local_settings import *
 except ImportError:
