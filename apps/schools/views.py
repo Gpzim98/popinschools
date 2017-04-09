@@ -14,7 +14,7 @@ class SchoolList(ListView):
         if self.request.GET.get('country'):
             country = self.request.GET.get('country')
             queryset = School.objects.filter(
-                address__neighborhood__city__state__country__name=country)
+                address__neighborhood__city__state__country__name__icontains=country)
 
         return queryset
 
