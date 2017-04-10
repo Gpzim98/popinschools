@@ -12,5 +12,5 @@ django-storages
 boto3
 django-allauth
 django-widget-tweaks
-django-localflavor
 django-filter
+django-localflavor
