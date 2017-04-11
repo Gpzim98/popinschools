@@ -809,7 +809,6 @@ footer {
 
 #profile-basics {
     position: absolute;
-    top: 105%;
     width: 30%;
     height: 20%;
     left: 37%;
@@ -1342,7 +1341,6 @@ footer {
     #profile-basics {
         left: 35%;
         width: 60%;
-        top:100%;
     }
 
     #school-form {

@@ -75,7 +75,7 @@
             <ul>
                 <li><a href="">Blog</a></li>
                 <li><a href="">About Popinschool</a></li>
-                <li><a href="">School sigin up</a></li>
+                <li><a href="{% url 'account_signup'%}">School sigin up</a></li>
             </ul>
         </div>
 
@@ -95,9 +95,16 @@
         <div id="social">
             <h4>FIND US ON</h4>
             <ul>
-                <li><a href=""><img src="{% static 'assets/img/facebook.png' %}" alt="Facebbok">Facebook</a></li>
-                <li><a href=""><img src="{% static 'assets/img/instagram.png' %}" alt="Instagram">Instagram</a></li>
-                <li><a href=""><img src="{% static 'assets/img/twitter.png' %}" alt="Twitter">Twitter</a></li>
+                <li><a target="_blank" href="https://www.facebook.com/popinschool/">
+                    <img src="{% static 'assets/img/facebook.png' %}" alt="Facebook">Facebook</a></li>
+                <li><a target="_blank" href="https://plus.google.com/118224126714322059589">
+                    <img src="{% static 'assets/img/google-plus.png' %}" alt="Google">Google</a></li>
+                <li><a target="_blank" href="https://www.instagram.com/popinschool/">
+                    <img target="_blank" src="{% static 'assets/img/instagram.png' %}" alt="Instagram">Instagram</a></li>
+                <li><a target="_blank" href="https://twitter.com/Popinschool">
+                    <img target="_blank" src="{% static 'assets/img/twitter.png' %}" alt="Twitter">Twitter</a></li>
+                <li><a target="_blank" href="https://www.youtube.com/channel/UCQhsELM-HcORaQJ4aTiWcmQ">
+                    <img src="{% static 'assets/img/youtube.png' %}" alt="Youtube">Youtube</a></li>
             </ul>
         </div>
     </div>
@@ -108,9 +115,16 @@
         <div id="social-footer">
             <p>Todos os direitos reservados</p>
             <ul>
-                <li><a href=""><img src="{% static 'assets/img/facebook.png' %}" alt="Facebook"></a></li>
-                <li><a href=""><img src="{% static 'assets/img/instagram.png' %}" alt="Instagram"></a></li>
-                <li><a href=""><img src="{% static 'assets/img/twitter.png' %}" alt="Twitter"></a></li>
+                <li><a target="_blank" href="https://www.facebook.com/popinschool/">
+                    <img src="{% static 'assets/img/facebook.png' %}" alt="Facebook"></a></li>
+                <li><a target="_blank" href="https://plus.google.com/118224126714322059589">
+                    <img src="{% static 'assets/img/google-plus.png' %}" alt="Instagram"></a></li>
+                <li><a target="_blank" href="https://www.instagram.com/popinschool/">
+                    <img target="_blank" src="{% static 'assets/img/instagram.png' %}" alt="Instagram"></a></li>
+                <li><a target="_blank" href="https://twitter.com/Popinschool">
+                    <img target="_blank" src="{% static 'assets/img/twitter.png' %}" alt="Twitter"></a></li>
+                <li><a target="_blank" href="https://www.youtube.com/channel/UCQhsELM-HcORaQJ4aTiWcmQ">
+                    <img src="{% static 'assets/img/youtube.png' %}" alt="Twitter"></a></li>
             </ul>
         </div>
     </div>

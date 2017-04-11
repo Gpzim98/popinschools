@@ -25,10 +25,10 @@
         <div class="socialaccount_ballot">
 
           <ul class="socialaccount_providers">
-            {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+            {% include "account/social_login.html" with process="login" %}
           </ul>
 
-          <div class="login-or">{% trans 'or' %}</div>
+          <div class="login-or"><strong>{% trans 'or' %}</strong></div>
 
         </div>
 
