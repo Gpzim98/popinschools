@@ -1,7 +1,9 @@
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, FormView
 from django.conf import settings
+from django.shortcuts import resolve_url
 
-from .models import School
+from .models import School, Comment
+from .forms import CommentForm
 
 
 class SchoolList(ListView):
@@ -30,4 +32,21 @@ class SchoolDetail(DetailView):
     def get_context_data(self, **kwargs):
         context = super(SchoolDetail, self).get_context_data(**kwargs)
         context['categories'] = settings.RATINGS_CATEGORIES
+        form = CommentForm(
+            instance=Comment(
+                school=self.object, user=self.request.user.profile
+            )
+        )
+        context['form'] = form
         return context
+
+
+class SchoolComment(FormView):
+    form_class = CommentForm
+
+    def get_success_url(self):
+        return resolve_url('schools:school-profile', self.kwargs.get('pk'))
+
+    def form_valid(self, form):
+        form.save()
+        return super(SchoolComment, self).form_valid(form)

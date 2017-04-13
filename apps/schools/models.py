@@ -5,6 +5,7 @@ from ..utils.rating_categories import RATINGS_CATEGORIES
 from ..profile.models import Profile
 from django.db.models import Avg
 
+
 from apps.adresses.models import Address
 
 
@@ -349,3 +350,13 @@ class Course(models.Model):
 
     def __str__(self):
         return self.description + ' - ' + str(self.price)
+
+
+class Comment(models.Model):
+    user = models.ForeignKey(Profile)
+    school = models.ForeignKey(School)
+    comment = models.TextField()
+    approved = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.user.user.first_name

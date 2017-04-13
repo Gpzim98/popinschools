@@ -7,7 +7,8 @@ from .models import (
     Accommodation,
     Languages,
     Ratings,
-    Course
+    Course,
+    Comment
 )
 
 
@@ -30,6 +31,11 @@ class SchoolAdmin(admin.ModelAdmin):
     filter_horizontal = []
 
 
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ('user', 'school', 'approved')
+    search_fields = ('user', 'school', 'approved')
+    list_filter = ('approved', )
+
 admin.site.register(School, SchoolAdmin)
 admin.site.register(ImageGalery)
 admin.site.register(EventsOffered)
@@ -38,3 +44,4 @@ admin.site.register(Accommodation)
 admin.site.register(Languages)
 admin.site.register(Ratings)
 admin.site.register(Course)
+admin.site.register(Comment, CommentAdmin)
