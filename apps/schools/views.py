@@ -38,6 +38,8 @@ class SchoolDetail(DetailView):
             )
         )
         context['form'] = form
+        context['comments'] = Comment.objects.filter(
+            school=self.get_object(), approved=True)
         return context
 
 

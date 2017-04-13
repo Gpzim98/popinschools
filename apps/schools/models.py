@@ -357,6 +357,10 @@ class Comment(models.Model):
     school = models.ForeignKey(School)
     comment = models.TextField()
     approved = models.BooleanField(default=True)
+    date = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ('date',)
 
     def __str__(self):
         return self.user.user.first_name

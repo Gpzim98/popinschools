@@ -8,7 +8,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['school-stalker.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['school-stalker.herokuapp.com',
+                 'localhost', 'www.popinschool.com']
 
 INSTALLED_APPS = [
     'django.contrib.admin',

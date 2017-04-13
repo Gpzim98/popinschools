@@ -373,91 +373,23 @@
         </div>
 
         <div class="content">
-            <div class="comment">
-                <h3>Comentários</h3>
-                <div class="img-comment">
-                    <img src="{% static 'assets/img/square.png' %}" alt="">
-                </div>
-                <div class="comment-content">
-                    <h3>Márcio Gabriel</h3>
-                    <p>18 de setembro 2016</p>
-                    <a href="#">Responder</a><br>
-                    <div class="school-rating">7.5</div>
-                    <label>Muito boa</label>
-                    <a href="#">Denunciar comentário</a>
-                    <p>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
-                    Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
-                    Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
-                    Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
-                    Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum </p>
-                </div>
 
-            </div>
+            <h3>Comentários</h3>
+            {% for comment in comments %}
+                <div class="comment">
+                    <div class="img-comment">
+                        <img src="{% static 'assets/img/square.png' %}" alt="">
+                    </div>
+                    <div class="comment-content">
+                        <h3>{{ comment.user }}</h3>
+                        <p>{{ comment.date}}</p>
+                        <a href="#">Responder</a><br>
+                        <!--<a href="#">Denunciar comentário</a>-->
+                        <p>{{ comment.comment }}</p>
+                    </div>
+                </div>
+            {% endfor %}
 
-            <!--Comment reply -->
-            <div class="comment replay">
-                <div class="img-comment">
-                    <img src="{% static 'assets/img/square.png' %}" alt="">
-                </div>
-                <div class="comment-content">
-                    <h3>Márcio Gabriel</h3>
-                    <p>18 de setembro 2016</p>
-                    <a href="#">Responder</a><br>
-                    <div class="school-rating">7.5</div>
-                    <label>Muito boa</label>
-                    <a href="#">Denunciar comentário</a>
-                    <p>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
-                    Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
-                    Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
-                    Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
-                    Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum </p>
-                </div>
-            </div>
-            <!--End comment reply -->
-
-            <div class="comment">
-                <div class="img-comment">
-                    <img src="{% static 'assets/img/square.png' %}" alt="">
-                </div>
-                <div class="comment-content">
-                    <h3>Márcio Gabriel</h3>
-                    <p>18 de setembro 2016</p>
-                    <a href="#">Responder</a><br>
-                    <div class="school-rating">7.5</div>
-                    <label>Muito boa</label>
-                    <a href="#">Denunciar comentário</a>
-                    <p>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
-                    Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
-                    Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
-                    Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
-                    Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum </p>
-                </div>
-
-            </div>
-
-            <!--Comment reply -->
-            <div class="comment replay">
-                <div class="img-comment">
-                    <img src="{% static 'assets/img/square.png' %}" alt="">
-                </div>
-                <div class="comment-content">
-                    <h3>Márcio Gabriel</h3>
-                    <p>18 de setembro 2016</p>
-                    <a href="#">Responder</a><br>
-                    <div class="school-rating">7.5</div>
-                    <label>Muito boa</label>
-                    <a href="#">Denunciar comentário</a>
-                    <p>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
-                    Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
-                    Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
-                    Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
-                    Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum </p>
-                </div>
-            </div>
-            <!--End comment reply -->
-            <button class="load-comments"><i class="fa fa-refresh fa-large" aria-hidden="true"></i>
-                Carregar mais comentários
-            </button>
 
             <form action="/schools/profile/1/comment/" method="POST">
                 {% csrf_token %}

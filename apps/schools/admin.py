@@ -32,9 +32,9 @@ class SchoolAdmin(admin.ModelAdmin):
 
 
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('user', 'school', 'approved')
+    list_display = ('user', 'school', 'approved', 'date')
     search_fields = ('user', 'school', 'approved')
-    list_filter = ('approved', )
+    list_filter = ('approved', 'date')
 
 admin.site.register(School, SchoolAdmin)
 admin.site.register(ImageGalery)
