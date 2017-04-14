@@ -201,8 +201,7 @@ class School(models.Model):
     accomodation = models.ForeignKey(
         Accommodation, null=True, blank=True)
 
-    language = models.ForeignKey(
-        Languages, null=True, blank=True)
+    language = models.ForeignKey(Languages)
 
     @property
     def events(self):
@@ -212,7 +211,7 @@ class School(models.Model):
     def ratings(self):
         rating_total = self.ratings_set.get_queryset().aggregate(
             Avg('stars')).get('stars__avg')
-        # rating_total = round(rating_total, 2) if rating_total else 0
+        rating_total = round(rating_total, 2) if rating_total else 1
         return rating_total
 
     @property
@@ -360,7 +359,15 @@ class Comment(models.Model):
     date = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        ordering = ('date',)
+        ordering = ('-date',)
+
+    def __str__(self):
+        return self.user.user.first_name
+
+
+class AlreadyStudiedHere(models.Model):
+    user = models.ForeignKey(Profile)
+    school = models.ForeignKey(School)
 
     def __str__(self):
         return self.user.user.first_name

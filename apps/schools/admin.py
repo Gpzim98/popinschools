@@ -8,7 +8,8 @@ from .models import (
     Languages,
     Ratings,
     Course,
-    Comment
+    Comment,
+    AlreadyStudiedHere,
 )
 
 
@@ -45,3 +46,4 @@ admin.site.register(Languages)
 admin.site.register(Ratings)
 admin.site.register(Course)
 admin.site.register(Comment, CommentAdmin)
+admin.site.register(AlreadyStudiedHere)

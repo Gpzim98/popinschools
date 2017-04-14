@@ -1,8 +1,8 @@
 from django.views.generic import ListView, DetailView, FormView
 from django.conf import settings
-from django.shortcuts import resolve_url
+from django.shortcuts import resolve_url, redirect, HttpResponseRedirect
 
-from .models import School, Comment
+from .models import School, Comment, AlreadyStudiedHere
 from .forms import CommentForm
 
 
@@ -32,12 +32,18 @@ class SchoolDetail(DetailView):
     def get_context_data(self, **kwargs):
         context = super(SchoolDetail, self).get_context_data(**kwargs)
         context['categories'] = settings.RATINGS_CATEGORIES
-        form = CommentForm(
-            instance=Comment(
-                school=self.object, user=self.request.user.profile
+
+        if self.request.user.is_authenticated:
+            form = CommentForm(
+                instance=Comment(
+                    school=self.object, user=self.request.user.profile
+                )
             )
-        )
-        context['form'] = form
+            context['form'] = form
+
+            ash = AlreadyStudiedHere.objects.filter(
+                school=self.object, user=self.request.user.profile)
+            context['already_studied_here'] = ash
         context['comments'] = Comment.objects.filter(
             school=self.get_object(), approved=True)
         return context
@@ -52,3 +58,20 @@ class SchoolComment(FormView):
     def form_valid(self, form):
         form.save()
         return super(SchoolComment, self).form_valid(form)
+
+
+def already_studied_here(request, pk):
+    if request.user.is_authenticated:
+        school = School.objects.get(pk=pk)
+        ash = AlreadyStudiedHere.objects.filter(school=school,
+                                                user=request.user.profile)
+        if ash:
+            ash.delete()
+        else:
+            AlreadyStudiedHere.objects.create(
+                school=school, user=request.user.profile)
+
+        return redirect('schools:school-profile', pk)
+    else:
+        return HttpResponseRedirect('/accounts/login/?next=/schools/profile/1/')
+

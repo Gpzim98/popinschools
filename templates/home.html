@@ -19,10 +19,17 @@
 <body>
     <header class="red-header">
         <div id="social-top">
-            <ul class="content">
-                <li><a href=""><img src="{% static 'assets/img/facebook.png' %}" alt="Facebbok"></a></li>
-                <li><a href=""><img src="{% static 'assets/img/instagram.png' %}" alt="Instagram"></a></li>
-                <li><a href=""><img src="{% static 'assets/img/twitter.png' %}" alt="Twitter"></a></li>
+            <ul>
+                <li><a target="_blank" href="https://www.facebook.com/popinschool/">
+                    <img src="{% static 'assets/img/facebook.png' %}" alt="Facebook"></a></li>
+                <li><a target="_blank" href="https://plus.google.com/118224126714322059589">
+                    <img src="{% static 'assets/img/google-plus.png' %}" alt="Instagram"></a></li>
+                <li><a target="_blank" href="https://www.instagram.com/popinschool/">
+                    <img target="_blank" src="{% static 'assets/img/instagram.png' %}" alt="Instagram"></a></li>
+                <li><a target="_blank" href="https://twitter.com/Popinschool">
+                    <img target="_blank" src="{% static 'assets/img/twitter.png' %}" alt="Twitter"></a></li>
+                <li><a target="_blank" href="https://www.youtube.com/channel/UCQhsELM-HcORaQJ4aTiWcmQ">
+                    <img src="{% static 'assets/img/youtube.png' %}" alt="Twitter"></a></li>
             </ul>
         </div>
 
@@ -34,14 +41,16 @@
                     <a href="{% url 'account_logout' %}" class="btn btn-login btn-color-home btn-header">
                         FAZER LOGOUT
                     </a>
+                    <h3 class="btn btn-login btn-color-home btn-header">
+                        Seja bem vindo {{ request.user.first_name }}
+                    </h3>
                 {% else %}
                     <a href="{% url 'account_login' %}" class="btn btn-login btn-color-home btn-header">
                         FAZER LOGIN
                     </a>
-                {% endif %}
-
-                <a href="{% url 'account_signup' %}" class="btn btn-create-profile btn-color-home btn-header">
+                                <a href="{% url 'account_signup' %}" class="btn btn-create-profile btn-color-home btn-header">
                     CRIE SEU PERFIL</a>
+                {% endif %}
             </div>
         </div>
     </header>

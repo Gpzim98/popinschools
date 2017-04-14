@@ -63,7 +63,7 @@ input {
 
 textarea {
     border: 1px solid #ccc;
-    width: 95%;
+    width: 100%;
     border-radius: 7px;
 }
 
@@ -98,6 +98,10 @@ select {
     border-radius: 5px;
     font-weight: bold;
     margin-top: 15px;
+    /*padding-left: 40px;*/
+}
+
+h3.btn, #login a.btn {
     padding-left: 40px;
 }
 
@@ -1098,6 +1102,10 @@ footer {
 .video-galery iframe{
     width: 200px;
     height: 120px;
+}
+
+.map {
+    height: 100%;
 }
 
 .map iframe {

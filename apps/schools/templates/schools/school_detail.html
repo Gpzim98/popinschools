@@ -241,7 +241,23 @@
 </div>
 
     <section id="school-form">
+
         <div class="content">
+            <p>Já estudei nesta escola</p>
+
+            {% if already_studied_here %}
+                <img src="{% static 'assets/img/arrow-right.png' %}"
+                     alt="Já estudei aqui"> Já estudei aqui
+            {% else %}
+                <img src="{% static 'assets/img/right-arrow-disable.png' %}"
+                     alt="Já estudei aqui"> Nunca estudei aqui
+            {% endif %}
+
+            <!--{% if request.user.is_authenticated %}-->
+            <!--{% endif %}-->
+            <a
+                    href="{% url 'schools:school-profile-alreadystdhere' object.id %}">
+                <button class="btn btn-danger">Altera</button></a>
             <h3>Descrição da escola</h3>
             <p>{{ object.short_phrase }}</p>
 
@@ -353,17 +369,17 @@
                  {% endfor %}
             </div>
         </div>
-       	<div id="image-slider">
-            <a class="buttons prev" href="#">&#60;</a>
-            <div class="viewport">
-                <ul class="overview">
-                    {% for file in object.galery %}
-                        <li><img src="{{ file.image.url }}" /></li>
-                    {% endfor %}
-                </ul>
-            </div>
-            <a class="buttons next" href="#">&#62;</a>
-        </div>
+       	<!--<div id="image-slider">-->
+            <!--<a class="buttons prev" href="#">&#60;</a>-->
+            <!--<div class="viewport">-->
+                <!--<ul class="overview">-->
+                    <!--{% for file in object.galery %}-->
+                        <!--<li><img src="{{ file.image.url }}" /></li>-->
+                    <!--{% endfor %}-->
+                <!--</ul>-->
+            <!--</div>-->
+            <!--<a class="buttons next" href="#">&#62;</a>-->
+        <!--</div>-->
 
         <div class="video-galery content">
             <h3>Galeria de vídeos</h3>
@@ -383,21 +399,23 @@
                     <div class="comment-content">
                         <h3>{{ comment.user }}</h3>
                         <p>{{ comment.date}}</p>
-                        <a href="#">Responder</a><br>
-                        <!--<a href="#">Denunciar comentário</a>-->
                         <p>{{ comment.comment }}</p>
                     </div>
                 </div>
+            <br>
             {% endfor %}
 
-
-            <form action="/schools/profile/1/comment/" method="POST">
-                {% csrf_token %}
-                {{ form.comment }}
-                <div hidden>{{ form.user }}</div>
-                <div hidden>{{ form.school }}</div>
-                <button class="btn btn-danger">Post comment</button>
-            </form>
+            <br>
+            {% if already_studied_here %}
+                <form action="{% url 'schools:school-profile-comment' object.id%}"
+                      method="POST">
+                    {% csrf_token %}
+                    {{ form.comment }}
+                    <div hidden>{{ form.user }}</div>
+                    <div hidden>{{ form.school }}</div>
+                    <button class="btn btn-danger pull-right">Post comment</button>
+                </form>
+            {% endif %}
         </div>
     </section>
 {% endblock main %}
