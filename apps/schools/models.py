@@ -222,6 +222,10 @@ class School(models.Model):
     def videos(self):
         return self.videos_set.get_queryset()
 
+    @property
+    def ratings_count(self):
+        return self.ratings_set.get_queryset().count()
+
     def __str__(self):
         return self.name
 

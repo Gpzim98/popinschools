@@ -62,7 +62,10 @@
             <img src="{{ school.get_image}}" alt="{{ school.name }}">
         </a>
         <h2><a href="profile/{{ school.id }}">{{ school }}</a></h2>
-        <div class="school-rating">{{ school.ratings }}</div>
+        <div class="school-rating"  data-toggle="modal"
+                 data-target="#myModal">{{ school.ratings }}</div>
+        ({{school.ratings_count}}
+        Rates)
         <ul>
             {% for id, categorie in categories %}
             <li>
@@ -71,6 +74,64 @@
             </li>
             {% endfor %}
         </ul>
+
+                <span>Wifi free
+                {% if school.accomodation.wifi_free %}
+                    <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
+                {% else %}
+                    <img src="{% static 'assets/img/right-arrow-disable.png' %}" alt="">
+                {% endif %}|
+                </span>
+
+
+                <span>Lunch influded
+                    {% if school.accomodation.is_lunch_included %}
+                    <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
+                    {% else %}
+                    <img src="{% static 'assets/img/right-arrow-disable.png' %}" alt="">
+                    {% endif %}|
+                </span>
+
+                <span>Breakfast
+                    {% if school.accomodation.is_beakfest_included %}
+                    <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
+                    {% else %}
+                    <img src="{% static 'assets/img/right-arrow-disable.png' %}" alt="">
+                    {% endif %}|
+                </span>
+
+                <span>Dinner included
+                    {% if object.accomodation.is_dinner_included %}
+                    <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
+                    {% else %}
+                    <img src="{% static 'assets/img/right-arrow-disable.png' %}" alt="">
+                    {% endif %}|
+                </span>
+
+                <span>TV in the Bedroom
+
+                {% if object.accomodation.is_tv_in_the_bedroom %}
+                <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
+                {% else %}
+                <img src="{% static 'assets/img/right-arrow-disable.png' %}" alt="">
+                {% endif %}|
+                </span>
+
+                <span>Wardrobe
+                {% if object.accomodation.is_wardrobe_in_the_bedroom %}
+                <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
+                {% else %}
+                <img src="{% static 'assets/img/right-arrow-disable.png' %}" alt="">
+                {% endif %}|
+                </span>
+
+                <span>Air conditioning
+                {% if object.accomodation.is_air_in_the_badroom %}
+                <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
+                {% else %}
+                <img src="{% static 'assets/img/right-arrow-disable.png' %}" alt="">
+                {% endif %}
+                </span>
 
         <p>{{ school.short_phrase|default_if_none:"" }}</p>
     </div>

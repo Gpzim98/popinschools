@@ -70,6 +70,9 @@
         <section id="search">
             <div class="content search-content">
                 <h1>Escolha a melhor escola para você</h1>
+                <p>{{schools}} Schools registered,  more than {{ratings}}
+                    comments and {{ users }} using the platform
+                </p>
                 <div class="search-box">
                     <form action="{% url 'schools:school-list' %}" method="GET">
                         <input type="text" name="country" id="id_country" placeholder="Em qual país você quer estudar">

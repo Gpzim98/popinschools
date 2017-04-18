@@ -1167,6 +1167,10 @@ footer {
     background-color: #8c8c8c;
     color: white;
 }
+
+#profile-photo {
+    margin-top: 5%;
+}
 /* End school profile stuffs */
 
 @media screen and (max-width: 621px){
@@ -1299,6 +1303,9 @@ footer {
         text-align: center;
     }
 
+    #profile-photo {
+        margin-top: 15%;
+    }
 
     /* School profile stuffs */
     .info-grid {
@@ -1596,6 +1603,11 @@ footer {
     #school-form button {
         width: 55%;
     }
+
+    #profile-photo {
+        margin-top: 9%;
+    }
+
 }
 
 .modal-header h4 {

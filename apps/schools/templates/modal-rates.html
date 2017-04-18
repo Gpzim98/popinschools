@@ -1,0 +1,194 @@
+{% load static from staticfiles %}
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+          <h4><img src="{{ object.get_image }}" alt="{{ object.name }}"
+               width="100px" > Ratings for {{ object.name }}</h4>
+      </div>
+
+      <div class="modal-body">
+        <section class="content" id="table">
+            <table>
+                <tbody><tr>
+                    <td>Atividades Extras</td>
+                    <td>
+                        <img width="70%"
+                             src="{% static 'assets/img/smile-01.png' %}" alt="">
+                    </td>
+                    <td>
+                        <img width="70%"
+                             src="{% static 'assets/img/smile-02.png' %}" alt="">
+                    </td>
+                    <td>
+                        <img width="70%"
+                             src="{% static 'assets/img/smile-03.png' %}" alt="">
+                    </td>
+                    <td>
+                        <img width="70%"
+                             src="{% static 'assets/img/smile-04.png' %}" alt="">
+                    </td>
+                    <td>
+                        <img width="70%"
+                             src="{% static 'assets/img/smile-10.png' %}"
+                             alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mix de nacionalidades</td>
+                    <td>
+                        <img width="70%"
+                             src="{% static 'assets/img/smile-01.png' %}" alt="">
+                    </td>
+                    <td>
+                        <img width="70%"
+                             src="{% static 'assets/img/smile-02.png' %}" alt="">
+                    </td>
+                    <td>
+                        <img width="70%"
+                             src="{% static 'assets/img/smile-08.png' %}"
+                             alt="">
+                    </td>
+                    <td>
+                        <img width="70%"
+                             src="{% static 'assets/img/smile-04.png' %}" alt="">
+                    </td>
+                    <td>
+                        <img width="70%"
+                             src="{% static 'assets/img/smile-05.png' %}"
+                             alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Estrutura</td>
+                                        <td>
+                        <img width="70%"
+                             src="{% static 'assets/img/smile-06.png' %}"
+                             alt="">
+                    </td>
+                    <td>
+                        <img width="70%"
+                             src="{% static 'assets/img/smile-02.png' %}" alt="">
+                    </td>
+                    <td>
+                        <img width="70%"
+                             src="{% static 'assets/img/smile-08.png' %}"
+                             alt="">
+                    </td>
+                    <td>
+                        <img width="70%"
+                             src="{% static 'assets/img/smile-04.png' %}" alt="">
+                    </td>
+                    <td>
+                        <img width="70%"
+                             src="{% static 'assets/img/smile-05.png' %}"
+                             alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Localização</td>
+                    <td>
+                        <img width="70%"
+                             src="{% static 'assets/img/smile-01.png' %}" alt="">
+                    </td>
+                    <td>
+                        <img width="70%"
+                             src="{% static 'assets/img/smile-07.png' %}"
+                             alt="">
+                    </td>
+                    <td>
+                        <img width="70%"
+                             src="{% static 'assets/img/smile-03.png' %}" alt="">
+                    </td>
+                    <td>
+                        <img width="70%"
+                             src="{% static 'assets/img/smile-04.png' %}" alt="">
+                    </td>
+                    <td>
+                        <img width="70%"
+                             src="{% static 'assets/img/smile-05.png' %}"
+                             alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Custo vs Benefício</td>
+                    <td>
+                        <img width="70%"
+                             src="{% static 'assets/img/smile-06.png' %}"
+                             alt="">
+                    </td>
+                    <td>
+                        <img width="70%"
+                             src="{% static 'assets/img/smile-02.png' %}" alt="">
+                    </td>
+                    <td>
+                        <img width="70%"
+                             src="{% static 'assets/img/smile-03.png' %}" alt="">
+                    </td>
+                    <td>
+                        <img width="70%"
+                             src="{% static 'assets/img/smile-04.png' %}" alt="">
+                    </td>
+                    <td>
+                        <img width="70%"
+                             src="{% static 'assets/img/smile-05.png' %}"
+                             alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Metodologia</td>
+                    <td>
+                        <img width="70%"
+                             src="{% static 'assets/img/smile-06.png' %}"
+                             alt="">
+                    </td>
+                    <td>
+                        <img width="70%"
+                             src="{% static 'assets/img/smile-02.png' %}" alt="">
+                    </td>
+                    <td>
+                        <img width="70%"
+                             src="{% static 'assets/img/smile-03.png' %}" alt="">
+                    </td>
+                    <td>
+                        <img width="70%"
+                             src="{% static 'assets/img/smile-04.png' %}" alt="">
+                    </td>
+                    <td>
+                        <img width="70%"
+                             src="{% static 'assets/img/smile-10.png' %}"
+                             alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Atendimento</td>
+                    <td>
+                        <img width="70%"
+                             src="{% static 'assets/img/smile-01.png' %}" alt="">
+                    </td>
+                    <td>
+                        <img width="70%"
+                             src="{% static 'assets/img/smile-02.png' %}" alt="">
+                    </td>
+                    <td>
+                        <img width="70%"
+                             src="{% static 'assets/img/smile-03.png' %}" alt="">
+                    </td>
+                    <td>
+                        <img width="70%"
+                             src="{% static 'assets/img/smile-09.png' %}"
+                             alt="">
+                    </td>
+                    <td>
+                        <img width="70%"
+                             src="{% static 'assets/img/smile-05.png' %}"
+                             alt="">
+                    </td>
+                </tr>
+            </tbody></table>
+        </section>
+      </div>
