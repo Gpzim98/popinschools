@@ -5,7 +5,6 @@ from ..utils.rating_categories import RATINGS_CATEGORIES
 from ..profile.models import Profile
 from django.db.models import Avg
 
-
 from apps.adresses.models import Address
 
 
