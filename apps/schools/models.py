@@ -196,6 +196,11 @@ class School(models.Model):
         blank=True
     )
 
+    work_time = models.CharField(
+        max_length=300, verbose_name=_('Working time'),
+        help_text=_('Inform the working time'), blank=True, null=True
+        )
+
     embeded_map = models.TextField()
 
     accomodation = models.ForeignKey(

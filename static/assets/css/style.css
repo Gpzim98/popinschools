@@ -238,7 +238,9 @@ header #social-top ul li a img {
 
 .search-box button {
     float: left;
-    margin-top: 3%;
+    margin-top: 14%;
+    margin-right: 5px;
+    width: 90%;
 }
 
 main {
@@ -278,14 +280,13 @@ section#search .search-box form {
 }
 
 section#search .search-box input[type='text'] {
-    padding: 5px;
     font-size: 1em;
     font-weight: bold;
     height: 40%;
-    width: 65%;
+    width: 90%;
     float: left;
     border-radius: 5px;
-    margin: 3% 1% 2% 2%;
+    margin: 5% 1% 2% 5%;
     background: #fff url('../img/find.png') no-repeat right;
     background-size: 30px 30px;
     background-position: 98%;
@@ -296,7 +297,7 @@ section#search .search-box input[type='text'] {
     color: white;
     font-size: 85%;
     padding: 15px 30px;
-    width: 28%;
+    width: 90%;
     height: 52%;
 }
 
@@ -456,8 +457,6 @@ section #container {
 
 #profile-form button {
     float: right;
-    margin-bottom: 20px;
-    margin-right: 3%;
 }
 
 #profile ul {
@@ -817,7 +816,7 @@ footer {
 
 #profile-basics {
     position: absolute;
-    width: 30%;
+    width: 70%;
     height: 20%;
     left: 37%;
 }
@@ -1222,6 +1221,11 @@ footer {
         width: 95%;
     }
 
+    .search-box button {
+        margin-top: 0;
+        margin-left: 7%;
+    }
+
     #logo, #logo-home {
         width: 25%;
         height: 95px;
@@ -1236,7 +1240,7 @@ footer {
     }
 
     #search {
-        height: 250px;
+        height: 300px;
     }
 
     #schools {
@@ -1261,7 +1265,7 @@ footer {
 
     #search .search-box {
         width: 90%;
-        height: auto;
+        height: 50%;
         padding-bottom: 2%;
     }
 
@@ -1462,7 +1466,7 @@ footer {
 
     #search .search-box {
         width: 90%;
-        height: 30%;
+        height: 50%;
 
     }
 
@@ -1495,19 +1499,16 @@ footer {
         width: 70%;
     }
 
+    .search-box button {
+        margin-top: 15%;
+        margin-left: 5%;
+    }
+
     /* Testar no tamanho grande */
     #footer-home #container-footer .content h2 {
         width: 100%;
         margin-left: 0;
     }
-
-    section#search .search-box input[type='text'] {
-        padding: 0 0 0 3%;
-        height: 50%;
-        font-size: 1em;
-    }
-
-    /* Footer stuffs */
 
     /* Footer stufs */
     footer {

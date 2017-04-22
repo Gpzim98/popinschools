@@ -28,12 +28,12 @@
         <img src="{{ object.get_image }}" alt="Image profile">
         <div id="profile-basics">
             <h2>{{ object.name }}</h2>
-
             <div class="school-rating" data-toggle="modal"
                  data-target="#myModal">{{ object.ratings }}</div>
             <label>Ótima</label>
-            <p>{{ object.address }}</p>
-            <p>{{ object.phone }}</p>
+            <p>{{ object.address }} - Email: {{ object.admin_email }}</p>
+            <p>Phone: {{ object.phone }} - {{ object.work_time }}</p>
+            
         </div>
     </div>
     </section>
@@ -54,11 +54,11 @@
 
 
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-7">
                     <h3>Diferencials</h3>
                     <p>{{ object.accomodation.differentials }}</p>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-3">
                     <div class="panel panel-default">
                         <div class="panel-body">
                             {% if already_studied_here %}
