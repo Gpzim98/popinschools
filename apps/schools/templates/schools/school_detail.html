@@ -212,7 +212,11 @@
             {% for comment in comments %}
                 <div class="comment">
                     <div class="img-comment">
-                        <img src="{% static 'assets/img/square.png' %}" alt="">
+                        {% if comment.user.socialaccount_set.all.0.get_avatar_url %}
+                            <img src="{{ comment.user.socialaccount_set.all.0.get_avatar_url }}" width="15%;" style="float:right"/>
+                        {% else %}
+                            <img src="{% static 'assets/img/square.png' %}" alt="">
+                        {% endif %}
                     </div>
                     <div class="comment-content">
                         <h3>{{ comment.user }}</h3>
