@@ -212,8 +212,8 @@
             {% for comment in comments %}
                 <div class="comment">
                     <div class="img-comment">
-                        {% if comment.user.socialaccount_set.all.0.get_avatar_url %}
-                            <img src="{{ comment.user.socialaccount_set.all.0.get_avatar_url }}" width="15%;" style="float:right"/>
+                        {% if comment.user.user.socialaccount_set.all.0.get_avatar_url %}
+                            <img src="{{ comment.user.user.socialaccount_set.all.0.get_avatar_url }}"/>
                         {% else %}
                             <img src="{% static 'assets/img/square.png' %}" alt="">
                         {% endif %}

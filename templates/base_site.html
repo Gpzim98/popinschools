@@ -32,7 +32,7 @@
 
         <div id="login">
             {% if user.is_authenticated %}
-                <img src="{{ request.user.socialaccount_set.all.0.get_avatar_url }}" width="15%;" style="float:right"/>
+                <img src="{{ request.user.socialaccount_set.all.0.get_avatar_url }}" width="10%;" style="float:right; margin: 2% 2% 0;"/>
                 <a href="{% url 'account_logout' %}"
                    class="btn btn-login login-icon-white btn-login-hover btn-header">
                     FAZER LOGOUT
