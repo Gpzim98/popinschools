@@ -50,13 +50,11 @@
 
             <div id="login">
                 {% if user.is_authenticated %}
+                    <img src="{{{ request.user.socialaccount_set.all.0.get_avatar_url }}" width="15%;" style="float:right"/>
                     <a href="{% url 'account_logout' %}" class="btn btn-login btn-color-home btn-header">
                         FAZER LOGOUT
                     </a>
-                    <h3 class="btn btn-login btn-color-home btn-header">
-                        Seja bem vindo {{ request.user.first_name }}
-                        <img src="{{ request.user.socialaccount_set.all.0.get_avatar_url }}" />
-                    </h3>
+                    <!--<img src="{{ request.user.socialaccount_set.all.0.get_avatar_url }}" />-->
                 {% else %}
                     <a href="{% url 'account_login' %}" class="btn btn-login btn-color-home btn-header">
                         FAZER LOGIN
