@@ -60,6 +60,7 @@
 </main>
 
 <footer>
+  
     <div class="content">
         <div id="stores">
             <a href="{% url 'core:homepage' %}">
@@ -80,16 +81,10 @@
         </div>
 
         <div id="twitter">
-            <h4>TWITTER</h4>
-            <ul>
-                <li>
-                    <p>@someone Loren ipsun Loren ipsun Loren ipsun Loren ipsun</p>
-                </li>
-
-                <li>
-                    <p>@someone_else Loren ipsun Loren ipsun Loren ipsun Loren ipsun</p>
-                </li>
-            </ul>
+            <a class="twitter-timeline"
+                href="https://twitter.com/popinschool" data-tweet-limit="3"
+                data-chrome="nofooter noborders">
+            </a>
         </div>
 
         <div id="social">
@@ -157,4 +152,21 @@
   ga('send', 'pageview');
 
 </script>
+
+<script>window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+
+    t._e = [];
+    t.ready = function(f) {
+        t._e.push(f);
+    };
+
+    return t;
+}(document, "script", "twitter-wjs"));</script>
 </body>

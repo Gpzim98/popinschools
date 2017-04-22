@@ -90,6 +90,7 @@ select {
 .content {
   width: 70%;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .btn {
@@ -495,7 +496,17 @@ footer {
 
 #twitter, #social, #quicklinks {
     float: left;
-    width: 17%;
+    width: 25%;
+}
+
+#social {
+    float: left;
+    width: 15%;
+}
+
+#quicklinks {
+    float: left;
+    width: 15%;
 }
 
 /* End footer stuffs*/
@@ -504,7 +515,7 @@ footer {
 /* Footer Store stuffs*/
 
 #stores {
-    width: 35%;
+    width: 30%;
     float: left;
     margin-right: 2%;
 }
@@ -527,7 +538,7 @@ footer {
 /* Quick links stuffs*/
 
 #quicklinks {
-    margin-right: 5%;
+    margin-right: 1%;
 }
 
 #quicklinks ul li {
@@ -556,7 +567,8 @@ footer {
 
 /* Footer Twitter stuffs  */
 #twitter {
-    margin-right: 5%;
+    margin-right: 1%;
+    max-height: 250px;
 }
 
 #twitter h4 {
