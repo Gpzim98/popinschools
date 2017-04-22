@@ -32,21 +32,21 @@
 
         <div id="login">
             {% if user.is_authenticated %}
+                <img src="{{ request.user.socialaccount_set.all.0.get_avatar_url }}" width="15%;" style="float:right"/>
                 <a href="{% url 'account_logout' %}"
                    class="btn btn-login login-icon-white btn-login-hover btn-header">
                     FAZER LOGOUT
                 </a>
             {% else %}
+                <a href="{% url 'account_signup' %}"
+                    class="btn btn-create-profile create-profile-icon-white btn-profile-hover btn-header">
+                    CRIE SEU PERFIL
+                </a>
                 <a href="{% url 'account_login' %}"
                    class="btn btn-login login-icon-white btn-login-hover btn-header">
                     FAZER LOGIN
                 </a>
             {% endif %}
-            <!--Verificar por que o URL dispatch não esta funcionando e tiar URL hard coded-->
-            <a href="{% url 'account_signup' %}"
-               class="btn btn-create-profile create-profile-icon-white btn-profile-hover btn-header">
-                CRIE SEU PERFIL
-            </a>
         </div>
     </div>
     {% block navigation %}
