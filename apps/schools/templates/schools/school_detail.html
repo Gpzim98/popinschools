@@ -1,5 +1,7 @@
 {% extends 'base_site.html' %}
 
+{% load i18n %}
+
 {% load static from staticfiles %}
 
 {% block css %}
@@ -23,16 +25,16 @@
     <div class="map">
         {{ object.embeded_map|safe }}
     </div>
-    <h1 hidden>School detail - Popinschools</h1>
+    <h1 hidden>{% trans 'School detail - Popinschools' %}</h1>
     <div id="profile-photo" class="content">
         <img src="{{ object.get_image }}" alt="Image profile">
         <div id="profile-basics">
             <h2>{{ object.name }}</h2>
             <div class="school-rating" data-toggle="modal"
                  data-target="#myModal">{{ object.ratings }}</div>
-            <label>Ótima</label>
+            <label>{% trans 'Ótima' %}</label>
             <p>{{ object.address }} - Email: {{ object.admin_email }}</p>
-            <p>Phone: {{ object.phone }} - {{ object.work_time }}</p>
+            <p>{% trans 'Phone:' %} {{ object.phone }} - {{ object.work_time }}</p>
             
         </div>
     </div>
@@ -41,7 +43,9 @@
     {% include 'modal-rates.html' %}
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">
+            {% trans 'Close' %}
+        </button>
       </div>
 
     </div>
@@ -55,7 +59,7 @@
 
             <div class="row">
                 <div class="col-md-7">
-                    <h3>Diferencials</h3>
+                    <h3>{% trans 'Diferencials' %}</h3>
                     <p>{{ object.accomodation.differentials }}</p>
                 </div>
                 <div class="col-md-3">
@@ -64,58 +68,60 @@
                             {% if already_studied_here %}
                                 <img src="{% static 'assets/img/arrow-right.png' %}"
                                      alt="Já estudei aqui">
-                                <span class="badge">Já estudei nesta escola</span><br>
+                                <span class="badge">{% trans 'I already estudied here'%}</span><br>
 
                             {% else %}
                                 <img src="{% static 'assets/img/right-arrow-disable.png' %}"
                                      alt="Já estudei aqui">
-                                <span class="badge">Nunca estudei nesta escola</span><br>
+                                <span class="badge">
+                                    {% trans 'I have never studied here' %}</span><br>
                             {% endif %}
                             <a href="{% url 'schools:school-profile-alreadystdhere' object.id %}">
-                            <button class="btn btn-danger">Altera</button></a>
+                            <button class="btn btn-danger">
+                                {% trans 'Change' %}</button></a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <h3>Descrição da escola</h3>
+            <h3>{% trans 'School description' %}</h3>
             <p>{{ object.short_phrase }}</p>
 
             <div class="info-grid">
-                <h3>Course and Fees</h3>
+                <h3>{% trans 'Course and Fees' %}</h3>
                 <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
-                <p>Acreditation or Enrolmente fee</p>
+                <p>{% trans 'Acreditation or Enrolmente fee' %}</p>
                 <p>€ {{ object.registration_fee }}</p>
                 <br>
                 <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
-                <p>Workbook</p>
+                <p>{% trans 'Workbook' %}</p>
                 <p>€ {{ object.workbook}}</p>
                 <br>
                 <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
-                <p>Refounds</p>
+                <p>{% trans 'Refounds' %}</p>
                 <p>€ {{ object.refounds }}</p>
             </div>
 
             <div class="info-grid price">
-                <h3>Price</h3>
+                <h3>{% trans 'Price' %}</h3>
                 <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
-                <p>Low season</p>
+                <p>{% trans 'Low season' %}</p>
                 <p>{{ object.low_season }}</p>
                 <br>
                 <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
-                <p>High season</p>
+                <p>{% trans 'High season' %}</p>
                 <p> {{ object.high_season }} </p>
             </div>
 
             <div class="info-grid">
-                <h3>Student accomodation</h3>
+                <h3>{% trans 'Student accomodation' %}</h3>
 
                 {% if object.accomodation.wifi_free %}
                 <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
                 {% else %}
                 <img src="{% static 'assets/img/right-arrow-disable.png' %}" alt="">
                 {% endif %}
-                <p>Registration free</p><br>
+                <p>{% trans 'Registration free' %}</p><br>
 
 
                 {% if object.accomodation.wifi_free %}
@@ -123,7 +129,7 @@
                 {% else %}
                 <img src="{% static 'assets/img/right-arrow-disable.png' %}" alt="">
                 {% endif %}
-                <p>Wifi free</p><br>
+                <p>{% trans 'Wifi free' %}</p><br>
 
                 <br>
                 <br>
@@ -133,21 +139,21 @@
                 {% else %}
                 <img src="{% static 'assets/img/right-arrow-disable.png' %}" alt="">
                 {% endif %}
-                <p>Lunch included</p><br>
+                <p>{% trans 'Lunch included' %}</p><br>
 
                 {% if object.accomodation.is_beakfest_included %}
                 <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
                 {% else %}
                 <img src="{% static 'assets/img/right-arrow-disable.png' %}" alt="">
                 {% endif %}
-                <p>Breackfast</p>
+                <p>{% trans 'Breackfast' %}</p>
 
                 {% if object.accomodation.is_dinner_included %}
                 <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
                 {% else %}
                 <img src="{% static 'assets/img/right-arrow-disable.png' %}" alt="">
                 {% endif %}
-                <p>Dinner</p>
+                <p>{% trans 'Dinner' %}</p>
 
                 <br>
 
@@ -156,21 +162,21 @@
                 {% else %}
                 <img src="{% static 'assets/img/right-arrow-disable.png' %}" alt="">
                 {% endif %}
-                <p>TV in the Bedroom</p>
+                <p>{% trans 'TV in the Bedroom' %}</p>
 
                 {% if object.accomodation.is_wardrobe_in_the_bedroom %}
                 <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
                 {% else %}
                 <img src="{% static 'assets/img/right-arrow-disable.png' %}" alt="">
                 {% endif %}
-                <p>Wardrobe</p>
+                <p>{% trans 'Wardrobe' %}</p>
 
                 {% if object.accomodation.is_air_in_the_badroom %}
                 <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
                 {% else %}
                 <img src="{% static 'assets/img/right-arrow-disable.png' %}" alt="">
                 {% endif %}
-                <p>Air conditioning</p>
+                <p>{% trans 'Air conditioning' %}</p>
 
                 <br>
                 <br>
@@ -178,7 +184,7 @@
             </div>
 
              <div class="info-grid-3">
-                 <h3>List of events and prices</h3>
+                 <h3>{% trans 'List of events and prices' %}</h3>
                  {% for event in object.events %}
                      <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
                      <p>{{ event.week_day }}</p>
@@ -200,7 +206,7 @@
         <!--</div>-->
 
         <div class="video-galery content">
-            <h3>Galeria de vídeos</h3>
+            <h3>{% trans 'Videos galery' %}</h3>
             {% for video in object.videos %}
                 {{ video.embeded_code|safe }}
             {% endfor %}
@@ -208,10 +214,10 @@
 
         <div class="content">
 
-            <h3>Comentários</h3>
+            <h3>{% trans 'Comments' %}</h3>
             {% for comment in comments %}
                 <div class="comment">
-                    <div class="img-comment">
+                    <div class="img-comment">o
                         {% if comment.user.user.socialaccount_set.all.0.get_avatar_url %}
                             <img src="{{ comment.user.user.socialaccount_set.all.0.get_avatar_url }}"/>
                         {% else %}
@@ -235,7 +241,8 @@
                     {{ form.comment }}
                     <div hidden>{{ form.user }}</div>
                     <div hidden>{{ form.school }}</div>
-                    <button class="btn btn-danger pull-right">Post comment</button>
+                    <button class="btn btn-danger pull-right">{% trans 'Post comment'
+                        %}</button>
                 </form>
             {% endif %}
         </div>

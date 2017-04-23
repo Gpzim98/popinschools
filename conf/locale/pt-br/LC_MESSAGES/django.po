@@ -1,0 +1,1597 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-04-23 23:32+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: apps/schools/models.py:20
+msgid "Is BreakFeast included?"
+msgstr ""
+
+#: apps/schools/models.py:21
+msgid "Is BreakFest Included?"
+msgstr ""
+
+#: apps/schools/models.py:26
+msgid "Is Lunch included?"
+msgstr ""
+
+#: apps/schools/models.py:27
+msgid "Is lunch Included?"
+msgstr ""
+
+#: apps/schools/models.py:32
+msgid "Is Dinner Included?"
+msgstr ""
+
+#: apps/schools/models.py:33
+msgid "Is dinner Included?"
+msgstr ""
+
+#: apps/schools/models.py:38 apps/schools/models.py:39
+msgid "Do you have a tv in the bedroom?"
+msgstr ""
+
+#: apps/schools/models.py:44 apps/schools/models.py:45
+msgid "Do you have a wardrobe in the bedroom?"
+msgstr ""
+
+#: apps/schools/models.py:50 apps/schools/models.py:51
+msgid "Do you have a air conditioning in the bedroom?"
+msgstr ""
+
+#: apps/schools/models.py:56
+msgid "Period of stay in"
+msgstr ""
+
+#: apps/schools/models.py:57
+msgid "Time of acomodation"
+msgstr ""
+
+#: apps/schools/models.py:62 apps/schools/models.py:63
+msgid "Do you have free wifi?"
+msgstr ""
+
+#: apps/schools/models.py:68 apps/schools/models.py:70
+msgid "How much time it take from the school?"
+msgstr ""
+
+#: apps/schools/models.py:74
+msgid "Tell Me about your differentials"
+msgstr ""
+
+#: apps/schools/models.py:75
+msgid "What is your accomodation's differential"
+msgstr ""
+
+#: apps/schools/models.py:99
+msgid "School Name"
+msgstr ""
+
+#: apps/schools/models.py:106
+msgid "Upload o logo do seu computador"
+msgstr ""
+
+#: apps/schools/models.py:111
+msgid "Informe o endereço da escola"
+msgstr ""
+
+#: apps/schools/models.py:115
+msgid "Youtube Channel"
+msgstr ""
+
+#: apps/schools/models.py:116
+msgid "Set the link for yout youtube channel or video"
+msgstr ""
+
+#: apps/schools/models.py:121 apps/schools/models.py:122
+msgid "Facebook Page"
+msgstr ""
+
+#: apps/schools/models.py:127
+msgid "WebSite"
+msgstr ""
+
+#: apps/schools/models.py:128
+msgid "Your website"
+msgstr ""
+
+#: apps/schools/models.py:133
+msgid "Instagram"
+msgstr ""
+
+#: apps/schools/models.py:135
+msgid "Instagram profile"
+msgstr ""
+
+#: apps/schools/models.py:139
+msgid "Email"
+msgstr ""
+
+#: apps/schools/models.py:142
+msgid "Email de contato da escola"
+msgstr ""
+
+#: apps/schools/models.py:146
+msgid "telefone"
+msgstr ""
+
+#: apps/schools/models.py:149
+msgid "Ex.: +55 11 91001 0101"
+msgstr ""
+
+#: apps/schools/models.py:153 apps/schools/models.py:155
+msgid "Registration Fee Price"
+msgstr ""
+
+#: apps/schools/models.py:163
+msgid "Workbook Price"
+msgstr ""
+
+#: apps/schools/models.py:165
+msgid "HWorkbook Price"
+msgstr ""
+
+#: apps/schools/models.py:173
+msgid "Redounds"
+msgstr ""
+
+#: apps/schools/models.py:175
+#: apps/schools/templates/schools/school_detail.html:101
+msgid "Refounds"
+msgstr ""
+
+#: apps/schools/models.py:183 apps/schools/models.py:185
+#: apps/schools/templates/schools/school_detail.html:108
+msgid "Low season"
+msgstr ""
+
+#: apps/schools/models.py:191 apps/schools/models.py:193
+#: apps/schools/templates/schools/school_detail.html:112
+msgid "High season"
+msgstr ""
+
+#: apps/schools/models.py:199
+msgid "Working time"
+msgstr ""
+
+#: apps/schools/models.py:200
+msgid "Inform the working time"
+msgstr ""
+
+#: apps/schools/models.py:263 apps/schools/models.py:285
+msgid "Domingo"
+msgstr ""
+
+#: apps/schools/models.py:264 apps/schools/models.py:286
+msgid "Segunda-feira"
+msgstr ""
+
+#: apps/schools/models.py:265 apps/schools/models.py:287
+msgid "Terça-feira"
+msgstr ""
+
+#: apps/schools/models.py:266 apps/schools/models.py:288
+msgid "Quarta-feira"
+msgstr ""
+
+#: apps/schools/models.py:267 apps/schools/models.py:289
+msgid "Quinta-feira"
+msgstr ""
+
+#: apps/schools/models.py:268
+msgid "Sexta"
+msgstr ""
+
+#: apps/schools/models.py:269 apps/schools/models.py:291
+msgid "Sábado"
+msgstr ""
+
+#: apps/schools/models.py:275
+msgid "Dia da semana"
+msgstr ""
+
+#: apps/schools/models.py:290
+msgid "Sexta-feira"
+msgstr ""
+
+#: apps/schools/models.py:310
+msgid "Ratings"
+msgstr ""
+
+#: apps/schools/models.py:315
+msgid "How many Stars Do you think this school diserve?"
+msgstr ""
+
+#: apps/schools/models.py:319
+msgid "Why this note?"
+msgstr ""
+
+#: apps/schools/models.py:321
+msgid "Why Would you like to do this rating?"
+msgstr ""
+
+#: apps/schools/templates/schools/school_detail.html:28
+msgid "School detail - Popinschools"
+msgstr ""
+
+#: apps/schools/templates/schools/school_detail.html:35
+msgid "Ótima"
+msgstr ""
+
+#: apps/schools/templates/schools/school_detail.html:37
+msgid "Phone:"
+msgstr ""
+
+#: apps/schools/templates/schools/school_detail.html:47
+msgid "Close"
+msgstr ""
+
+#: apps/schools/templates/schools/school_detail.html:62
+msgid "Diferencials"
+msgstr ""
+
+#: apps/schools/templates/schools/school_detail.html:71
+msgid "I already estudied here"
+msgstr ""
+
+#: apps/schools/templates/schools/school_detail.html:77
+msgid "I have never studied here"
+msgstr ""
+
+#: apps/schools/templates/schools/school_detail.html:81
+msgid "Change"
+msgstr ""
+
+#: apps/schools/templates/schools/school_detail.html:87
+msgid "School description"
+msgstr ""
+
+#: apps/schools/templates/schools/school_detail.html:91
+msgid "Course and Fees"
+msgstr ""
+
+#: apps/schools/templates/schools/school_detail.html:93
+msgid "Acreditation or Enrolmente fee"
+msgstr ""
+
+#: apps/schools/templates/schools/school_detail.html:97
+msgid "Workbook"
+msgstr ""
+
+#: apps/schools/templates/schools/school_detail.html:106
+#: apps/schools/templates/schools/school_list_aside.html:24
+msgid "Price"
+msgstr ""
+
+#: apps/schools/templates/schools/school_detail.html:117
+msgid "Student accomodation"
+msgstr ""
+
+#: apps/schools/templates/schools/school_detail.html:124
+msgid "Registration free"
+msgstr ""
+
+#: apps/schools/templates/schools/school_detail.html:132
+#: apps/schools/templates/schools/school_list.html:92
+msgid "Wifi free"
+msgstr ""
+
+#: apps/schools/templates/schools/school_detail.html:142
+msgid "Lunch included"
+msgstr ""
+
+#: apps/schools/templates/schools/school_detail.html:149
+msgid "Breackfast"
+msgstr ""
+
+#: apps/schools/templates/schools/school_detail.html:156
+msgid "Dinner"
+msgstr ""
+
+#: apps/schools/templates/schools/school_detail.html:165
+#: apps/schools/templates/schools/school_list.html:125
+msgid "TV in the Bedroom"
+msgstr ""
+
+#: apps/schools/templates/schools/school_detail.html:172
+#: apps/schools/templates/schools/school_list.html:134
+msgid "Wardrobe"
+msgstr ""
+
+#: apps/schools/templates/schools/school_detail.html:179
+#: apps/schools/templates/schools/school_list.html:142
+msgid "Air conditioning"
+msgstr ""
+
+#: apps/schools/templates/schools/school_detail.html:187
+msgid "List of events and prices"
+msgstr ""
+
+#: apps/schools/templates/schools/school_detail.html:209
+msgid "Videos galery"
+msgstr ""
+
+#: apps/schools/templates/schools/school_detail.html:217
+msgid "Comments"
+msgstr ""
+
+#: apps/schools/templates/schools/school_list.html:19
+#: apps/schools/templates/schools/school_list.html:27
+msgid "Values between"
+msgstr ""
+
+#: apps/schools/templates/schools/school_list.html:21
+#: apps/schools/templates/schools/school_list.html:30
+#: apps/schools/templates/schools/school_list.html:43
+#: apps/schools/templates/schools/school_list.html:52
+msgid "and"
+msgstr ""
+
+#: apps/schools/templates/schools/school_list.html:41
+#: apps/schools/templates/schools/school_list.html:49
+msgid "Ratings between"
+msgstr ""
+
+#: apps/schools/templates/schools/school_list.html:61
+#: templates/account/logout.html:8 templates/account/signup.html:9
+msgid "Home"
+msgstr ""
+
+#: apps/schools/templates/schools/school_list.html:62
+msgid "School search"
+msgstr ""
+
+#: apps/schools/templates/schools/school_list.html:71
+msgid "School filter - Popinschools"
+msgstr ""
+
+#: apps/schools/templates/schools/school_list.html:82
+msgid "Rates"
+msgstr ""
+
+#: apps/schools/templates/schools/school_list.html:101
+msgid "Lunch influded"
+msgstr ""
+
+#: apps/schools/templates/schools/school_list.html:109
+msgid "Breakfast"
+msgstr ""
+
+#: apps/schools/templates/schools/school_list.html:117
+msgid "Dinner included"
+msgstr ""
+
+#: apps/schools/templates/schools/school_list.html:154
+msgid "None schools matched with your search"
+msgstr ""
+
+#: apps/schools/templates/schools/school_list_aside.html:4
+msgid "Search filter"
+msgstr ""
+
+#: apps/schools/templates/schools/school_list_aside.html:8
+msgid "Country"
+msgstr ""
+
+#: apps/schools/templates/schools/school_list_aside.html:10
+msgid "City"
+msgstr ""
+
+#: apps/schools/templates/schools/school_list_aside.html:12
+msgid "Language"
+msgstr ""
+
+#: apps/schools/templates/schools/school_list_aside.html:18
+msgid "Classification"
+msgstr ""
+
+#: apps/schools/templates/schools/school_list_aside.html:29
+#: apps/schools/templates/schools/school_list_aside.html:31
+msgid "Visa"
+msgstr ""
+
+#: apps/schools/templates/schools/school_list_aside.html:32
+msgid "No"
+msgstr ""
+
+#: apps/schools/templates/schools/school_list_aside.html:44
+msgid "Morning"
+msgstr ""
+
+#: apps/schools/templates/schools/school_list_aside.html:47
+msgid "Afternoon"
+msgstr ""
+
+#: apps/schools/templates/schools/school_list_aside.html:50
+msgid "Night"
+msgstr ""
+
+#: apps/utils/countries.py:5
+msgid "Afghanistan"
+msgstr ""
+
+#: apps/utils/countries.py:6
+msgid "Åland Islands"
+msgstr ""
+
+#: apps/utils/countries.py:7
+msgid "Albania"
+msgstr ""
+
+#: apps/utils/countries.py:8
+msgid "Algeria"
+msgstr ""
+
+#: apps/utils/countries.py:9
+msgid "American Samoa"
+msgstr ""
+
+#: apps/utils/countries.py:10
+msgid "Andorra"
+msgstr ""
+
+#: apps/utils/countries.py:11
+msgid "Angola"
+msgstr ""
+
+#: apps/utils/countries.py:12
+msgid "Anguilla"
+msgstr ""
+
+#: apps/utils/countries.py:13
+msgid "Antarctica"
+msgstr ""
+
+#: apps/utils/countries.py:14
+msgid "Antigua and Barbuda"
+msgstr ""
+
+#: apps/utils/countries.py:15
+msgid "Argentina"
+msgstr ""
+
+#: apps/utils/countries.py:16
+msgid "Armenia"
+msgstr ""
+
+#: apps/utils/countries.py:17
+msgid "Aruba"
+msgstr ""
+
+#: apps/utils/countries.py:18
+msgid "Australia"
+msgstr ""
+
+#: apps/utils/countries.py:19
+msgid "Austria"
+msgstr ""
+
+#: apps/utils/countries.py:20
+msgid "Azerbaijan"
+msgstr ""
+
+#: apps/utils/countries.py:21
+msgid "Bahamas"
+msgstr ""
+
+#: apps/utils/countries.py:22
+msgid "Bahrain"
+msgstr ""
+
+#: apps/utils/countries.py:23
+msgid "Bangladesh"
+msgstr ""
+
+#: apps/utils/countries.py:24
+msgid "Barbados"
+msgstr ""
+
+#: apps/utils/countries.py:25
+msgid "Belarus"
+msgstr ""
+
+#: apps/utils/countries.py:26
+msgid "Belgium"
+msgstr ""
+
+#: apps/utils/countries.py:27
+msgid "Belize"
+msgstr ""
+
+#: apps/utils/countries.py:28
+msgid "Benin"
+msgstr ""
+
+#: apps/utils/countries.py:29
+msgid "Bermuda"
+msgstr ""
+
+#: apps/utils/countries.py:30
+msgid "Bhutan"
+msgstr ""
+
+#: apps/utils/countries.py:31
+msgid "Bolivia, Plurinational State of"
+msgstr ""
+
+#: apps/utils/countries.py:32
+msgid "Bosnia and Herzegovina"
+msgstr ""
+
+#: apps/utils/countries.py:33
+msgid "Botswana"
+msgstr ""
+
+#: apps/utils/countries.py:34
+msgid "Bouvet Island"
+msgstr ""
+
+#: apps/utils/countries.py:35
+msgid "Brazil"
+msgstr ""
+
+#: apps/utils/countries.py:36
+msgid "British Indian Ocean Territory"
+msgstr ""
+
+#: apps/utils/countries.py:37
+msgid "Brunei Darussalam"
+msgstr ""
+
+#: apps/utils/countries.py:38
+msgid "Bulgaria"
+msgstr ""
+
+#: apps/utils/countries.py:39
+msgid "Burkina Faso"
+msgstr ""
+
+#: apps/utils/countries.py:40
+msgid "Burundi"
+msgstr ""
+
+#: apps/utils/countries.py:41
+msgid "Cambodia"
+msgstr ""
+
+#: apps/utils/countries.py:42
+msgid "Cameroon"
+msgstr ""
+
+#: apps/utils/countries.py:43
+msgid "Canada"
+msgstr ""
+
+#: apps/utils/countries.py:44
+msgid "Cape Verde"
+msgstr ""
+
+#: apps/utils/countries.py:45
+msgid "Cayman Islands"
+msgstr ""
+
+#: apps/utils/countries.py:46
+msgid "Central African Republic"
+msgstr ""
+
+#: apps/utils/countries.py:47
+msgid "Chad"
+msgstr ""
+
+#: apps/utils/countries.py:48
+msgid "Chile"
+msgstr ""
+
+#: apps/utils/countries.py:49
+msgid "China"
+msgstr ""
+
+#: apps/utils/countries.py:50
+msgid "Christmas Island"
+msgstr ""
+
+#: apps/utils/countries.py:51
+msgid "Cocos (Keeling) Islands"
+msgstr ""
+
+#: apps/utils/countries.py:52
+msgid "Colombia"
+msgstr ""
+
+#: apps/utils/countries.py:53
+msgid "Comoros"
+msgstr ""
+
+#: apps/utils/countries.py:54
+msgid "Congo"
+msgstr ""
+
+#: apps/utils/countries.py:55
+msgid "Congo, The Democratic Republic of the"
+msgstr ""
+
+#: apps/utils/countries.py:56
+msgid "Cook Islands"
+msgstr ""
+
+#: apps/utils/countries.py:57
+msgid "Costa Rica"
+msgstr ""
+
+#: apps/utils/countries.py:58
+msgid "Côte D'ivoire"
+msgstr ""
+
+#: apps/utils/countries.py:59
+msgid "Croatia"
+msgstr ""
+
+#: apps/utils/countries.py:60
+msgid "Cuba"
+msgstr ""
+
+#: apps/utils/countries.py:61
+msgid "Cyprus"
+msgstr ""
+
+#: apps/utils/countries.py:62
+msgid "Czech Republic"
+msgstr ""
+
+#: apps/utils/countries.py:63
+msgid "Denmark"
+msgstr ""
+
+#: apps/utils/countries.py:64
+msgid "Djibouti"
+msgstr ""
+
+#: apps/utils/countries.py:65
+msgid "Dominica"
+msgstr ""
+
+#: apps/utils/countries.py:66
+msgid "Dominican Republic"
+msgstr ""
+
+#: apps/utils/countries.py:67
+msgid "Ecuador"
+msgstr ""
+
+#: apps/utils/countries.py:68
+msgid "Egypt"
+msgstr ""
+
+#: apps/utils/countries.py:69
+msgid "El Salvador"
+msgstr ""
+
+#: apps/utils/countries.py:70
+msgid "Equatorial Guinea"
+msgstr ""
+
+#: apps/utils/countries.py:71
+msgid "Eritrea"
+msgstr ""
+
+#: apps/utils/countries.py:72
+msgid "Estonia"
+msgstr ""
+
+#: apps/utils/countries.py:73
+msgid "Ethiopia"
+msgstr ""
+
+#: apps/utils/countries.py:74
+msgid "Falkland Islands (Malvinas)"
+msgstr ""
+
+#: apps/utils/countries.py:75
+msgid "Faroe Islands"
+msgstr ""
+
+#: apps/utils/countries.py:76
+msgid "Fiji"
+msgstr ""
+
+#: apps/utils/countries.py:77
+msgid "Finland"
+msgstr ""
+
+#: apps/utils/countries.py:78
+msgid "France"
+msgstr ""
+
+#: apps/utils/countries.py:79
+msgid "French Guiana"
+msgstr ""
+
+#: apps/utils/countries.py:80
+msgid "French Polynesia"
+msgstr ""
+
+#: apps/utils/countries.py:81
+msgid "French Southern Territories"
+msgstr ""
+
+#: apps/utils/countries.py:82
+msgid "Gabon"
+msgstr ""
+
+#: apps/utils/countries.py:83
+msgid "Gambia"
+msgstr ""
+
+#: apps/utils/countries.py:84
+msgid "Georgia"
+msgstr ""
+
+#: apps/utils/countries.py:85
+msgid "Germany"
+msgstr ""
+
+#: apps/utils/countries.py:86
+msgid "Ghana"
+msgstr ""
+
+#: apps/utils/countries.py:87
+msgid "Gibraltar"
+msgstr ""
+
+#: apps/utils/countries.py:88
+msgid "Greece"
+msgstr ""
+
+#: apps/utils/countries.py:89
+msgid "Greenland"
+msgstr ""
+
+#: apps/utils/countries.py:90
+msgid "Grenada"
+msgstr ""
+
+#: apps/utils/countries.py:91
+msgid "Guadeloupe"
+msgstr ""
+
+#: apps/utils/countries.py:92
+msgid "Guam"
+msgstr ""
+
+#: apps/utils/countries.py:93
+msgid "Guatemala"
+msgstr ""
+
+#: apps/utils/countries.py:94
+msgid "Guernsey"
+msgstr ""
+
+#: apps/utils/countries.py:95
+msgid "Guinea"
+msgstr ""
+
+#: apps/utils/countries.py:96
+msgid "Guinea-bissau"
+msgstr ""
+
+#: apps/utils/countries.py:97
+msgid "Guyana"
+msgstr ""
+
+#: apps/utils/countries.py:98
+msgid "Haiti"
+msgstr ""
+
+#: apps/utils/countries.py:99
+msgid "Heard Island and McDonald Islands"
+msgstr ""
+
+#: apps/utils/countries.py:100
+msgid "Holy See (Vatican City State)"
+msgstr ""
+
+#: apps/utils/countries.py:101
+msgid "Honduras"
+msgstr ""
+
+#: apps/utils/countries.py:102
+msgid "Hong Kong"
+msgstr ""
+
+#: apps/utils/countries.py:103
+msgid "Hungary"
+msgstr ""
+
+#: apps/utils/countries.py:104
+msgid "Iceland"
+msgstr ""
+
+#: apps/utils/countries.py:105
+msgid "India"
+msgstr ""
+
+#: apps/utils/countries.py:106
+msgid "Indonesia"
+msgstr ""
+
+#: apps/utils/countries.py:107
+msgid "Iran, Islamic Republic of"
+msgstr ""
+
+#: apps/utils/countries.py:108
+msgid "Iraq"
+msgstr ""
+
+#: apps/utils/countries.py:109
+msgid "Ireland"
+msgstr ""
+
+#: apps/utils/countries.py:110
+msgid "Isle of Man"
+msgstr ""
+
+#: apps/utils/countries.py:111
+msgid "Israel"
+msgstr ""
+
+#: apps/utils/countries.py:112
+msgid "Italy"
+msgstr ""
+
+#: apps/utils/countries.py:113
+msgid "Jamaica"
+msgstr ""
+
+#: apps/utils/countries.py:114
+msgid "Japan"
+msgstr ""
+
+#: apps/utils/countries.py:115
+msgid "Jersey"
+msgstr ""
+
+#: apps/utils/countries.py:116
+msgid "Jordan"
+msgstr ""
+
+#: apps/utils/countries.py:117
+msgid "Kazakhstan"
+msgstr ""
+
+#: apps/utils/countries.py:118
+msgid "Kenya"
+msgstr ""
+
+#: apps/utils/countries.py:119
+msgid "Kiribati"
+msgstr ""
+
+#: apps/utils/countries.py:120
+msgid "Korea, Democratic People's Republic of"
+msgstr ""
+
+#: apps/utils/countries.py:121
+msgid "Korea, Republic of"
+msgstr ""
+
+#: apps/utils/countries.py:122
+msgid "Kuwait"
+msgstr ""
+
+#: apps/utils/countries.py:123
+msgid "Kyrgyzstan"
+msgstr ""
+
+#: apps/utils/countries.py:124
+msgid "Lao People's Democratic Republic"
+msgstr ""
+
+#: apps/utils/countries.py:125
+msgid "Latvia"
+msgstr ""
+
+#: apps/utils/countries.py:126
+msgid "Lebanon"
+msgstr ""
+
+#: apps/utils/countries.py:127
+msgid "Lesotho"
+msgstr ""
+
+#: apps/utils/countries.py:128
+msgid "Liberia"
+msgstr ""
+
+#: apps/utils/countries.py:129
+msgid "Libyan Arab Jamahiriya"
+msgstr ""
+
+#: apps/utils/countries.py:130
+msgid "Liechtenstein"
+msgstr ""
+
+#: apps/utils/countries.py:131
+msgid "Lithuania"
+msgstr ""
+
+#: apps/utils/countries.py:132
+msgid "Luxembourg"
+msgstr ""
+
+#: apps/utils/countries.py:133
+msgid "Macao"
+msgstr ""
+
+#: apps/utils/countries.py:134
+msgid "Macedonia, The Former Yugoslav Republic of"
+msgstr ""
+
+#: apps/utils/countries.py:135
+msgid "Madagascar"
+msgstr ""
+
+#: apps/utils/countries.py:136
+msgid "Malawi"
+msgstr ""
+
+#: apps/utils/countries.py:137
+msgid "Malaysia"
+msgstr ""
+
+#: apps/utils/countries.py:138
+msgid "Maldives"
+msgstr ""
+
+#: apps/utils/countries.py:139
+msgid "Mali"
+msgstr ""
+
+#: apps/utils/countries.py:140
+msgid "Malta"
+msgstr ""
+
+#: apps/utils/countries.py:141
+msgid "Marshall Islands"
+msgstr ""
+
+#: apps/utils/countries.py:142
+msgid "Martinique"
+msgstr ""
+
+#: apps/utils/countries.py:143
+msgid "Mauritania"
+msgstr ""
+
+#: apps/utils/countries.py:144
+msgid "Mauritius"
+msgstr ""
+
+#: apps/utils/countries.py:145
+msgid "Mayotte"
+msgstr ""
+
+#: apps/utils/countries.py:146
+msgid "Mexico"
+msgstr ""
+
+#: apps/utils/countries.py:147
+msgid "Micronesia, Federated States of"
+msgstr ""
+
+#: apps/utils/countries.py:148
+msgid "Moldova, Republic of"
+msgstr ""
+
+#: apps/utils/countries.py:149
+msgid "Monaco"
+msgstr ""
+
+#: apps/utils/countries.py:150
+msgid "Mongolia"
+msgstr ""
+
+#: apps/utils/countries.py:151
+msgid "Montenegro"
+msgstr ""
+
+#: apps/utils/countries.py:152
+msgid "Montserrat"
+msgstr ""
+
+#: apps/utils/countries.py:153
+msgid "Morocco"
+msgstr ""
+
+#: apps/utils/countries.py:154
+msgid "Mozambique"
+msgstr ""
+
+#: apps/utils/countries.py:155
+msgid "Myanmar"
+msgstr ""
+
+#: apps/utils/countries.py:156
+msgid "Namibia"
+msgstr ""
+
+#: apps/utils/countries.py:157
+msgid "Nauru"
+msgstr ""
+
+#: apps/utils/countries.py:158
+msgid "Nepal"
+msgstr ""
+
+#: apps/utils/countries.py:159
+msgid "Netherlands"
+msgstr ""
+
+#: apps/utils/countries.py:160
+msgid "Netherlands Antilles"
+msgstr ""
+
+#: apps/utils/countries.py:161
+msgid "New Caledonia"
+msgstr ""
+
+#: apps/utils/countries.py:162
+msgid "New Zealand"
+msgstr ""
+
+#: apps/utils/countries.py:163
+msgid "Nicaragua"
+msgstr ""
+
+#: apps/utils/countries.py:164
+msgid "Niger"
+msgstr ""
+
+#: apps/utils/countries.py:165
+msgid "Nigeria"
+msgstr ""
+
+#: apps/utils/countries.py:166
+msgid "Niue"
+msgstr ""
+
+#: apps/utils/countries.py:167
+msgid "Norfolk Island"
+msgstr ""
+
+#: apps/utils/countries.py:168
+msgid "Northern Mariana Islands"
+msgstr ""
+
+#: apps/utils/countries.py:169
+msgid "Norway"
+msgstr ""
+
+#: apps/utils/countries.py:170
+msgid "Oman"
+msgstr ""
+
+#: apps/utils/countries.py:171
+msgid "Pakistan"
+msgstr ""
+
+#: apps/utils/countries.py:172
+msgid "Palau"
+msgstr ""
+
+#: apps/utils/countries.py:173
+msgid "Palestinian Territory, Occupied"
+msgstr ""
+
+#: apps/utils/countries.py:174
+msgid "Panama"
+msgstr ""
+
+#: apps/utils/countries.py:175
+msgid "Papua New Guinea"
+msgstr ""
+
+#: apps/utils/countries.py:176
+msgid "Paraguay"
+msgstr ""
+
+#: apps/utils/countries.py:177
+msgid "Peru"
+msgstr ""
+
+#: apps/utils/countries.py:178
+msgid "Philippines"
+msgstr ""
+
+#: apps/utils/countries.py:179
+msgid "Pitcairn"
+msgstr ""
+
+#: apps/utils/countries.py:180
+msgid "Poland"
+msgstr ""
+
+#: apps/utils/countries.py:181
+msgid "Portugal"
+msgstr ""
+
+#: apps/utils/countries.py:182
+msgid "Puerto Rico"
+msgstr ""
+
+#: apps/utils/countries.py:183
+msgid "Qatar"
+msgstr ""
+
+#: apps/utils/countries.py:184
+msgid "Réunion"
+msgstr ""
+
+#: apps/utils/countries.py:185
+msgid "Romania"
+msgstr ""
+
+#: apps/utils/countries.py:186
+msgid "Russian Federation"
+msgstr ""
+
+#: apps/utils/countries.py:187
+msgid "Rwanda"
+msgstr ""
+
+#: apps/utils/countries.py:188
+msgid "Saint Barthélemy"
+msgstr ""
+
+#: apps/utils/countries.py:189
+msgid "Saint Helena"
+msgstr ""
+
+#: apps/utils/countries.py:190
+msgid "Saint Kitts and Nevis"
+msgstr ""
+
+#: apps/utils/countries.py:191
+msgid "Saint Lucia"
+msgstr ""
+
+#: apps/utils/countries.py:192
+msgid "Saint Martin"
+msgstr ""
+
+#: apps/utils/countries.py:193
+msgid "Saint Pierre and Miquelon"
+msgstr ""
+
+#: apps/utils/countries.py:194
+msgid "Saint Vincent and the Grenadines"
+msgstr ""
+
+#: apps/utils/countries.py:195
+msgid "Samoa"
+msgstr ""
+
+#: apps/utils/countries.py:196
+msgid "San Marino"
+msgstr ""
+
+#: apps/utils/countries.py:197
+msgid "Sao Tome and Principe"
+msgstr ""
+
+#: apps/utils/countries.py:198
+msgid "Saudi Arabia"
+msgstr ""
+
+#: apps/utils/countries.py:199
+msgid "Senegal"
+msgstr ""
+
+#: apps/utils/countries.py:200
+msgid "Serbia"
+msgstr ""
+
+#: apps/utils/countries.py:201
+msgid "Seychelles"
+msgstr ""
+
+#: apps/utils/countries.py:202
+msgid "Sierra Leone"
+msgstr ""
+
+#: apps/utils/countries.py:203
+msgid "Singapore"
+msgstr ""
+
+#: apps/utils/countries.py:204
+msgid "Slovakia"
+msgstr ""
+
+#: apps/utils/countries.py:205
+msgid "Slovenia"
+msgstr ""
+
+#: apps/utils/countries.py:206
+msgid "Solomon Islands"
+msgstr ""
+
+#: apps/utils/countries.py:207
+msgid "Somalia"
+msgstr ""
+
+#: apps/utils/countries.py:208
+msgid "South Africa"
+msgstr ""
+
+#: apps/utils/countries.py:209
+msgid "South Georgia and the South Sandwich Islands"
+msgstr ""
+
+#: apps/utils/countries.py:210
+msgid "Spain"
+msgstr ""
+
+#: apps/utils/countries.py:211
+msgid "Sri Lanka"
+msgstr ""
+
+#: apps/utils/countries.py:212
+msgid "Sudan"
+msgstr ""
+
+#: apps/utils/countries.py:213
+msgid "Suriname"
+msgstr ""
+
+#: apps/utils/countries.py:214
+msgid "Svalbard and Jan Mayen"
+msgstr ""
+
+#: apps/utils/countries.py:215
+msgid "Swaziland"
+msgstr ""
+
+#: apps/utils/countries.py:216
+msgid "Sweden"
+msgstr ""
+
+#: apps/utils/countries.py:217
+msgid "Switzerland"
+msgstr ""
+
+#: apps/utils/countries.py:218
+msgid "Syrian Arab Republic"
+msgstr ""
+
+#: apps/utils/countries.py:219
+msgid "Taiwan, Province of China"
+msgstr ""
+
+#: apps/utils/countries.py:220
+msgid "Tajikistan"
+msgstr ""
+
+#: apps/utils/countries.py:221
+msgid "Tanzania, United Republic of"
+msgstr ""
+
+#: apps/utils/countries.py:222
+msgid "Thailand"
+msgstr ""
+
+#: apps/utils/countries.py:223
+msgid "Timor-leste"
+msgstr ""
+
+#: apps/utils/countries.py:224
+msgid "Togo"
+msgstr ""
+
+#: apps/utils/countries.py:225
+msgid "Tokelau"
+msgstr ""
+
+#: apps/utils/countries.py:226
+msgid "Tonga"
+msgstr ""
+
+#: apps/utils/countries.py:227
+msgid "Trinidad and Tobago"
+msgstr ""
+
+#: apps/utils/countries.py:228
+msgid "Tunisia"
+msgstr ""
+
+#: apps/utils/countries.py:229
+msgid "Turkey"
+msgstr ""
+
+#: apps/utils/countries.py:230
+msgid "Turkmenistan"
+msgstr ""
+
+#: apps/utils/countries.py:231
+msgid "Turks and Caicos Islands"
+msgstr ""
+
+#: apps/utils/countries.py:232
+msgid "Tuvalu"
+msgstr ""
+
+#: apps/utils/countries.py:233
+msgid "Uganda"
+msgstr ""
+
+#: apps/utils/countries.py:234
+msgid "Ukraine"
+msgstr ""
+
+#: apps/utils/countries.py:235
+msgid "United Arab Emirates"
+msgstr ""
+
+#: apps/utils/countries.py:236
+msgid "United Kingdom"
+msgstr ""
+
+#: apps/utils/countries.py:237
+msgid "United States"
+msgstr ""
+
+#: apps/utils/countries.py:238
+msgid "United States Minor Outlying Islands"
+msgstr ""
+
+#: apps/utils/countries.py:239
+msgid "Uruguay"
+msgstr ""
+
+#: apps/utils/countries.py:240
+msgid "Uzbekistan"
+msgstr ""
+
+#: apps/utils/countries.py:241
+msgid "Vanuatu"
+msgstr ""
+
+#: apps/utils/countries.py:242
+msgid "Venezuela, Bolivarian Republic of"
+msgstr ""
+
+#: apps/utils/countries.py:243
+msgid "Viet Nam"
+msgstr ""
+
+#: apps/utils/countries.py:244
+msgid "Virgin Islands, British"
+msgstr ""
+
+#: apps/utils/countries.py:245
+msgid "Virgin Islands, U.s."
+msgstr ""
+
+#: apps/utils/countries.py:246
+msgid "Wallis and Futuna"
+msgstr ""
+
+#: apps/utils/countries.py:247
+msgid "Western Sahara"
+msgstr ""
+
+#: apps/utils/countries.py:248
+msgid "Yemen"
+msgstr ""
+
+#: apps/utils/countries.py:249
+msgid "Zambia"
+msgstr ""
+
+#: apps/utils/countries.py:250
+msgid "Zimbabwe"
+msgstr ""
+
+#: apps/utils/gender.py:5
+msgid "MAN"
+msgstr ""
+
+#: apps/utils/gender.py:6
+msgid "WOMAN"
+msgstr ""
+
+#: apps/utils/gender.py:7
+msgid "OTHERS"
+msgstr ""
+
+#: school_stalker/settings.py:103
+msgid "Portuguese"
+msgstr ""
+
+#: school_stalker/settings.py:104
+msgid "Spanish"
+msgstr ""
+
+#: templates/account/login.html:15
+msgid "Sign In"
+msgstr ""
+
+#: templates/account/login.html:21
+#, python-format
+msgid ""
+"Please sign in with one\n"
+"        of your existing third party accounts. Or, <a href=\"%(signup_url)s"
+"\">sign up</a>\n"
+"        for a %(site_name)s account and sign in below:"
+msgstr ""
+
+#: templates/account/login.html:31
+msgid "or"
+msgstr ""
+
+#: templates/account/login.html:38
+#, python-format
+msgid ""
+"If you have not created an account yet, then please\n"
+"        <a href=\"%(signup_url)s\">sign up</a> first."
+msgstr ""
+
+#: templates/account/login.html:64
+msgid "Forgot Password?"
+msgstr ""
+
+#: templates/account/logout.html:17 templates/account/logout.html:27
+msgid "Sign Out"
+msgstr ""
+
+#: templates/account/logout.html:18
+msgid "Logout - Popinschools"
+msgstr ""
+
+#: templates/account/logout.html:20
+msgid "Are you sure you want to sign out?"
+msgstr ""
+
+#: templates/account/signup.html:10
+msgid "Signup"
+msgstr ""
+
+#: templates/account/signup.html:16
+msgid "Sign Up"
+msgstr ""
+
+#: templates/account/signup.html:18
+#, python-format
+msgid ""
+"\n"
+"                Already have an account? Then please\n"
+"                <a href=\"%(login_url)s\">sign in</a>.\n"
+"            "
+msgstr ""
+
+#: templates/account/signup.html:47
+msgid "Username"
+msgstr ""
+
+#: templates/account/signup.html:54
+msgid "First name"
+msgstr ""
+
+#: templates/account/signup.html:61
+msgid "Last name"
+msgstr ""
+
+#: templates/account/signup.html:70
+msgid "Gender"
+msgstr ""
+
+#: templates/account/signup.html:77
+msgid "Nationality"
+msgstr ""
+
+#: templates/account/signup.html:84
+msgid "Birth day"
+msgstr ""
+
+#: templates/account/signup.html:100
+msgid "Password"
+msgstr ""
+
+#: templates/account/signup.html:107
+msgid "Confirm password"
+msgstr ""
+
+#: templates/account/signup.html:117 templates/home.html:63
+msgid "REGISTER"
+msgstr ""
+
+#: templates/base_site.html:117 templates/home.html:136
+msgid "All rights reserveds"
+msgstr ""
+
+#: templates/base_site.html:118 templates/home.html:138
+msgid "About us"
+msgstr ""
+
+#: templates/home.html:56
+msgid "LOGOUT"
+msgstr ""
+
+#: templates/home.html:60
+msgid "LOGIN"
+msgstr ""
+
+#: templates/home.html:72
+msgid "Choose your best school"
+msgstr "Escolha sua melhor escola"
+
+#: templates/home.html:73
+msgid "Schools registered,  more than"
+msgstr "Escolas registradas, mais de "
+
+#: templates/home.html:74
+msgid "comments and"
+msgstr "comentários e"
+
+#: templates/home.html:74
+msgid "using the platform"
+msgstr "utilizando a plataforma"
+
+#: templates/home.html:82
+msgid "Wich country do you wanna study?"
+msgstr "Em que país você quer estudar?"
+
+#: templates/home.html:86
+msgid "SEARCH"
+msgstr "PROCURAR"
+
+#: templates/home.html:96
+msgid "Best schools around the world"
+msgstr "Melhores escolas ao redor do mundo"
+
+#: templates/home.html:97
+msgid ""
+"\n"
+"                    Nothing is perfect we know, but when it comes\n"
+"                    to learning a new language the school\n"
+"                    needs to be perfect to you, right? With that in mind we "
+"created Popinschool,\n"
+"                    a place where you can share your experiences and read "
+"other students’ feedback to\n"
+"                    help you choose your school. Join Popinschool and let’s "
+"make\n"
+"                    learning easier and perfect for you.\n"
+"                    "
+msgstr "\n Nada é perfeito...0."
+"   "
+
+#: templates/home.html:120
+msgid "Popinschool"
+msgstr ""
+
+#: templates/home.html:121
+msgid ""
+"\n"
+"                    We love birds, languages and a good revolution. With "
+"that in mind we created Popinschool,\n"
+"                    a place to share worldwide learning experiences and "
+"school reviews.\n"
+"                    Now you can find the best school for you anywhere in the "
+"globe and also read real student’s\n"
+"                    feedback to help you decide where you want to study. "
+"Join Popinschool and let’s start a\n"
+"                    learning revolution together. Popinschool. Learn away.\n"
+"                    "
+msgstr ""

@@ -6,7 +6,8 @@
 
 {% block navigation %}
     <div id="navigation">
-        <a href="{% url 'core:homepage' %}">Home ></a><a>Signup</a>
+        <a href="{% url 'core:homepage' %}">{% trans 'Home' %} ></a><a>
+        {% trans 'Signup' %}</a>
     </div>
 {% endblock %}
 
@@ -43,21 +44,21 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="id_username">Username</label>
+                            <label for="id_username">{% trans 'Username' %}</label>
                             {% render_field form.username class+="form-control" %}
                         </div>
                     </div>
 
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="id_first_name">First name</label>
+                            <label for="id_first_name">{% trans 'First name' %}</label>
                             {% render_field form.first_name class+="form-control" %}
                         </div>
                     </div>
 
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="id_last_name">Last name</label>
+                            <label for="id_last_name">{% trans 'Last name' %}</label>
                             {% render_field form.last_name class+="form-control" %}
                         </div>
                     </div>
@@ -66,21 +67,21 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="id_gender">Gender</label>
+                            <label for="id_gender">{% trans 'Gender' %}</label>
                             {% render_field form.gender class+="form-control" %}
                         </div>
                     </div>
 
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="id_nationality">Nationality</label>
+                            <label for="id_nationality">{% trans 'Nationality' %}</label>
                             {% render_field form.nationality class+="form-control" %}
                         </div>
                     </div>
 
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="id_birth_day">Birth day</label>
+                            <label for="id_birth_day">{% trans 'Birth day' %}</label>
                             {% render_field form.birth_day class+="form-control" %}
                         </div>
                     </div>
@@ -95,14 +96,15 @@
 
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="id_password1">Password</label>
+                            <label for="id_password1">
+                                {% trans 'Password' %}</label>
                             {% render_field form.password1 class+="form-control" %}
                         </div>
                     </div>
 
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="id_password2">Confirm password</label>
+                            <label for="id_password2">{% trans 'Confirm password' %}</label>
                             {% render_field form.password2 class+="form-control" %}
                         </div>
                     </div>
@@ -112,10 +114,9 @@
 
                     </div>
                     <div class="col-md-8">
-                        <button class="btn btn-danger">REGISTER</button>
+                        <button class="btn btn-danger">{% trans 'REGISTER' %}</button>
                     </div>
                 </div>
             </form>
     </section>
 {% endblock main %}
-

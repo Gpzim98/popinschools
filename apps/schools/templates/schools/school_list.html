@@ -1,5 +1,7 @@
 {% extends 'base_site.html' %}
 
+{% load i18n %}
+
 {% load static from staticfiles %}
 
 {% block scripts %}
@@ -14,14 +16,18 @@
             step: 500,
             values: [ 0, 20000 ],
             slide: function( event, ui ) {
-                $( "#price-amount" ).val( "Valores entre R$" + ui.values[ 0 ] + " e R$" + ui.values[ 1 ] );
+                $( "#price-amount" ).val( "{% trans 'Values between' %} $" + ui
+                .values[ 0 ] +
+                " {% trans 'and' %} $" + ui.values[ 1 ] );
             },
             change: function( event, ui ) {
                 searchSchool();
             }
         });
-        $( "#price-amount" ).val( "Valores entre R$" + $( "#price" ).slider( "values", 0 ) +
-          " e R$" + $( "#price" ).slider( "values", 1 ) );
+        $( "#price-amount" ).val( "{% trans 'Values between' %} $" + $(
+        "#price" ).slider(
+        "values", 0 ) +
+          " {% trans 'and' %} $" + $( "#price" ).slider( "values", 1 ) );
     } );
 
     $( function() {
@@ -31,14 +37,20 @@
             max: 5,
             values: [1, 5],
             slide: function( event, ui ) {
-                $( "#classification-amount" ).val( 'Avaliações entre ' + ui.values[ 0 ] + " e " + ui.values[ 1 ] );
+                $( "#classification-amount" )
+                .val( '{% trans 'Ratings between' %} ' + ui
+                .values[
+                0 ] + " {% trans 'and' %} " + ui.values[ 1 ] );
             },
             change: function( event, ui ) {
                 searchSchool();
               }
         });
-        $( "#classification-amount" ).val( 'Avaliações entre ' + $( "#classification" ).slider( "values", 0 ) +
-          " e " + $( "#classification" ).slider( "values", 1 ) );
+        $( "#classification-amount" ).val( '{% trans 'Ratings between' %} '
+        + $(
+        "#classification" ).slider( "values", 0 ) +
+          " {% trans 'and' %} " + $( "#classification" ).slider( "values", 1
+          ) );
     } );
     </script>
 
@@ -46,7 +58,9 @@
 
 {% block navigation %}
     <div id="navigation">
-        <a href="{% url 'core:homepage' %}">Home ></a><a>School search</a>
+        <a href="{% url 'core:homepage' %}">{% trans 'Home' %} ></a><a>
+        {% trans 'School search' %}
+    </a>
     </div>
 {% endblock %}
 
@@ -54,7 +68,7 @@
     {% include 'schools/school_list_aside.html' %}
 
     <section id="search-result">
-        <h1 hidden>School filter - Popinschools</h1>
+        <h1 hidden>{% trans 'School filter - Popinschools' %}</h1>
     {% if object_list %}
     {% for school in object_list %}
     <div class="result">
@@ -65,7 +79,7 @@
         <div class="school-rating"  data-toggle="modal"
                  data-target="#myModal">{{ school.ratings }}</div>
         ({{school.ratings_count}}
-        Rates)
+        {% trans 'Rates' %})
         <ul>
             {% for id, categorie in categories %}
             <li>
@@ -75,7 +89,7 @@
             {% endfor %}
         </ul>
 
-                <span>Wifi free
+                <span>{% trans 'Wifi free' %}
                 {% if school.accomodation.wifi_free %}
                     <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
                 {% else %}
@@ -84,7 +98,7 @@
                 </span>
 
 
-                <span>Lunch influded
+                <span>{% trans 'Lunch influded' %}
                     {% if school.accomodation.is_lunch_included %}
                     <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
                     {% else %}
@@ -92,7 +106,7 @@
                     {% endif %}|
                 </span>
 
-                <span>Breakfast
+                <span>{% trans 'Breakfast' %}
                     {% if school.accomodation.is_beakfest_included %}
                     <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
                     {% else %}
@@ -100,7 +114,7 @@
                     {% endif %}|
                 </span>
 
-                <span>Dinner included
+                <span>{% trans 'Dinner included' %}
                     {% if object.accomodation.is_dinner_included %}
                     <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
                     {% else %}
@@ -108,7 +122,7 @@
                     {% endif %}|
                 </span>
 
-                <span>TV in the Bedroom
+                <span>{% trans 'TV in the Bedroom' %}
 
                 {% if object.accomodation.is_tv_in_the_bedroom %}
                 <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
@@ -117,7 +131,7 @@
                 {% endif %}|
                 </span>
 
-                <span>Wardrobe
+                <span>{% trans 'Wardrobe' %}
                 {% if object.accomodation.is_wardrobe_in_the_bedroom %}
                 <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
                 {% else %}
@@ -125,7 +139,7 @@
                 {% endif %}|
                 </span>
 
-                <span>Air conditioning
+                <span>{% trans 'Air conditioning' %}
                 {% if object.accomodation.is_air_in_the_badroom %}
                 <img src="{% static 'assets/img/arrow-right.png' %}" alt="">
                 {% else %}
@@ -137,7 +151,7 @@
     </div>
     {% endfor %}
     {% else %}
-        None schools matched with your search
+        {% trans 'None schools matched with your search' %}
     {% endif %}
     </section>
 

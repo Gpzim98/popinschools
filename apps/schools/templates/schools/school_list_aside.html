@@ -1,31 +1,35 @@
+{% load i18n %}
 <aside id="aside-search">
     <div id="aside-title">
-        <h2>Filtro de Busca</h2>
+        <h2>{% trans 'Search filter' %}</h2>
     </div>
     <form onchange="searchSchool()" id="formSearch">
         {% csrf_token %}
-        <label for="country"><b>País</b></label><br>
-        <input type="text" id="country" value="{{ country }}">
-        <label for="city"><b>Cidade</b></label>
+        <label for="country"><b>{% trans 'Country' %}</b></label><br>
+        <input type="text" id="country" value="{{ country }}"><br>
+        <label for="city"><b>{% trans 'City' %}</b></label><br>
         <input type="text" id="city">
-        <label for="idiom"><b>Idioma</b></label>
+        <label for="idiom"><b>{% trans 'Language' %}</b></label>
         <input type="text" id="idiom">
 
         <p>
-          <label for="classification-amount"><b>Classificação</b></label>
+          <label
+                  for="classification-amount"><b>
+              {% trans 'Classification' %}</b></label>
           <input type="text" id="classification-amount" readonly>
         </p>
         <div id="classification"></div>
         <br>
         <p>
-          <label for="price-amount"><b>Preço</b></label>
+          <label for="price-amount"><b>{% trans 'Price' %}</b></label>
           <input type="text" id="price-amount" readonly>
         </p>
         <div id="price"></div>
         <br>
-        <label for="visa"><b>Visto</b></label><br>
-        <input type="radio" name="visa" id="visto" value="true"><p>Sim</p><br>
-        <input type="radio" name="visa" value="false"><p>Não</p>
+        <label for="visa"><b>{% trans 'Visa' %}</b></label><br>
+        <input type="radio" name="visa" id="visto" value="true"><p>
+        {% trans 'Visa' %}</p><br>
+        <input type="radio" name="visa" value="false"><p>{% trans 'No' %}</p>
 
         <!--<br>-->
         <!--<br>-->
@@ -35,10 +39,16 @@
 
         <br>
         <br>
-        <label for="shift"><b>Turno</b></label><br>
-        <input type="radio" name="shift" id="shift" value="morning"><p>Manhã</p><br>
-        <input type="radio" name="shift" value="afternoon"><p>Tarde</p><br>
-        <input type="radio" name="shift" value="night"><p>Noite</p>
+        <label for="shift"><b>Period</b></label><br>
+        <input type="radio" name="shift" id="shift" value="morning"><p>
+        {% trans 'Morning' %}
+    </p><br>
+        <input type="radio" name="shift" value="afternoon"><p>
+        {% trans 'Afternoon' %}
+    </p><br>
+        <input type="radio" name="shift" value="night"><p>
+        {% trans 'Night' %}
+    </p>
 
         <br>
         <br>

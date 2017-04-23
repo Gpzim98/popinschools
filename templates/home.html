@@ -1,3 +1,4 @@
+{% load i18n %}
 {% load static from staticfiles %}
 <!doctype html>
 <html lang="en">
@@ -52,14 +53,14 @@
                 {% if user.is_authenticated %}
                     <img src="{{ request.user.socialaccount_set.all.0.get_avatar_url }}" width="15%;" style="float:right"/>
                     <a href="{% url 'account_logout' %}" class="btn btn-login btn-color-home btn-header">
-                        FAZER LOGOUT
+                        {% trans 'LOGOUT' %}
                     </a>
                 {% else %}
                     <a href="{% url 'account_login' %}" class="btn btn-login btn-color-home btn-header">
-                        FAZER LOGIN
+                        {% trans 'LOGIN' %}
                     </a>
                                 <a href="{% url 'account_signup' %}" class="btn btn-create-profile btn-color-home btn-header">
-                    CRIE SEU PERFIL</a>
+                    {% trans 'REGISTER' %}</a>
                 {% endif %}
             </div>
         </div>
@@ -68,18 +69,21 @@
     <main>
         <section id="search">
             <div class="content search-content">
-                <h1>Escolha a melhor escola para você</h1>
-                <p>{{schools}} Schools registered,  more than {{ratings}}
-                    comments and {{ users }} using the platform
+                <h1>{% trans 'Choose your best school' %}</h1>
+                <p>{{schools}} {% trans 'Schools registered,  more than' %} {{ratings}}
+                    {% trans 'comments and' %} {{ users }} {% trans 'using the platform' %}
                 </p>
                 <div class="search-box">
                     <form action="{% url 'schools:school-list' %}" method="GET">
                         <div class="row">
                             <div class="col-xs-12 col-md-9 col-sm-9">
-                                <input type="text" name="country" id="id_country" placeholder="Em qual país você quer estudar">
+                                <input type="text" name="country"
+                                       id="id_country"
+                                       placeholder="{% trans 'Wich country do you wanna study?' %}">
                             </div>
                             <div class="col-xs-12 col-md-3 col-sm-3">
-                                <button class="btn btn-danger">BUSCAR</button>
+                                <button class="btn btn-danger">
+                                    {% trans 'SEARCH' %}</button>
                             </div>
                         </div>
                     </form>
@@ -89,12 +93,15 @@
 
         <section id="schools">
             <div class="content">
-                <h2>Best schools around the world</h2>
-                <p>Nothing is perfect we know, but when it comes to learning a new language the school
+                <h2>{% trans 'Best schools around the world' %}</h2>
+                <p>{% blocktrans %}
+                    Nothing is perfect we know, but when it comes
+                    to learning a new language the school
                     needs to be perfect to you, right? With that in mind we created Popinschool,
                     a place where you can share your experiences and read other students’ feedback to
                     help you choose your school. Join Popinschool and let’s make
                     learning easier and perfect for you.
+                    {% endblocktrans %}
                 </p>
                 {% for feed in feeds %}
                 <div class="school">
@@ -110,12 +117,14 @@
     <footer id="footer-home">
         <div id="container-footer">
             <div class="content">
-                <h2>Popinschool</h2>
-                <p>We love birds, languages and a good revolution. With that in mind we created Popinschool,
+                <h2>{% trans 'Popinschool' %}</h2>
+                <p>{% blocktrans %}
+                    We love birds, languages and a good revolution. With that in mind we created Popinschool,
                     a place to share worldwide learning experiences and school reviews.
                     Now you can find the best school for you anywhere in the globe and also read real student’s
                     feedback to help you decide where you want to study. Join Popinschool and let’s start a
                     learning revolution together. Popinschool. Learn away.
+                    {% endblocktrans %}
                 </p>
             </div>
         </div>
@@ -124,8 +133,9 @@
     <div class="rights">
         <div class="content">
             <div id="social-footer">
-                <p>Todos os direitos reservados - info@popinschool.com - <a
-                        href="{% url 'core:about-us' %}">About us</a></p>
+                <p>{% trans 'All rights reserveds' %} - info@popinschool.com
+                    - <a
+                        href="{% url 'core:about-us' %}">{% trans 'About us' %}</a></p>
                 <ul>
                     <li><a target="_blank" href="https://www.facebook.com/popinschool/">
                         <img src="{% static 'assets/img/facebook.png' %}" alt="Facebook"></a></li>
